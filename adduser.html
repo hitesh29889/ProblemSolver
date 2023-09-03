@@ -724,326 +724,147 @@
           <div class="mb-9">
             <div id="projectSummary" data-list='{"valueNames":["projectName","assigness","start","deadline","task","projectprogress","status","action"],"page":6,"pagination":true}'>
                 <div class="row mb-4 gx-6 gy-3 align-items-center">
-                <h3>Manage User</h3>
+                <h3>Add User</h3>
+                <ul class="nav nav-underline" id="myTab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#tab-home" role="tab" aria-controls="tab-home" aria-selected="true">
+                        <div class="col-auto">
+                          <h2 class="mb-0">Add User</h2>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#tab-profile" role="tab" aria-controls="tab-profile" aria-selected="false">
+                        <div class="col-auto">
+                          <h2 class="mb-0">Edit User</h2>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
                 </div>
-                <div class="row g-3 justify-content-between align-items-end mb-4">
-                <div class="col-12 col-sm-auto">
-                    <button class="btn btn-primary me-1 mb-1" onclick="window.location.href='adduser.html'" type="button">Add user</button>
-                    <button class="btn btn-info  me-1 mb-1" type="button">Import user</button>
-                    <button class="btn btn-danger me-1 mb-1" type="button">Reset</button>
-                </div>
-                <div class="col-12 col-sm-auto">
-                    <div class="d-flex align-items-center">
-                    <div class="search-box me-3">
-                        <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
-                        <input class="form-control search-input search" type="search" placeholder="Search user" aria-label="Search" />
-                        <span class="fas fa-search search-box-icon"></span>
-
-                        </form>
+                <div class="tab-content mt-3" id="myTabContent">
+                    <div class="tab-pane fade show active" id="tab-home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-xl-9">
+                            <form class="row g-3 mb-6">
+                                <div class="col-sm-6 col-md-8">
+                                <div class="form-floating">
+                                    <input class="form-control" id="floatingInputGrid" type="text" placeholder="First name" />
+                                    <label for="floatingInputGrid">First name*</label>
+                                </div>
+                                </div>
+                                <div class="col-sm-6 col-md-8">
+                                    <div class="form-floating">
+                                    <input class="form-control" id="floatingInputGrid" type="text" placeholder="Last name" />
+                                    <label for="floatingInputGrid">Last name*</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-8">
+                                    <div class="form-floating">
+                                        <input class="form-control" id="floatingInputGrid" type="text" placeholder="Email" />
+                                        <label for="floatingInputGrid">Email*</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-8">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="floatingSelectTask">
+                                            <option selected="selected">Select</option>
+                                            <option value="1">user 1</option>
+                                            <option value="2">user 2</option>
+                                            <option value="3">user 3</option>
+                                        </select>
+                                        <label for="floatingSelectTask">Report to</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-8">
+                                    <div class="flatpickr-input-container">
+                                        <div class="form-floating">
+                                            <input class="form-control" id="floatingInputStartDate" type="text" placeholder="end date" data-options='{"disableMobile":true}' />
+                                            <label class="ps-6" for="floatingInputStartDate">Start date</label><span class="uil uil-calendar-alt flatpickr-icon text-700"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 gy-6 col-md-8">
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="floatingProjectOverview" placeholder="Permission details" style="height: 100px"></textarea>
+                                    <label for="floatingProjectOverview">Permission</label>
+                                </div>
+                                </div>
+                                <div class="col-6 gy-6 col-md-8">
+                                <div class="row g-3 justify-content-end">
+                                    <div class="col-auto">
+                                    <button class="btn btn-phoenix-primary px-5">Cancel</button>
+                                    </div>
+                                    <div class="col-auto">
+                                    <button class="btn btn-primary px-5 px-sm-15">Add User</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
                     </div>
+                    <div class="tab-pane fade show" id="tab-profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="row">
+                            <div class="col-xl-9">
+                            <form class="row g-3 mb-6">
+                                <div class="col-sm-6 col-md-8">
+                                <div class="form-floating">
+                                    <input class="form-control" id="floatingInputGrid" type="text" placeholder="First name" />
+                                    <label for="floatingInputGrid">First name*</label>
+                                </div>
+                                </div>
+                                <div class="col-sm-6 col-md-8">
+                                    <div class="form-floating">
+                                    <input class="form-control" id="floatingInputGrid" type="text" placeholder="Last name" />
+                                    <label for="floatingInputGrid">Last name*</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-8">
+                                    <div class="form-floating">
+                                        <input class="form-control" id="exampleFormControlInput" type="email" disabled="" placeholder="hitesh.29889@gmail.com" value="hitesh.29889@gmail.com">
+                                        <label class="form-label" for="exampleFormControlInput">Email*</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-8">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="floatingSelectTask">
+                                            <option selected="selected">Select</option>
+                                            <option value="1">user 1</option>
+                                            <option value="2">user 2</option>
+                                            <option value="3">user 3</option>
+                                        </select>
+                                        <label for="floatingSelectTask">Report to</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-8">
+                                    <div class="flatpickr-input-container">
+                                        <div class="form-floating">
+                                            <input class="form-control" id="floatingInputStartDate" type="text" placeholder="end date" data-options='{"disableMobile":true}' />
+                                            <label class="ps-6" for="floatingInputStartDate">Start date</label><span class="uil uil-calendar-alt flatpickr-icon text-700"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 gy-6 col-md-8">
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="floatingProjectOverview" placeholder="Permission details" style="height: 100px"></textarea>
+                                    <label for="floatingProjectOverview">Permission</label>
+                                </div>
+                                </div>
+                                <div class="col-6 gy-6 col-md-8">
+                                <div class="row g-3 justify-content-end">
+                                    <div class="col-auto">
+                                    <button class="btn btn-phoenix-primary px-5">Cancel</button>
+                                    </div>
+                                    <div class="col-auto">
+                                    <button class="btn btn-primary px-5 px-sm-15">Edit User</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                </div>
-                <div class="table-responsive scrollbar">
-                <table class="table fs--1 mb-0 border-top border-200">
-                    <thead>
-                    <tr>
-                        <th class="sort white-space-nowrap align-middle ps-3" scope="col" data-sort="projectName" style="width:5%;"></th>
-                        <th class="sort white-space-nowrap align-middle ps-0" scope="col" data-sort="projectName" style="width:30%;">User</th>
-                        <th class="sort align-middle ps-3" scope="col" data-sort="assigness" style="width:10%;">Reports</th>
-                        <th class="sort align-middle ps-3" scope="col" data-sort="start" style="width:10%;">Added to</th>
-                        <th class="sort align-middle ps-3" scope="col" data-sort="deadline" style="width:15%;">Permission</th>
-                        <th class="sort align-middle text-end" scope="col" style="width:10%;"></th>
-                    </tr>
-                    </thead>
-                    <tbody class="list" id="project-list-table-body">
-                    <tr class="position-static">
-                        <td class="align-middle time white-space-nowrap ps-3 py-4">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" id="flexSwitchCheckChecked" type="checkbox" checked="" />
-                            </div>
-                        </td>
-                        <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">User 1</a></td>
-                        <td class="align-middle white-space-nowrap assigness ps-3 py-4">
-                        <div class="avatar-group avatar-group-dense">
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/34.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/59.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/35.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/58.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-s  rounded-circle">
-                            <div class="avatar-name rounded-circle "><span>+2</span></div>
-                            </div>
-                        </div>
-                        </td>
-                        <td class="align-middle white-space-nowrap start ps-3 py-4">
-                        <p class="mb-0 fs--1 text-900">PS | AP</p>
-                        </td>
-                        <td class="align-middle white-space-nowrap deadline ps-3 py-4">
-                        <p class="mb-0 fs--1 text-900"><span class="far fa-address-card"></span></p>
-                        </td>
-                        <td class="align-middle text-end white-space-nowrap pe-0 action">
-                        <div class="font-sans-serif btn-reveal-trigger position-static">
-                            <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                            <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                            </div>
-                        </div>
-                        </td>
-                    </tr>
-                    <tr class="position-static">
-                        <td class="align-middle time white-space-nowrap ps-3 py-4">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" id="flexSwitchCheckChecked" type="checkbox"  />
-                            </div>
-                        </td>
-                        <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">User 2</a></td>
-                        <td class="align-middle white-space-nowrap assigness ps-3 py-4">
-                        <div class="avatar-group avatar-group-dense">
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/1.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/2.png" alt="" />
-
-                            </div>
-                        </div>
-                        </td>
-                        <td class="align-middle white-space-nowrap start ps-3 py-4">
-                        <p class="mb-0 fs--1 text-900">PS | AP</p>
-                        </td>
-                        <td class="align-middle white-space-nowrap deadline ps-3 py-4">
-                        <p class="mb-0 fs--1 text-900"><span class="far fa-address-card"></span></p>
-                        </td>
-                        <td class="align-middle text-end white-space-nowrap pe-0 action">
-                        <div class="font-sans-serif btn-reveal-trigger position-static">
-                            <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                            <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                            </div>
-                        </div>
-                        </td>
-                    </tr>
-                    <tr class="position-static">
-                        <td class="align-middle time white-space-nowrap ps-3 py-4">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" id="flexSwitchCheckChecked" type="checkbox" checked="" />
-                            </div>
-                        </td>
-                        <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">User 3</a></td>
-                        <td class="align-middle white-space-nowrap assigness ps-3 py-4">
-                        <div class="avatar-group avatar-group-dense">
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/20.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-s  rounded-circle">
-                            <div class="avatar-name rounded-circle"><span>R</span></div>
-                            </div>
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/35.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/58.png" alt="" />
-
-                            </div>
-                        </div>
-                        </td>
-                        <td class="align-middle white-space-nowrap start ps-3 py-4">
-                        <p class="mb-0 fs--1 text-900">PS | AP</p>
-                        </td>
-                        <td class="align-middle white-space-nowrap deadline ps-3 py-4">
-                        <p class="mb-0 fs--1 text-900"><span class="far fa-address-card"></span></p>
-                        </td>
-                        <td class="align-middle text-end white-space-nowrap pe-0 action">
-                        <div class="font-sans-serif btn-reveal-trigger position-static">
-                            <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                            <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                            </div>
-                        </div>
-                        </td>
-                    </tr>
-                    <tr class="position-static">
-                        <td class="align-middle time white-space-nowrap ps-3 py-4">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" id="flexSwitchCheckChecked" type="checkbox" />
-                            </div>
-                        </td>
-                        <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">User 4</a></td>
-                        <td class="align-middle white-space-nowrap assigness ps-3 py-4">
-                        <div class="avatar-group avatar-group-dense">
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/11.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/12.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/13.png" alt="" />
-
-                            </div>
-                        </div>
-                        </td>
-                        <td class="align-middle white-space-nowrap start ps-3 py-4">
-                        <p class="mb-0 fs--1 text-900">PS | AP</p>
-                        </td>
-                        <td class="align-middle white-space-nowrap deadline ps-3 py-4">
-                        <p class="mb-0 fs--1 text-900"><span class="far fa-address-card"></span></p>
-                        </td>
-                        <td class="align-middle text-end white-space-nowrap pe-0 action">
-                        <div class="font-sans-serif btn-reveal-trigger position-static">
-                            <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                            <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                            </div>
-                        </div>
-                        </td>
-                    </tr>
-                    <tr class="position-static">
-                        <td class="align-middle time white-space-nowrap ps-3 py-4">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" id="flexSwitchCheckChecked" type="checkbox" />
-                            </div>
-                        </td>
-                        <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">User 5</a></td>
-                        <td class="align-middle white-space-nowrap assigness ps-3 py-4">
-                        <div class="avatar-group avatar-group-dense">
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/14.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/16.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/18.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/20.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-s  rounded-circle">
-                            <div class="avatar-name rounded-circle "><span>+3</span></div>
-                            </div>
-                        </div>
-                        </td>
-                        <td class="align-middle white-space-nowrap start ps-3 py-4">
-                        <p class="mb-0 fs--1 text-900">PS | AP</p>
-                        </td>
-                        <td class="align-middle white-space-nowrap deadline ps-3 py-4">
-                        <p class="mb-0 fs--1 text-900"><span class="far fa-address-card"></span></p>
-                        </td>
-                        <td class="align-middle text-end white-space-nowrap pe-0 action">
-                        <div class="font-sans-serif btn-reveal-trigger position-static">
-                            <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                            <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                            </div>
-                        </div>
-                        </td>
-                    </tr>
-                    <tr class="position-static">
-                        <td class="align-middle time white-space-nowrap ps-3 py-4">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" id="flexSwitchCheckChecked" type="checkbox" checked="" />
-                            </div>
-                        </td>
-                        <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">User 6</a></td>
-                        <td class="align-middle white-space-nowrap assigness ps-3 py-4">
-                        <div class="avatar-group avatar-group-dense">
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/31.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/33.png" alt="" />
-
-                            </div>
-                        </div>
-                        </td>
-                        <td class="align-middle white-space-nowrap start ps-3 py-4">
-                        <p class="mb-0 fs--1 text-900">PS | AP</p>
-                        </td>
-                        <td class="align-middle white-space-nowrap deadline ps-3 py-4">
-                        <p class="mb-0 fs--1 text-900"><span class="far fa-address-card"></span></p>
-                        </td>
-                        <td class="align-middle text-end white-space-nowrap pe-0 action">
-                        <div class="font-sans-serif btn-reveal-trigger position-static">
-                            <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                            <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                            </div>
-                        </div>
-                        </td>
-                    </tr>
-                    <tr class="position-static">
-                        <td class="align-middle time white-space-nowrap ps-3 py-4">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" id="flexSwitchCheckChecked" type="checkbox" />
-                            </div>
-                        </td>
-                        <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">User 7</a></td>
-                        <td class="align-middle white-space-nowrap assigness ps-3 py-4">
-                        <div class="avatar-group avatar-group-dense">
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/11.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/12.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-s  rounded-circle">
-                            <img class="rounded-circle " src="assets/img/team/13.png" alt="" />
-
-                            </div>
-                        </div>
-                        </td>
-                        <td class="align-middle white-space-nowrap start ps-3 py-4">
-                        <p class="mb-0 fs--1 text-900">PS | AP</p>
-                        </td>
-                        <td class="align-middle white-space-nowrap deadline ps-3 py-4">
-                        <p class="mb-0 fs--1 text-900"><span class="far fa-address-card"></span></p>
-                        </td>
-                        <td class="align-middle text-end white-space-nowrap pe-0 action">
-                        <div class="font-sans-serif btn-reveal-trigger position-static">
-                            <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                            <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                            </div>
-                        </div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-                </div>
-                <div class="d-flex flex-wrap align-items-center justify-content-between py-3 pe-0 fs--1 border-bottom border-200">
-                <div class="d-flex">
-                    <p class="mb-0 d-none d-sm-block me-3 fw-semi-bold text-900" data-list-info="data-list-info"></p><a class="fw-semi-bold" href="#!" data-list-view="*">View all<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a><a class="fw-semi-bold d-none" href="#!" data-list-view="less">View Less<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
-                </div>
-                <div class="d-flex">
-                    <button class="page-link" data-list-pagination="prev"><span class="fas fa-chevron-left"></span></button>
-                    <ul class="mb-0 pagination"></ul>
-                    <button class="page-link pe-0" data-list-pagination="next"><span class="fas fa-chevron-right"></span></button>
-                </div>
                 </div>
             </div>
           </div>

@@ -130,11 +130,11 @@
                         <!-- more inner pages-->
                         </li>
                         <li class="nav-item"><a class="nav-link" href="manageuser.html" data-bs-toggle="" aria-expanded="false">
-                          <div class="d-flex align-items-center"><span class="nav-link-text">Manage user</span>
-                          </div>
-                          </a>
-                        <!-- more inner pages-->
-                        </li>
+                            <div class="d-flex align-items-center"><span class="nav-link-text">Manage user</span>
+                            </div>
+                            </a>
+                          <!-- more inner pages-->
+                          </li>
                       </ul>
                     </div>
                   </div>
@@ -719,412 +719,329 @@
         </div>
         <div class="content">
           <div class="mb-9">
-            <ul class="nav nav-underline" id="myTab" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#tab-home" role="tab" aria-controls="tab-home" aria-selected="true">
-                  <div class="col-auto">
-                    <h2 class="mb-0">RCA</h2>
-                  </div>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#tab-profile" role="tab" aria-controls="tab-profile" aria-selected="false">
-                  <div class="col-auto">
-                    <h2 class="mb-0">G8D</h2>
-                  </div>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#tab-contact" role="tab" aria-controls="tab-contact" aria-selected="false">
-                  <div class="col-auto">
-                    <h2 class="mb-0">A3</h2>
-                  </div>
-                </a>
-              </li>
-            </ul>
-            <div class="tab-content mt-3" id="myTabContent">
-              
-              <div class="tab-pane fade show active" id="tab-home" role="tabpanel" aria-labelledby="home-tab">
-                <div id="projectSummary" data-list='{"valueNames":["projectName","assigness","start","deadline","task","projectprogress","status","action"],"page":6,"pagination":true}'>
-                  <div class="row mb-4 gx-6 gy-3 align-items-center">
-                    <div class="col-auto"><a class="btn btn-primary px-5" href="#"><i class="fa-solid fa-plus me-2"></i>New Problem Statement</a></div>
-                  </div>
-                  <div class="row g-3 justify-content-between align-items-end mb-4">
-                    <div class="col-12 col-sm-auto">
-                      <button class="btn btn-phoenix-warning me-1 mb-1" type="button">Open (2)</button>
-
-                      <button class="btn btn-phoenix-primary me-1 mb-1" type="button">In Progress (4)</button>
-
-                      <button class="btn btn-phoenix-success me-1 mb-1" type="button">Closed (10)</button>
-
-                      <button class="btn btn-phoenix-danger me-1 mb-1" type="button">Overdue (4)</button>
-
-                      <button class="btn btn-phoenix-warning me-1 mb-1" type="button">No due date (8) </button>
-
-                      <button class="btn btn-phoenix-danger me-1 mb-1" type="button">Unassigned (9)</button>
-                    </div>
-                    <div class="col-12 col-sm-auto">
-                      <div class="d-flex align-items-center">
-                        <div class="search-box me-3">
-                          <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
-                            <input class="form-control search-input search" type="search" placeholder="Search problem statements" aria-label="Search" />
-                            <span class="fas fa-search search-box-icon"></span>
-    
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="table-responsive scrollbar">
-                    <table class="table fs--1 mb-0 border-top border-200">
-                      <thead>
-                        <tr>
-                          <th class="sort white-space-nowrap align-middle ps-3" scope="col" data-sort="projectName" style="width:5%;">ID</th>
-                          <th class="sort white-space-nowrap align-middle ps-0" scope="col" data-sort="projectName" style="width:30%;">Problem Statement</th>
-                          <th class="sort align-middle ps-3" scope="col" data-sort="assigness" style="width:10%;">Assignee</th>
-                          <th class="sort align-middle ps-3" scope="col" data-sort="start" style="width:10%;">Age(days)</th>
-                          <th class="sort align-middle ps-3" scope="col" data-sort="deadline" style="width:15%;">Duedate</th>
-                          <th class="sort align-middle ps-3" scope="col" data-sort="task" style="width:12%;">Duedate Changes</th>
-                          <!-- <th class="sort align-middle ps-3" scope="col" data-sort="projectprogress" style="width:5%;">PROGRESS</th> -->
-                          <th class="sort align-middle text-end" scope="col" data-sort="statuses" style="width:10%;">STATUS</th>
-                          <th class="sort align-middle text-end" scope="col" style="width:10%;"></th>
-                        </tr>
-                      </thead>
-                      <tbody class="list" id="project-list-table-body">
-                        <tr class="position-static">
-                          <td class="align-middle time white-space-nowrap ps-3 py-4">#564</td>
-                          <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">Project Doughnut Dungeon</a></td>
-                          <td class="align-middle white-space-nowrap assigness ps-3 py-4">
-                            <div class="avatar-group avatar-group-dense">
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/34.png" alt="" />
-    
-                              </div>
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/59.png" alt="" />
-    
-                              </div>
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/35.png" alt="" />
-    
-                              </div>
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/58.png" alt="" />
-    
-                              </div>
-                              <div class="avatar avatar-s  rounded-circle">
-                                <div class="avatar-name rounded-circle "><span>+2</span></div>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="align-middle white-space-nowrap start ps-3 py-4">
-                            <p class="mb-0 fs--1 text-900">123</p>
-                          </td>
-                          <td class="align-middle white-space-nowrap deadline ps-3 py-4">
-                            <p class="mb-0 fs--1 text-900">May 21, 2028</p>
-                          </td>
-                          <td class="align-middle white-space-nowrap task ps-3 py-4">
-                            <p class="fw-bo text-900 fs--1 mb-0">23</p>
-                          </td>
-                          <!-- <td class="align-middle white-space-nowrap ps-3 projectprogress">
-                            <p class="text-800 fs--2 mb-0">145 / 145</p>
-                            <div class="progress" style="height:3px;">
-                              <div class="progress-bar bg-success" style="width: 100%" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td> -->
-                          <td class="align-middle white-space-nowrap text-end statuses"><span class="badge badge-phoenix fs--2 badge-phoenix-success">completed</span></td>
-                          <td class="align-middle text-end white-space-nowrap pe-0 action">
-                            <div class="font-sans-serif btn-reveal-trigger position-static">
-                              <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                              <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="position-static">
-                          <td class="align-middle time white-space-nowrap ps-3 py-4">#545</td>
-                          <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">Water resistant mosquito killer gun</a></td>
-                          <td class="align-middle white-space-nowrap assigness ps-3 py-4">
-                            <div class="avatar-group avatar-group-dense">
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/1.png" alt="" />
-    
-                              </div>
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/2.png" alt="" />
-    
-                              </div>
-                            </div>
-                          </td>
-                          <td class="align-middle white-space-nowrap start ps-3 py-4">
-                            <p class="mb-0 fs--1 text-900">45</p>
-                          </td>
-                          <td class="align-middle white-space-nowrap deadline ps-3 py-4">
-                            <p class="mb-0 fs--1 text-900">Sep 15, 2022</p>
-                          </td>
-                          <td class="align-middle white-space-nowrap task ps-3 py-4">
-                            <p class="fw-bo text-900 fs--1 mb-0">12</p>
-                          </td>
-                          <!-- <td class="align-middle white-space-nowrap ps-3 projectprogress">
-                            <p class="text-800 fs--2 mb-0">148 / 223</p>
-                            <div class="progress" style="height:3px;">
-                              <div class="progress-bar bg-success" style="width: 66.3677130044843%" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td> -->
-                          <td class="align-middle white-space-nowrap text-end statuses"><span class="badge badge-phoenix fs--2 badge-phoenix-warning">inactive</span></td>
-                          <td class="align-middle text-end white-space-nowrap pe-0 action">
-                            <div class="font-sans-serif btn-reveal-trigger position-static">
-                              <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                              <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="position-static">
-                          <td class="align-middle time white-space-nowrap ps-3 py-4">#234</td>
-                          <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">Execution of Micky the foul mouse</a></td>
-                          <td class="align-middle white-space-nowrap assigness ps-3 py-4">
-                            <div class="avatar-group avatar-group-dense">
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/20.png" alt="" />
-    
-                              </div>
-                              <div class="avatar avatar-s  rounded-circle">
-                                <div class="avatar-name rounded-circle"><span>R</span></div>
-                              </div>
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/35.png" alt="" />
-    
-                              </div>
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/58.png" alt="" />
-    
-                              </div>
-                            </div>
-                          </td>
-                          <td class="align-middle white-space-nowrap start ps-3 py-4">
-                            <p class="mb-0 fs--1 text-900">53</p>
-                          </td>
-                          <td class="align-middle white-space-nowrap deadline ps-3 py-4">
-                            <p class="mb-0 fs--1 text-900">Sep 23, 2026</p>
-                          </td>
-                          <td class="align-middle white-space-nowrap task ps-3 py-4">
-                            <p class="fw-bo text-900 fs--1 mb-0">2</p>
-                          </td>
-                          <!-- <td class="align-middle white-space-nowrap ps-3 projectprogress">
-                            <p class="text-800 fs--2 mb-0">277 / 539</p>
-                            <div class="progress" style="height:3px;">
-                              <div class="progress-bar bg-success" style="width: 51.39146567717996%" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td> -->
-                          <td class="align-middle white-space-nowrap text-end statuses"><span class="badge badge-phoenix fs--2 badge-phoenix-primary">ongoing</span></td>
-                          <td class="align-middle text-end white-space-nowrap pe-0 action">
-                            <div class="font-sans-serif btn-reveal-trigger position-static">
-                              <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                              <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="position-static">
-                          <td class="align-middle time white-space-nowrap ps-3 py-4">#2457</td>
-                          <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">Harnessing stupidity from Jerry</a></td>
-                          <td class="align-middle white-space-nowrap assigness ps-3 py-4">
-                            <div class="avatar-group avatar-group-dense">
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/11.png" alt="" />
-    
-                              </div>
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/12.png" alt="" />
-    
-                              </div>
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/13.png" alt="" />
-    
-                              </div>
-                            </div>
-                          </td>
-                          <td class="align-middle white-space-nowrap start ps-3 py-4">
-                            <p class="mb-0 fs--1 text-900">45</p>
-                          </td>
-                          <td class="align-middle white-space-nowrap deadline ps-3 py-4">
-                            <p class="mb-0 fs--1 text-900">Apr 04, 2022</p>
-                          </td>
-                          <td class="align-middle white-space-nowrap task ps-3 py-4">
-                            <p class="fw-bo text-900 fs--1 mb-0">12</p>
-                          </td>
-                          <!-- <td class="align-middle white-space-nowrap ps-3 projectprogress">
-                            <p class="text-800 fs--2 mb-0">169 / 394</p>
-                            <div class="progress" style="height:3px;">
-                              <div class="progress-bar bg-success" style="width: 42.89340101522843%" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td> -->
-                          <td class="align-middle white-space-nowrap text-end statuses"><span class="badge badge-phoenix fs--2 badge-phoenix-danger">Critical</span></td>
-                          <td class="align-middle text-end white-space-nowrap pe-0 action">
-                            <div class="font-sans-serif btn-reveal-trigger position-static">
-                              <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                              <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="position-static">
-                          <td class="align-middle time white-space-nowrap ps-3 py-4">#698</td>
-                          <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">Making the Butterflies shoot each other dead</a></td>
-                          <td class="align-middle white-space-nowrap assigness ps-3 py-4">
-                            <div class="avatar-group avatar-group-dense">
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/14.png" alt="" />
-    
-                              </div>
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/16.png" alt="" />
-    
-                              </div>
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/18.png" alt="" />
-    
-                              </div>
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/20.png" alt="" />
-    
-                              </div>
-                              <div class="avatar avatar-s  rounded-circle">
-                                <div class="avatar-name rounded-circle "><span>+3</span></div>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="align-middle white-space-nowrap start ps-3 py-4">
-                            <p class="mb-0 fs--1 text-900">43</p>
-                          </td>
-                          <td class="align-middle white-space-nowrap deadline ps-3 py-4">
-                            <p class="mb-0 fs--1 text-900">Jan 15, 2024</p>
-                          </td>
-                          <td class="align-middle white-space-nowrap task ps-3 py-4">
-                            <p class="fw-bo text-900 fs--1 mb-0">12</p>
-                          </td>
-                          <!-- <td class="align-middle white-space-nowrap ps-3 projectprogress">
-                            <p class="text-800 fs--2 mb-0">600 / 600</p>
-                            <div class="progress" style="height:3px;">
-                              <div class="progress-bar bg-success" style="width: 100%" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td> -->
-                          <td class="align-middle white-space-nowrap text-end statuses"><span class="badge badge-phoenix fs--2 badge-phoenix-primary">ongoing</span></td>
-                          <td class="align-middle text-end white-space-nowrap pe-0 action">
-                            <div class="font-sans-serif btn-reveal-trigger position-static">
-                              <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                              <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="position-static">
-                          <td class="align-middle time white-space-nowrap ps-3 py-4">#123</td>
-                          <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">The chewing gum attack</a></td>
-                          <td class="align-middle white-space-nowrap assigness ps-3 py-4">
-                            <div class="avatar-group avatar-group-dense">
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/31.png" alt="" />
-    
-                              </div>
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/33.png" alt="" />
-    
-                              </div>
-                            </div>
-                          </td>
-                          <td class="align-middle white-space-nowrap start ps-3 py-4">
-                            <p class="mb-0 fs--1 text-900">44</p>
-                          </td>
-                          <td class="align-middle white-space-nowrap deadline ps-3 py-4">
-                            <p class="mb-0 fs--1 text-900">Oct 22, 2023</p>
-                          </td>
-                          <td class="align-middle white-space-nowrap task ps-3 py-4">
-                            <p class="fw-bo text-900 fs--1 mb-0">12</p>
-                          </td>
-                          <!-- <td class="align-middle white-space-nowrap ps-3 projectprogress">
-                            <p class="text-800 fs--2 mb-0">600 / 600</p>
-                            <div class="progress" style="height:3px;">
-                              <div class="progress-bar bg-success" style="width: 100%" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td> -->
-                          <td class="align-middle white-space-nowrap text-end statuses"><span class="badge badge-phoenix fs--2 badge-phoenix-secondary">Cancelled</span></td>
-                          <td class="align-middle text-end white-space-nowrap pe-0 action">
-                            <div class="font-sans-serif btn-reveal-trigger position-static">
-                              <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                              <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="position-static">
-                          <td class="align-middle time white-space-nowrap ps-3 py-4">#454</td>
-                          <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">Olga Dies Dreaming by Xóchitl González</a></td>
-                          <td class="align-middle white-space-nowrap assigness ps-3 py-4">
-                            <div class="avatar-group avatar-group-dense">
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/11.png" alt="" />
-    
-                              </div>
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/12.png" alt="" />
-    
-                              </div>
-                              <div class="avatar avatar-s  rounded-circle">
-                                <img class="rounded-circle " src="assets/img/team/13.png" alt="" />
-    
-                              </div>
-                            </div>
-                          </td>
-                          <td class="align-middle white-space-nowrap start ps-3 py-4">
-                            <p class="mb-0 fs--1 text-900">56</p>
-                          </td>
-                          <td class="align-middle white-space-nowrap deadline ps-3 py-4">
-                            <p class="mb-0 fs--1 text-900">Jan 04, 2022</p>
-                          </td>
-                          <td class="align-middle white-space-nowrap task ps-3 py-4">
-                            <p class="fw-bo text-900 fs--1 mb-0">12</p>
-                          </td>
-                          <!-- <td class="align-middle white-space-nowrap ps-3 projectprogress">
-                            <p class="text-800 fs--2 mb-0">150 / 294</p>
-                            <div class="progress" style="height:3px;">
-                              <div class="progress-bar bg-success" style="width: 51.02040816326531%" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td> -->
-                          <td class="align-middle white-space-nowrap text-end statuses"><span class="badge badge-phoenix fs--2 badge-phoenix-danger">Critical</span></td>
-                          <td class="align-middle text-end white-space-nowrap pe-0 action">
-                            <div class="font-sans-serif btn-reveal-trigger position-static">
-                              <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                              <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="d-flex flex-wrap align-items-center justify-content-between py-3 pe-0 fs--1 border-bottom border-200">
-                    <div class="d-flex">
-                      <p class="mb-0 d-none d-sm-block me-3 fw-semi-bold text-900" data-list-info="data-list-info"></p><a class="fw-semi-bold" href="#!" data-list-view="*">View all<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a><a class="fw-semi-bold d-none" href="#!" data-list-view="less">View Less<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
-                    </div>
-                    <div class="d-flex">
-                      <button class="page-link" data-list-pagination="prev"><span class="fas fa-chevron-left"></span></button>
-                      <ul class="mb-0 pagination"></ul>
-                      <button class="page-link pe-0" data-list-pagination="next"><span class="fas fa-chevron-right"></span></button>
-                    </div>
-                  </div>
+            <div id="projectSummary" data-list='{"valueNames":["projectName","assigness","start","deadline","task","projectprogress","status","action"],"page":6,"pagination":true}'>
+                <div class="row mb-4 gx-6 gy-3 align-items-center">
+                <h3>Manage User</h3>
                 </div>
-              </div>
-              <div class="tab-pane fade" id="tab-profile" role="tabpanel" aria-labelledby="profile-tab">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-              <div class="tab-pane fade" id="tab-contact" role="tabpanel" aria-labelledby="contact-tab">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                <div class="row g-3 justify-content-between align-items-end mb-4">
+                <div class="col-12 col-sm-auto">
+                    <button class="btn btn-primary me-1 mb-1" type="button">Add user</button>
+                    <button class="btn btn-info  me-1 mb-1" type="button">Import user</button>
+                    <button class="btn btn-danger me-1 mb-1" type="button">Reset</button>
+                </div>
+                <div class="col-12 col-sm-auto">
+                    <div class="d-flex align-items-center">
+                    <div class="search-box me-3">
+                        <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
+                        <input class="form-control search-input search" type="search" placeholder="Search user" aria-label="Search" />
+                        <span class="fas fa-search search-box-icon"></span>
+
+                        </form>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="table-responsive scrollbar">
+                <table class="table fs--1 mb-0 border-top border-200">
+                    <thead>
+                    <tr>
+                        <th class="sort white-space-nowrap align-middle ps-3" scope="col" data-sort="projectName" style="width:5%;"></th>
+                        <th class="sort white-space-nowrap align-middle ps-0" scope="col" data-sort="projectName" style="width:30%;">User</th>
+                        <th class="sort align-middle ps-3" scope="col" data-sort="assigness" style="width:10%;">Reports</th>
+                        <th class="sort align-middle ps-3" scope="col" data-sort="start" style="width:10%;">Added to</th>
+                        <th class="sort align-middle ps-3" scope="col" data-sort="deadline" style="width:15%;">Permission</th>
+                        <th class="sort align-middle text-end" scope="col" style="width:10%;"></th>
+                    </tr>
+                    </thead>
+                    <tbody class="list" id="project-list-table-body">
+                    <tr class="position-static">
+                        <td class="align-middle time white-space-nowrap ps-3 py-4">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" id="flexSwitchCheckChecked" type="checkbox" checked="" />
+                            </div>
+                        </td>
+                        <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">User 1</a></td>
+                        <td class="align-middle white-space-nowrap assigness ps-3 py-4">
+                        <div class="avatar-group avatar-group-dense">
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/34.png" alt="" />
+
+                            </div>
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/59.png" alt="" />
+
+                            </div>
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/35.png" alt="" />
+
+                            </div>
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/58.png" alt="" />
+
+                            </div>
+                            <div class="avatar avatar-s  rounded-circle">
+                            <div class="avatar-name rounded-circle "><span>+2</span></div>
+                            </div>
+                        </div>
+                        </td>
+                        <td class="align-middle white-space-nowrap start ps-3 py-4">
+                        <p class="mb-0 fs--1 text-900">PS | AP</p>
+                        </td>
+                        <td class="align-middle white-space-nowrap deadline ps-3 py-4">
+                        <p class="mb-0 fs--1 text-900"><span class="far fa-address-card"></span></p>
+                        </td>
+                        <td class="align-middle text-end white-space-nowrap pe-0 action">
+                        <div class="font-sans-serif btn-reveal-trigger position-static">
+                            <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
+                            <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                            </div>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr class="position-static">
+                        <td class="align-middle time white-space-nowrap ps-3 py-4">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" id="flexSwitchCheckChecked" type="checkbox"  />
+                            </div>
+                        </td>
+                        <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">User 2</a></td>
+                        <td class="align-middle white-space-nowrap assigness ps-3 py-4">
+                        <div class="avatar-group avatar-group-dense">
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/1.png" alt="" />
+
+                            </div>
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/2.png" alt="" />
+
+                            </div>
+                        </div>
+                        </td>
+                        <td class="align-middle white-space-nowrap start ps-3 py-4">
+                        <p class="mb-0 fs--1 text-900">PS | AP</p>
+                        </td>
+                        <td class="align-middle white-space-nowrap deadline ps-3 py-4">
+                        <p class="mb-0 fs--1 text-900"><span class="far fa-address-card"></span></p>
+                        </td>
+                        <td class="align-middle text-end white-space-nowrap pe-0 action">
+                        <div class="font-sans-serif btn-reveal-trigger position-static">
+                            <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
+                            <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                            </div>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr class="position-static">
+                        <td class="align-middle time white-space-nowrap ps-3 py-4">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" id="flexSwitchCheckChecked" type="checkbox" checked="" />
+                            </div>
+                        </td>
+                        <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">User 3</a></td>
+                        <td class="align-middle white-space-nowrap assigness ps-3 py-4">
+                        <div class="avatar-group avatar-group-dense">
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/20.png" alt="" />
+
+                            </div>
+                            <div class="avatar avatar-s  rounded-circle">
+                            <div class="avatar-name rounded-circle"><span>R</span></div>
+                            </div>
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/35.png" alt="" />
+
+                            </div>
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/58.png" alt="" />
+
+                            </div>
+                        </div>
+                        </td>
+                        <td class="align-middle white-space-nowrap start ps-3 py-4">
+                        <p class="mb-0 fs--1 text-900">PS | AP</p>
+                        </td>
+                        <td class="align-middle white-space-nowrap deadline ps-3 py-4">
+                        <p class="mb-0 fs--1 text-900"><span class="far fa-address-card"></span></p>
+                        </td>
+                        <td class="align-middle text-end white-space-nowrap pe-0 action">
+                        <div class="font-sans-serif btn-reveal-trigger position-static">
+                            <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
+                            <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                            </div>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr class="position-static">
+                        <td class="align-middle time white-space-nowrap ps-3 py-4">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" id="flexSwitchCheckChecked" type="checkbox" />
+                            </div>
+                        </td>
+                        <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">User 4</a></td>
+                        <td class="align-middle white-space-nowrap assigness ps-3 py-4">
+                        <div class="avatar-group avatar-group-dense">
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/11.png" alt="" />
+
+                            </div>
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/12.png" alt="" />
+
+                            </div>
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/13.png" alt="" />
+
+                            </div>
+                        </div>
+                        </td>
+                        <td class="align-middle white-space-nowrap start ps-3 py-4">
+                        <p class="mb-0 fs--1 text-900">PS | AP</p>
+                        </td>
+                        <td class="align-middle white-space-nowrap deadline ps-3 py-4">
+                        <p class="mb-0 fs--1 text-900"><span class="far fa-address-card"></span></p>
+                        </td>
+                        <td class="align-middle text-end white-space-nowrap pe-0 action">
+                        <div class="font-sans-serif btn-reveal-trigger position-static">
+                            <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
+                            <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                            </div>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr class="position-static">
+                        <td class="align-middle time white-space-nowrap ps-3 py-4">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" id="flexSwitchCheckChecked" type="checkbox" />
+                            </div>
+                        </td>
+                        <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">User 5</a></td>
+                        <td class="align-middle white-space-nowrap assigness ps-3 py-4">
+                        <div class="avatar-group avatar-group-dense">
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/14.png" alt="" />
+
+                            </div>
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/16.png" alt="" />
+
+                            </div>
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/18.png" alt="" />
+
+                            </div>
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/20.png" alt="" />
+
+                            </div>
+                            <div class="avatar avatar-s  rounded-circle">
+                            <div class="avatar-name rounded-circle "><span>+3</span></div>
+                            </div>
+                        </div>
+                        </td>
+                        <td class="align-middle white-space-nowrap start ps-3 py-4">
+                        <p class="mb-0 fs--1 text-900">PS | AP</p>
+                        </td>
+                        <td class="align-middle white-space-nowrap deadline ps-3 py-4">
+                        <p class="mb-0 fs--1 text-900"><span class="far fa-address-card"></span></p>
+                        </td>
+                        <td class="align-middle text-end white-space-nowrap pe-0 action">
+                        <div class="font-sans-serif btn-reveal-trigger position-static">
+                            <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
+                            <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                            </div>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr class="position-static">
+                        <td class="align-middle time white-space-nowrap ps-3 py-4">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" id="flexSwitchCheckChecked" type="checkbox" checked="" />
+                            </div>
+                        </td>
+                        <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">User 6</a></td>
+                        <td class="align-middle white-space-nowrap assigness ps-3 py-4">
+                        <div class="avatar-group avatar-group-dense">
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/31.png" alt="" />
+
+                            </div>
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/33.png" alt="" />
+
+                            </div>
+                        </div>
+                        </td>
+                        <td class="align-middle white-space-nowrap start ps-3 py-4">
+                        <p class="mb-0 fs--1 text-900">PS | AP</p>
+                        </td>
+                        <td class="align-middle white-space-nowrap deadline ps-3 py-4">
+                        <p class="mb-0 fs--1 text-900"><span class="far fa-address-card"></span></p>
+                        </td>
+                        <td class="align-middle text-end white-space-nowrap pe-0 action">
+                        <div class="font-sans-serif btn-reveal-trigger position-static">
+                            <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
+                            <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                            </div>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr class="position-static">
+                        <td class="align-middle time white-space-nowrap ps-3 py-4">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" id="flexSwitchCheckChecked" type="checkbox" />
+                            </div>
+                        </td>
+                        <td class="align-middle time white-space-nowrap ps-0 projectName py-4"><a class="text-decoration-none fw-bold fs-0" href="#">User 7</a></td>
+                        <td class="align-middle white-space-nowrap assigness ps-3 py-4">
+                        <div class="avatar-group avatar-group-dense">
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/11.png" alt="" />
+
+                            </div>
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/12.png" alt="" />
+
+                            </div>
+                            <div class="avatar avatar-s  rounded-circle">
+                            <img class="rounded-circle " src="assets/img/team/13.png" alt="" />
+
+                            </div>
+                        </div>
+                        </td>
+                        <td class="align-middle white-space-nowrap start ps-3 py-4">
+                        <p class="mb-0 fs--1 text-900">PS | AP</p>
+                        </td>
+                        <td class="align-middle white-space-nowrap deadline ps-3 py-4">
+                        <p class="mb-0 fs--1 text-900"><span class="far fa-address-card"></span></p>
+                        </td>
+                        <td class="align-middle text-end white-space-nowrap pe-0 action">
+                        <div class="font-sans-serif btn-reveal-trigger position-static">
+                            <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
+                            <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                            </div>
+                        </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+                <div class="d-flex flex-wrap align-items-center justify-content-between py-3 pe-0 fs--1 border-bottom border-200">
+                <div class="d-flex">
+                    <p class="mb-0 d-none d-sm-block me-3 fw-semi-bold text-900" data-list-info="data-list-info"></p><a class="fw-semi-bold" href="#!" data-list-view="*">View all<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a><a class="fw-semi-bold d-none" href="#!" data-list-view="less">View Less<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
+                </div>
+                <div class="d-flex">
+                    <button class="page-link" data-list-pagination="prev"><span class="fas fa-chevron-left"></span></button>
+                    <ul class="mb-0 pagination"></ul>
+                    <button class="page-link pe-0" data-list-pagination="next"><span class="fas fa-chevron-right"></span></button>
+                </div>
+                </div>
             </div>
           </div>
          

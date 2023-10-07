@@ -1,0 +1,510 @@
+(this["webpackJsonpreactjs"] = this["webpackJsonpreactjs"] || []).push([[39],{
+
+/***/ "./src/components/Mockup/manageuser.tsx":
+/*!**********************************************!*\
+  !*** ./src/components/Mockup/manageuser.tsx ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @syncfusion/ej2-react-grids */ "./node_modules/@syncfusion/ej2-react-grids/index.js");
+/* harmony import */ var _syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @syncfusion/ej2-react-buttons */ "./node_modules/@syncfusion/ej2-react-buttons/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _manageuserdatasource__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./manageuserdatasource */ "./src/components/Mockup/manageuserdatasource.tsx");
+var _jsxFileName = "D:\\Projects\\Gerhard\\MultiTenancy Boilerplate\\HiteshMultiTenancy\\8.1.0\\reactjs\\src\\components\\Mockup\\manageuser.tsx";
+
+
+
+
+
+
+
+
+function ManageUser() {
+  const pageSettings = {
+    pageSize: 10
+  };
+  const sortSettings = {
+    columns: [{
+      field: 'EmployeeID',
+      direction: 'Ascending'
+    }]
+  };
+  const filterSettings = {
+    columns: [{
+      field: 'EmployeeID',
+      operator: 'greaterthan',
+      value: 0
+    }]
+  }; //const groupSettings: GroupSettingsModel = { columns: ['EmployeeID'] };
+
+  const gridTemplate = props => {
+    //const src = props.EmployeeID + ".png";
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("tr", {
+      className: "templateRow",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24,
+        columnNumber: 13
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("td", {
+      className: "active",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25,
+        columnNumber: 17
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_1__["SwitchComponent"], {
+      checked: props.Active,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26,
+        columnNumber: 21
+      }
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("td", {
+      className: "user",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28,
+        columnNumber: 17
+      }
+    }, props.User), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("td", {
+      className: "reports-to",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31,
+        columnNumber: 17
+      }
+    }, props.Reportsto), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("td", {
+      className: "added-to",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34,
+        columnNumber: 17
+      }
+    }, props.Addedto), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("td", {
+      className: "permission",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37,
+        columnNumber: 17
+      }
+    }, props.Permission, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("span", {
+      className: "permission-icon",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 38,
+        columnNumber: 40
+      }
+    })));
+  };
+
+  let history = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["useHistory"])();
+
+  const routeChange = () => {
+    let path = '/useraddedit';
+    history.push(path);
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("div", {
+    className: "mb-9",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("div", {
+    className: "mt-3",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54,
+      columnNumber: 17
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("div", {
+    className: "mb-3",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55,
+      columnNumber: 21
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_1__["ButtonComponent"], {
+    type: "primary",
+    className: "e-btn e-primary",
+    onClick: routeChange,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56,
+      columnNumber: 25
+    }
+  }, "Add User"), " \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_1__["ButtonComponent"], {
+    type: "primary",
+    onClick: routeChange,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57,
+      columnNumber: 25
+    }
+  }, "Import User"), " \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_1__["ButtonComponent"], {
+    type: "primary",
+    className: "e-btn e-danger",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58,
+      columnNumber: 25
+    }
+  }, "Reset"), " \xA0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("div", {
+    className: "mb-3",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60,
+      columnNumber: 21
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["GridComponent"], {
+    dataSource: _manageuserdatasource__WEBPACK_IMPORTED_MODULE_4__["data"],
+    allowPaging: true,
+    pageSettings: pageSettings,
+    rowTemplate: gridTemplate,
+    filterSettings: filterSettings,
+    allowSorting: true,
+    sortSettings: sortSettings,
+    allowFiltering: false,
+    height: 500,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61,
+      columnNumber: 25
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["ColumnsDirective"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63,
+      columnNumber: 33
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["ColumnDirective"], {
+    field: "Active",
+    width: "100",
+    textAlign: "Left",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64,
+      columnNumber: 37
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["ColumnDirective"], {
+    field: "User",
+    width: "100",
+    textAlign: "Left",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65,
+      columnNumber: 37
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["ColumnDirective"], {
+    field: "Reportsto",
+    width: "100",
+    textAlign: "Left",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66,
+      columnNumber: 37
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["ColumnDirective"], {
+    field: "Addedto",
+    width: "100",
+    textAlign: "Left",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67,
+      columnNumber: 37
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["ColumnDirective"], {
+    field: "Permission",
+    width: "100",
+    textAlign: "Left",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68,
+      columnNumber: 37
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["Inject"], {
+    services: [_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["Page"], _syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["Sort"], _syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["Filter"], _syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["Group"]],
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70,
+      columnNumber: 29
+    }
+  }))))));
+}
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (ManageUser);
+
+/***/ }),
+
+/***/ "./src/components/Mockup/manageuserdatasource.tsx":
+/*!********************************************************!*\
+  !*** ./src/components/Mockup/manageuserdatasource.tsx ***!
+  \********************************************************/
+/*! exports provided: data, sdata */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "data", function() { return data; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sdata", function() { return sdata; });
+let data = [{
+  Active: true,
+  User: 'User 1',
+  'Reportsto': '',
+  'Addedto': 'PS | AP',
+  Permission: ''
+}, {
+  Active: true,
+  User: 'User 2',
+  'Reportsto': '',
+  'Addedto': 'PS | AP',
+  Permission: ''
+}, {
+  Active: false,
+  User: 'User 3',
+  'Reportsto': '',
+  'Addedto': 'PS | AP',
+  Permission: ''
+}, {
+  Active: true,
+  User: 'User 4',
+  'Reportsto': '',
+  'Addedto': 'PS | AP',
+  Permission: ''
+}, {
+  Active: false,
+  User: 'User 5',
+  'Reportsto': '',
+  'Addedto': 'PS | AP',
+  Permission: ''
+}, {
+  Active: false,
+  User: 'User 6',
+  'Reportsto': '',
+  'Addedto': 'PS | AP',
+  Permission: ''
+}, {
+  Active: true,
+  User: 'User 7',
+  'Reportsto': '',
+  'Addedto': 'PS | AP',
+  Permission: ''
+}, {
+  Active: false,
+  User: 'User 8',
+  'Reportsto': '',
+  'Addedto': 'PS | AP',
+  Permission: ''
+}, {
+  Active: true,
+  User: 'User 9',
+  'Reportsto': '',
+  'Addedto': 'PS | AP',
+  Permission: ''
+}, {
+  Active: true,
+  User: 'User 10',
+  'Reportsto': '',
+  'Addedto': 'PS | AP',
+  Permission: ''
+}, {
+  Active: false,
+  User: 'User 11',
+  'Reportsto': '',
+  'Addedto': 'PS | AP',
+  Permission: ''
+}, {
+  Active: false,
+  User: 'User 12',
+  'Reportsto': '',
+  'Addedto': 'PS | AP',
+  Permission: ''
+}];
+let sdata = [{
+  ID: 10248,
+  CustomerID: 'VINET',
+  EmployeeID: 5,
+  OrderDate: new Date(8364186e5),
+  ProblemStatement: 'Vins et alcools Chevalier',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Reims',
+  ShipAddress: '59 rue de l Abbaye',
+  ShipRegion: 'CJ',
+  ShipPostalCode: '51100',
+  ShipCountry: 'Brazil',
+  Freight: 32.38,
+  Verified: !0
+}, {
+  ID: 10249,
+  CustomerID: 'TOMSP',
+  EmployeeID: 6,
+  OrderDate: new Date(836505e6),
+  ProblemStatement: 'Toms Spezialitäten',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Münster',
+  ShipAddress: 'Luisenstr. 48',
+  ShipRegion: 'CJ',
+  ShipPostalCode: '44087',
+  ShipCountry: 'Germany',
+  Freight: 11.61,
+  Verified: !1
+}, {
+  ID: 10250,
+  CustomerID: 'HANAR',
+  EmployeeID: 4,
+  OrderDate: new Date(8367642e5),
+  ProblemStatement: 'Hanari Carnes',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Rio de Janeiro',
+  ShipAddress: 'Rua do Paço, 67',
+  ShipRegion: 'RJ',
+  ShipPostalCode: '05454-876',
+  ShipCountry: 'Brazil',
+  Freight: 65.83,
+  Verified: !0
+}, {
+  ID: 10251,
+  CustomerID: 'VICTE',
+  EmployeeID: 3,
+  OrderDate: new Date(8367642e5),
+  ProblemStatement: 'Victuailles en stock',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Lyon',
+  ShipAddress: '2, rue du Commerce',
+  ShipRegion: 'CJ',
+  ShipPostalCode: '69004',
+  ShipCountry: 'France',
+  Freight: 41.34,
+  Verified: !0
+}, {
+  ID: 10252,
+  CustomerID: 'SUPRD',
+  EmployeeID: 4,
+  OrderDate: new Date(8368506e5),
+  ProblemStatement: 'Suprêmes délices',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Charleroi',
+  ShipAddress: 'Boulevard Tirou, 255',
+  ShipRegion: 'CJ',
+  ShipPostalCode: 'B-6000',
+  ShipCountry: 'Belgium',
+  Freight: 51.3,
+  Verified: !0
+}, {
+  ID: 10253,
+  CustomerID: 'HANAR',
+  EmployeeID: 3,
+  OrderDate: new Date(836937e6),
+  ProblemStatement: 'Hanari Carnes',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Rio de Janeiro',
+  ShipAddress: 'Rua do Paço, 67',
+  ShipRegion: 'RJ',
+  ShipPostalCode: '05454-876',
+  ShipCountry: 'Brazil',
+  Freight: 58.17,
+  Verified: !0
+}, {
+  ID: 10254,
+  CustomerID: 'CHOPS',
+  EmployeeID: 5,
+  OrderDate: new Date(8370234e5),
+  ProblemStatement: 'Chop-suey Chinese',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Bern',
+  ShipAddress: 'Hauptstr. 31',
+  ShipRegion: 'CJ',
+  ShipPostalCode: '3012',
+  ShipCountry: 'Brazil',
+  Freight: 22.98,
+  Verified: !1
+}, {
+  ID: 10255,
+  CustomerID: 'RICSU',
+  EmployeeID: 9,
+  OrderDate: new Date(8371098e5),
+  ProblemStatement: 'Richter Supermarkt',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Genève',
+  ShipAddress: 'Starenweg 5',
+  ShipRegion: 'CJ',
+  ShipPostalCode: '1204',
+  ShipCountry: 'Switzerland',
+  Freight: 148.33,
+  Verified: !0
+}];
+
+/***/ })
+
+}]);
+//# sourceMappingURL=39.chunk.js.map

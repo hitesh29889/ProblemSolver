@@ -1,0 +1,860 @@
+(this["webpackJsonpreactjs"] = this["webpackJsonpreactjs"] || []).push([[27],{
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/components/Mockup/useraddedit.css":
+/*!**************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/components/Mockup/useraddedit.css ***!
+  \**************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".permission-icon\r\n{\r\n    content: '\\e75f';\r\n}", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./src/components/Mockup/adduser.tsx":
+/*!*******************************************!*\
+  !*** ./src/components/Mockup/adduser.tsx ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var antd_es_card_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! antd/es/card/style */ "./node_modules/antd/es/card/style/index.js");
+/* harmony import */ var antd_es_card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd/es/card */ "./node_modules/antd/es/card/index.js");
+/* harmony import */ var antd_es_avatar_style__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd/es/avatar/style */ "./node_modules/antd/es/avatar/style/index.js");
+/* harmony import */ var antd_es_avatar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! antd/es/avatar */ "./node_modules/antd/es/avatar/index.js");
+/* harmony import */ var antd_es_select_style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antd/es/select/style */ "./node_modules/antd/es/select/style/index.js");
+/* harmony import */ var antd_es_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! antd/es/select */ "./node_modules/antd/es/select/index.js");
+/* harmony import */ var antd_es_input_style__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! antd/es/input/style */ "./node_modules/antd/es/input/style/index.js");
+/* harmony import */ var antd_es_input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! antd/es/input */ "./node_modules/antd/es/input/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @syncfusion/ej2-react-buttons */ "./node_modules/@syncfusion/ej2-react-buttons/index.js");
+/* harmony import */ var antd_lib_card_Meta__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! antd/lib/card/Meta */ "./node_modules/antd/lib/card/Meta.js");
+/* harmony import */ var antd_lib_card_Meta__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(antd_lib_card_Meta__WEBPACK_IMPORTED_MODULE_10__);
+
+
+
+
+
+
+
+
+var _jsxFileName = "D:\\Projects\\Gerhard\\MultiTenancy Boilerplate\\HiteshMultiTenancy\\8.1.0\\reactjs\\src\\components\\Mockup\\adduser.tsx";
+
+
+ //const { Meta } = Card;
+
+const Adduser = () => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_8___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("form", {
+    //disabled={componentDisabled}
+    style: {
+      maxWidth: 600
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14,
+      columnNumber: 7
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+    className: "mb-3",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", {
+    className: "form-label",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 13
+    }
+  }, "First Name*:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_input__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 13
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+    className: "mb-3",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", {
+    className: "form-label",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
+      columnNumber: 13
+    }
+  }, "Last Name:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_input__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25,
+      columnNumber: 13
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+    className: "mb-3",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", {
+    className: "form-label",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
+      columnNumber: 13
+    }
+  }, "Email*:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_input__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29,
+      columnNumber: 13
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+    className: "mb-3",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", {
+    className: "form-label",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32,
+      columnNumber: 13
+    }
+  }, "Reports to:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    className: "form-control",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"].Option, {
+    value: "demo",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34,
+      columnNumber: 15
+    }
+  }, "User 1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"].Option, {
+    value: "demo",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 15
+    }
+  }, "User 2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"].Option, {
+    value: "demo",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36,
+      columnNumber: 15
+    }
+  }, "User 3"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"].Option, {
+    value: "demo",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37,
+      columnNumber: 15
+    }
+  }, "User 4"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+    className: "mb-3",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", {
+    className: "form-label",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41,
+      columnNumber: 13
+    }
+  }, "Timezone:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    className: "form-control",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"].Option, {
+    value: "demo",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43,
+      columnNumber: 15
+    }
+  }, "New Delhi, India(GMT 5:30)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"].Option, {
+    value: "demo",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44,
+      columnNumber: 15
+    }
+  }, "New York, USA(GMT -5:00)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"].Option, {
+    value: "demo",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45,
+      columnNumber: 15
+    }
+  }, "San Jose, Costa Rica(GMT -6:00)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"].Option, {
+    value: "demo",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46,
+      columnNumber: 15
+    }
+  }, "San Jose, Puerto Rica(GMT -4:00)"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+    className: "mb-3",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", {
+    className: "form-label",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50,
+      columnNumber: 15
+    }
+  }, "Permission:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_card__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    style: {
+      width: 300
+    },
+    actions: [/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+      key: "setting",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 54,
+        columnNumber: 19
+      }
+    }, "Setting"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+      key: "edit",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 55,
+        columnNumber: 19
+      }
+    }, "Edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+      key: "ellipsis",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 56,
+        columnNumber: 19
+      }
+    }, "Ellipsis")],
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51,
+      columnNumber: 15
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_lib_card_Meta__WEBPACK_IMPORTED_MODULE_10___default.a, {
+    avatar: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_avatar__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      src: "https://xsgames.co/randomusers/avatar.php?g=pixel",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60,
+        columnNumber: 27
+      }
+    }),
+    title: "Admin",
+    description: "This user had admin permission to these these modules etc.",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59,
+      columnNumber: 19
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+    className: "e-btn-group",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_9__["ButtonComponent"], {
+    className: "e-btn e-warning",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67,
+      columnNumber: 13
+    }
+  }, "Cancel"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_9__["ButtonComponent"], {
+    type: "primary",
+    className: "e-btn e-primary",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68,
+      columnNumber: 13
+    }
+  }, "Add User")))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (() => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Adduser, {
+  __self: undefined,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 76,
+    columnNumber: 22
+  }
+}));
+
+/***/ }),
+
+/***/ "./src/components/Mockup/edituser.tsx":
+/*!********************************************!*\
+  !*** ./src/components/Mockup/edituser.tsx ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var antd_es_card_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! antd/es/card/style */ "./node_modules/antd/es/card/style/index.js");
+/* harmony import */ var antd_es_card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd/es/card */ "./node_modules/antd/es/card/index.js");
+/* harmony import */ var antd_es_avatar_style__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd/es/avatar/style */ "./node_modules/antd/es/avatar/style/index.js");
+/* harmony import */ var antd_es_avatar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! antd/es/avatar */ "./node_modules/antd/es/avatar/index.js");
+/* harmony import */ var antd_es_select_style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antd/es/select/style */ "./node_modules/antd/es/select/style/index.js");
+/* harmony import */ var antd_es_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! antd/es/select */ "./node_modules/antd/es/select/index.js");
+/* harmony import */ var antd_es_input_style__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! antd/es/input/style */ "./node_modules/antd/es/input/style/index.js");
+/* harmony import */ var antd_es_input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! antd/es/input */ "./node_modules/antd/es/input/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var antd_lib_card_Meta__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! antd/lib/card/Meta */ "./node_modules/antd/lib/card/Meta.js");
+/* harmony import */ var antd_lib_card_Meta__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(antd_lib_card_Meta__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @syncfusion/ej2-react-buttons */ "./node_modules/@syncfusion/ej2-react-buttons/index.js");
+
+
+
+
+
+
+
+
+var _jsxFileName = "D:\\Projects\\Gerhard\\MultiTenancy Boilerplate\\HiteshMultiTenancy\\8.1.0\\reactjs\\src\\components\\Mockup\\edituser.tsx";
+
+
+
+
+const EditUser = () => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_8___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("form", {
+    //disabled={componentDisabled}
+    style: {
+      maxWidth: 600
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 6
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+    className: "mb-3",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", {
+    className: "form-label",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 13
+    }
+  }, "First Name*:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_input__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    value: "Hitesh",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 13
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+    className: "mb-3",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", {
+    className: "form-label",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23,
+      columnNumber: 13
+    }
+  }, "Last Name:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_input__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    value: "Asodiya",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
+      columnNumber: 13
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+    className: "mb-3",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", {
+    className: "form-label",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27,
+      columnNumber: 13
+    }
+  }, "Email*:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_input__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    disabled: true,
+    value: "hitesh.29889@gmail.com",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
+      columnNumber: 13
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+    className: "mb-3",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", {
+    className: "form-label",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31,
+      columnNumber: 13
+    }
+  }, "Reports to:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    className: "form-control",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"].Option, {
+    value: "demo",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 15
+    }
+  }, "User 1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"].Option, {
+    value: "demo",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34,
+      columnNumber: 15
+    }
+  }, "User 2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"].Option, {
+    value: "demo",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 15
+    }
+  }, "User 3"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"].Option, {
+    value: "demo",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36,
+      columnNumber: 15
+    }
+  }, "User 4"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+    className: "mb-3",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", {
+    className: "form-label",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40,
+      columnNumber: 13
+    }
+  }, "Timezone:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    className: "form-control",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"].Option, {
+    value: "demo",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42,
+      columnNumber: 15
+    }
+  }, "New Delhi, India(GMT 5:30)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"].Option, {
+    value: "demo",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43,
+      columnNumber: 15
+    }
+  }, "New York, USA(GMT -5:00)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"].Option, {
+    value: "demo",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44,
+      columnNumber: 15
+    }
+  }, "San Jose, Costa Rica(GMT -6:00)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_select__WEBPACK_IMPORTED_MODULE_5__["default"].Option, {
+    value: "demo",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45,
+      columnNumber: 15
+    }
+  }, "San Jose, Puerto Rica(GMT -4:00)"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+    className: "mb-3",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", {
+    className: "form-label",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49,
+      columnNumber: 15
+    }
+  }, "Permission:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_card__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    style: {
+      width: 300
+    },
+    actions: [/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+      key: "setting",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 53,
+        columnNumber: 19
+      }
+    }, "Setting"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+      key: "edit",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 54,
+        columnNumber: 19
+      }
+    }, "Edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+      key: "ellipsis",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 55,
+        columnNumber: 19
+      }
+    }, "Ellipsis")],
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50,
+      columnNumber: 15
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_lib_card_Meta__WEBPACK_IMPORTED_MODULE_9___default.a, {
+    avatar: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_es_avatar__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      src: "https://xsgames.co/randomusers/avatar.php?g=pixel",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59,
+        columnNumber: 27
+      }
+    }),
+    title: "Admin",
+    description: "This user had admin permission to these these modules etc.",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58,
+      columnNumber: 19
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+    className: "e-btn-group",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_10__["ButtonComponent"], {
+    className: "e-btn e-warning",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66,
+      columnNumber: 13
+    }
+  }, "Cancel"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_10__["ButtonComponent"], {
+    type: "primary",
+    className: "e-btn e-primary",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67,
+      columnNumber: 13
+    }
+  }, "Edit User")))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (() => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(EditUser, {
+  __self: undefined,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 75,
+    columnNumber: 22
+  }
+}));
+
+/***/ }),
+
+/***/ "./src/components/Mockup/useraddedit.css":
+/*!***********************************************!*\
+  !*** ./src/components/Mockup/useraddedit.css ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../../../node_modules/postcss-loader/src??postcss!./useraddedit.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/components/Mockup/useraddedit.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../../../node_modules/postcss-loader/src??postcss!./useraddedit.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/components/Mockup/useraddedit.css", function() {
+		var newContent = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../../../node_modules/postcss-loader/src??postcss!./useraddedit.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/components/Mockup/useraddedit.css");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/Mockup/useraddedit.tsx":
+/*!***********************************************!*\
+  !*** ./src/components/Mockup/useraddedit.tsx ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _syncfusion_ej2_react_navigations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @syncfusion/ej2-react-navigations */ "./node_modules/@syncfusion/ej2-react-navigations/index.js");
+/* harmony import */ var _adduser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./adduser */ "./src/components/Mockup/adduser.tsx");
+/* harmony import */ var _edituser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edituser */ "./src/components/Mockup/edituser.tsx");
+/* harmony import */ var _useraddedit_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./useraddedit.css */ "./src/components/Mockup/useraddedit.css");
+/* harmony import */ var _useraddedit_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_useraddedit_css__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "D:\\Projects\\Gerhard\\MultiTenancy Boilerplate\\HiteshMultiTenancy\\8.1.0\\reactjs\\src\\components\\Mockup\\useraddedit.tsx";
+
+
+
+
+
+
+function UserAddEdit() {
+  let headerText = [{
+    text: "Add User"
+  }, {
+    text: "Edit User"
+  }];
+
+  const content0 = () => {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_adduser__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11,
+        columnNumber: 12
+      }
+    });
+  };
+
+  const content1 = () => {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edituser__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14,
+        columnNumber: 12
+      }
+    });
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_syncfusion_ej2_react_navigations__WEBPACK_IMPORTED_MODULE_1__["TabComponent"], {
+    heightAdjustMode: "Auto",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 7
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_syncfusion_ej2_react_navigations__WEBPACK_IMPORTED_MODULE_1__["TabItemsDirective"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_syncfusion_ej2_react_navigations__WEBPACK_IMPORTED_MODULE_1__["TabItemDirective"], {
+    header: headerText[0],
+    content: content0,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 11
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_syncfusion_ej2_react_navigations__WEBPACK_IMPORTED_MODULE_1__["TabItemDirective"], {
+    header: headerText[1],
+    content: content1,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 11
+    }
+  }))));
+}
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (UserAddEdit);
+
+/***/ })
+
+}]);
+//# sourceMappingURL=27.chunk.js.map

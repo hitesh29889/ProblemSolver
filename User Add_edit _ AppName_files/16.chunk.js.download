@@ -1,0 +1,816 @@
+(this["webpackJsonpreactjs"] = this["webpackJsonpreactjs"] || []).push([[16],{
+
+/***/ "./src/components/Mockup/HomeGrid.tsx":
+/*!********************************************!*\
+  !*** ./src/components/Mockup/HomeGrid.tsx ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @syncfusion/ej2-react-grids */ "./node_modules/@syncfusion/ej2-react-grids/index.js");
+/* harmony import */ var _syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @syncfusion/ej2-react-buttons */ "./node_modules/@syncfusion/ej2-react-buttons/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _datasource__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./datasource */ "./src/components/Mockup/datasource.tsx");
+var _jsxFileName = "D:\\Projects\\Gerhard\\MultiTenancy Boilerplate\\HiteshMultiTenancy\\8.1.0\\reactjs\\src\\components\\Mockup\\HomeGrid.tsx";
+
+
+
+
+
+
+function HomeGrid() {
+  const pageSettings = {
+    pageSize: 10
+  };
+  const sortSettings = {
+    columns: [{
+      field: 'EmployeeID',
+      direction: 'Ascending'
+    }]
+  };
+  const filterSettings = {
+    columns: [{
+      field: 'EmployeeID',
+      operator: 'greaterthan',
+      value: 0
+    }]
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("div", {
+    className: "mb-9",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("div", {
+    className: "mt-3",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 17
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("div", {
+    className: "mb-4 gx-6 gy-3 align-items-center",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 21
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_1__["ButtonComponent"], {
+    type: "button",
+    className: "e-control e-lib e-primary e-btn e-keyboard",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 25
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("span", {
+    className: "e-btn-icon e-icons  e-plus",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 29
+    }
+  }), "New Problem Statement")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("div", {
+    className: "g-3 justify-content-between align-items-end mb-4",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
+      columnNumber: 21
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_1__["ButtonComponent"], {
+    type: "button",
+    className: "e-control e-btn e-lib e-outline e-warning",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25,
+      columnNumber: 25
+    }
+  }, "Open (2)"), " \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_1__["ButtonComponent"], {
+    type: "button",
+    className: "e-control e-btn e-lib e-outline e-primary",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26,
+      columnNumber: 25
+    }
+  }, "In Progress (10)"), " \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_1__["ButtonComponent"], {
+    type: "button",
+    className: "e-control e-btn e-lib e-outline e-success",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27,
+      columnNumber: 25
+    }
+  }, "Closed (4)"), " \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_1__["ButtonComponent"], {
+    type: "button",
+    className: "e-control e-btn e-lib e-outline e-danger",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
+      columnNumber: 25
+    }
+  }, "Overdue (50)"), " \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_1__["ButtonComponent"], {
+    type: "button",
+    className: "e-control e-btn e-lib e-outline e-warning",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29,
+      columnNumber: 25
+    }
+  }, "No due date (8)"), " \xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_buttons__WEBPACK_IMPORTED_MODULE_1__["ButtonComponent"], {
+    type: "button",
+    className: "e-control e-btn e-lib e-outline e-danger",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30,
+      columnNumber: 25
+    }
+  }, "Unassigned (5)"), " \xA0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("div", {
+    className: "table-responsive scrollbar",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32,
+      columnNumber: 21
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["GridComponent"], {
+    dataSource: _datasource__WEBPACK_IMPORTED_MODULE_3__["data"],
+    allowPaging: true,
+    pageSettings: pageSettings,
+    filterSettings: filterSettings,
+    allowSorting: true,
+    sortSettings: sortSettings,
+    allowFiltering: false,
+    height: 500,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 25
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["ColumnsDirective"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 33
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["ColumnDirective"], {
+    field: "ID",
+    width: "100",
+    textAlign: "Left",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36,
+      columnNumber: 37
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["ColumnDirective"], {
+    field: "ProblemStatement",
+    width: "100",
+    textAlign: "Left",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37,
+      columnNumber: 37
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["ColumnDirective"], {
+    field: "Assignee",
+    width: "100",
+    textAlign: "Left",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38,
+      columnNumber: 37
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["ColumnDirective"], {
+    field: "Age(days)",
+    width: "100",
+    textAlign: "Left",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 37
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["ColumnDirective"], {
+    field: "Duedate",
+    width: "100",
+    textAlign: "Left",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40,
+      columnNumber: 37
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["ColumnDirective"], {
+    field: "Duedate Changes",
+    width: "100",
+    textAlign: "Left",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41,
+      columnNumber: 37
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["ColumnDirective"], {
+    field: "Status",
+    width: "100",
+    textAlign: "Left",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42,
+      columnNumber: 37
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["Inject"], {
+    services: [_syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["Page"], _syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["Sort"], _syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["Filter"], _syncfusion_ej2_react_grids__WEBPACK_IMPORTED_MODULE_0__["Group"]],
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44,
+      columnNumber: 29
+    }
+  })))));
+}
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (HomeGrid);
+
+/***/ }),
+
+/***/ "./src/components/Mockup/datasource.tsx":
+/*!**********************************************!*\
+  !*** ./src/components/Mockup/datasource.tsx ***!
+  \**********************************************/
+/*! exports provided: data, sdata */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "data", function() { return data; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sdata", function() { return sdata; });
+let data = [{
+  ID: 10248,
+  CustomerID: 'VINET',
+  EmployeeID: 5,
+  OrderDate: new Date(8364186e5),
+  ProblemStatement: 'Vins et alcools Chevalier',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Reims',
+  ShipAddress: '59 rue de l Abbaye',
+  ShipRegion: 'CJ',
+  ShipPostalCode: '51100',
+  ShipCountry: 'France',
+  Freight: 32.38,
+  Verified: !0
+}, {
+  ID: 10249,
+  CustomerID: 'TOMSP',
+  EmployeeID: 6,
+  OrderDate: new Date(836505e6),
+  ProblemStatement: 'Toms Spezialitäten',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Münster',
+  ShipAddress: 'Luisenstr. 48',
+  ShipRegion: 'CJ',
+  ShipPostalCode: '44087',
+  ShipCountry: 'Germany',
+  Freight: 11.61,
+  Verified: !1
+}, {
+  ID: 10250,
+  CustomerID: 'HANAR',
+  EmployeeID: 4,
+  OrderDate: new Date(8367642e5),
+  ProblemStatement: 'Hanari Carnes',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Rio de Janeiro',
+  ShipAddress: 'Rua do Paço, 67',
+  ShipRegion: 'RJ',
+  ShipPostalCode: '05454-876',
+  ShipCountry: 'Brazil',
+  Freight: 65.83,
+  Verified: !0
+}, {
+  ID: 10251,
+  CustomerID: 'VICTE',
+  EmployeeID: 3,
+  OrderDate: new Date(8367642e5),
+  ProblemStatement: 'Victuailles en stock',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Lyon',
+  ShipAddress: '2, rue du Commerce',
+  ShipRegion: 'CJ',
+  ShipPostalCode: '69004',
+  ShipCountry: 'France',
+  Freight: 41.34,
+  Verified: !0
+}, {
+  ID: 10252,
+  CustomerID: 'SUPRD',
+  EmployeeID: 4,
+  OrderDate: new Date(8368506e5),
+  ProblemStatement: 'Suprêmes délices',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Charleroi',
+  ShipAddress: 'Boulevard Tirou, 255',
+  ShipRegion: 'CJ',
+  ShipPostalCode: 'B-6000',
+  ShipCountry: 'Belgium',
+  Freight: 51.3,
+  Verified: !0
+}, {
+  ID: 10253,
+  CustomerID: 'HANAR',
+  EmployeeID: 3,
+  OrderDate: new Date(836937e6),
+  ProblemStatement: 'Hanari Carnes',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Rio de Janeiro',
+  ShipAddress: 'Rua do Paço, 67',
+  ShipRegion: 'RJ',
+  ShipPostalCode: '05454-876',
+  ShipCountry: 'Brazil',
+  Freight: 58.17,
+  Verified: !0
+}, {
+  ID: 10254,
+  CustomerID: 'CHOPS',
+  EmployeeID: 5,
+  OrderDate: new Date(8370234e5),
+  ProblemStatement: 'Chop-suey Chinese',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Bern',
+  ShipAddress: 'Hauptstr. 31',
+  ShipRegion: 'CJ',
+  ShipPostalCode: '3012',
+  ShipCountry: 'Switzerland',
+  Freight: 22.98,
+  Verified: !1
+}, {
+  ID: 10255,
+  CustomerID: 'RICSU',
+  EmployeeID: 9,
+  OrderDate: new Date(8371098e5),
+  ProblemStatement: 'Richter Supermarkt',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Genève',
+  ShipAddress: 'Starenweg 5',
+  ShipRegion: 'CJ',
+  ShipPostalCode: '1204',
+  ShipCountry: 'Switzerland',
+  Freight: 148.33,
+  Verified: !0
+}, {
+  ID: 10256,
+  CustomerID: 'WELLI',
+  EmployeeID: 3,
+  OrderDate: new Date(837369e6),
+  ProblemStatement: 'Wellington Importadora',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Resende',
+  ShipAddress: 'Rua do Mercado, 12',
+  ShipRegion: 'SP',
+  ShipPostalCode: '08737-363',
+  ShipCountry: 'Brazil',
+  Freight: 13.97,
+  Verified: !1
+}, {
+  ID: 10257,
+  CustomerID: 'HILAA',
+  EmployeeID: 4,
+  OrderDate: new Date(8374554e5),
+  ProblemStatement: 'HILARION-Abastos',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'San Cristóbal',
+  ShipAddress: 'Carrera 22 con Ave. Carlos Soublette #8-35',
+  ShipRegion: 'Táchira',
+  ShipPostalCode: '5022',
+  ShipCountry: 'Venezuela',
+  Freight: 81.91,
+  Verified: !0
+}, {
+  ID: 10258,
+  CustomerID: 'ERNSH',
+  EmployeeID: 1,
+  OrderDate: new Date(8375418e5),
+  ProblemStatement: 'Ernst Handel',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Graz',
+  ShipAddress: 'Kirchgasse 6',
+  ShipRegion: 'CJ',
+  ShipPostalCode: '8010',
+  ShipCountry: 'Austria',
+  Freight: 140.51,
+  Verified: !0
+}, {
+  ID: 10259,
+  CustomerID: 'CENTC',
+  EmployeeID: 4,
+  OrderDate: new Date(8376282e5),
+  ProblemStatement: 'Centro comercial Moctezuma',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'México D.F.',
+  ShipAddress: 'Sierras de Granada 9993',
+  ShipRegion: 'CJ',
+  ShipPostalCode: '05022',
+  ShipCountry: 'Mexico',
+  Freight: 3.25,
+  Verified: !1
+}, {
+  ID: 10260,
+  CustomerID: 'OTTIK',
+  EmployeeID: 4,
+  OrderDate: new Date(8377146e5),
+  ProblemStatement: 'Ottilies Käseladen',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Köln',
+  ShipAddress: 'Mehrheimerstr. 369',
+  ShipRegion: 'CJ',
+  ShipPostalCode: '50739',
+  ShipCountry: 'Germany',
+  Freight: 55.09,
+  Verified: !0
+}, {
+  ID: 10261,
+  CustomerID: 'QUEDE',
+  EmployeeID: 4,
+  OrderDate: new Date(8377146e5),
+  ProblemStatement: 'Que Delícia',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Rio de Janeiro',
+  ShipAddress: 'Rua da Panificadora, 12',
+  ShipRegion: 'RJ',
+  ShipPostalCode: '02389-673',
+  ShipCountry: 'Brazil',
+  Freight: 3.05,
+  Verified: !1
+}, {
+  ID: 10262,
+  CustomerID: 'RATTC',
+  EmployeeID: 8,
+  OrderDate: new Date(8379738e5),
+  ProblemStatement: 'Rattlesnake Canyon Grocery',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Albuquerque',
+  ShipAddress: '2817 Milton Dr.',
+  ShipRegion: 'NM',
+  ShipPostalCode: '87110',
+  ShipCountry: 'USA',
+  Freight: 48.29,
+  Verified: !0
+}];
+let sdata = [{
+  ID: 10248,
+  CustomerID: 'VINET',
+  EmployeeID: 5,
+  OrderDate: new Date(8364186e5),
+  ProblemStatement: 'Vins et alcools Chevalier',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Reims',
+  ShipAddress: '59 rue de l Abbaye',
+  ShipRegion: 'CJ',
+  ShipPostalCode: '51100',
+  ShipCountry: 'Brazil',
+  Freight: 32.38,
+  Verified: !0
+}, {
+  ID: 10249,
+  CustomerID: 'TOMSP',
+  EmployeeID: 6,
+  OrderDate: new Date(836505e6),
+  ProblemStatement: 'Toms Spezialitäten',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Münster',
+  ShipAddress: 'Luisenstr. 48',
+  ShipRegion: 'CJ',
+  ShipPostalCode: '44087',
+  ShipCountry: 'Germany',
+  Freight: 11.61,
+  Verified: !1
+}, {
+  ID: 10250,
+  CustomerID: 'HANAR',
+  EmployeeID: 4,
+  OrderDate: new Date(8367642e5),
+  ProblemStatement: 'Hanari Carnes',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Rio de Janeiro',
+  ShipAddress: 'Rua do Paço, 67',
+  ShipRegion: 'RJ',
+  ShipPostalCode: '05454-876',
+  ShipCountry: 'Brazil',
+  Freight: 65.83,
+  Verified: !0
+}, {
+  ID: 10251,
+  CustomerID: 'VICTE',
+  EmployeeID: 3,
+  OrderDate: new Date(8367642e5),
+  ProblemStatement: 'Victuailles en stock',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Lyon',
+  ShipAddress: '2, rue du Commerce',
+  ShipRegion: 'CJ',
+  ShipPostalCode: '69004',
+  ShipCountry: 'France',
+  Freight: 41.34,
+  Verified: !0
+}, {
+  ID: 10252,
+  CustomerID: 'SUPRD',
+  EmployeeID: 4,
+  OrderDate: new Date(8368506e5),
+  ProblemStatement: 'Suprêmes délices',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Charleroi',
+  ShipAddress: 'Boulevard Tirou, 255',
+  ShipRegion: 'CJ',
+  ShipPostalCode: 'B-6000',
+  ShipCountry: 'Belgium',
+  Freight: 51.3,
+  Verified: !0
+}, {
+  ID: 10253,
+  CustomerID: 'HANAR',
+  EmployeeID: 3,
+  OrderDate: new Date(836937e6),
+  ProblemStatement: 'Hanari Carnes',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Rio de Janeiro',
+  ShipAddress: 'Rua do Paço, 67',
+  ShipRegion: 'RJ',
+  ShipPostalCode: '05454-876',
+  ShipCountry: 'Brazil',
+  Freight: 58.17,
+  Verified: !0
+}, {
+  ID: 10254,
+  CustomerID: 'CHOPS',
+  EmployeeID: 5,
+  OrderDate: new Date(8370234e5),
+  ProblemStatement: 'Chop-suey Chinese',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Bern',
+  ShipAddress: 'Hauptstr. 31',
+  ShipRegion: 'CJ',
+  ShipPostalCode: '3012',
+  ShipCountry: 'Brazil',
+  Freight: 22.98,
+  Verified: !1
+}, {
+  ID: 10255,
+  CustomerID: 'RICSU',
+  EmployeeID: 9,
+  OrderDate: new Date(8371098e5),
+  ProblemStatement: 'Richter Supermarkt',
+  Assignee: '',
+  'Age(days)': '4',
+  Duedate: 'May 21, 2028',
+  'Duedate Changes': '20',
+  Status: 'Completed',
+  ShipCity: 'Genève',
+  ShipAddress: 'Starenweg 5',
+  ShipRegion: 'CJ',
+  ShipPostalCode: '1204',
+  ShipCountry: 'Switzerland',
+  Freight: 148.33,
+  Verified: !0
+}];
+
+/***/ }),
+
+/***/ "./src/components/Mockup/home.tsx":
+/*!****************************************!*\
+  !*** ./src/components/Mockup/home.tsx ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _syncfusion_ej2_react_navigations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @syncfusion/ej2-react-navigations */ "./node_modules/@syncfusion/ej2-react-navigations/index.js");
+/* harmony import */ var _HomeGrid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HomeGrid */ "./src/components/Mockup/HomeGrid.tsx");
+var _jsxFileName = "D:\\Projects\\Gerhard\\MultiTenancy Boilerplate\\HiteshMultiTenancy\\8.1.0\\reactjs\\src\\components\\Mockup\\home.tsx";
+
+
+
+
+function Home() {
+  let headerText = [{
+    text: "RCA"
+  }, {
+    text: "G8D"
+  }, {
+    text: "A3"
+  }];
+
+  const content0 = () => {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_HomeGrid__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9,
+        columnNumber: 12
+      }
+    });
+  }; //<Tabs defaultActiveKey="1" items={items} onChange={onChange} />
+
+
+  const content1 = () => {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13,
+        columnNumber: 12
+      }
+    }, "this is G8D tab", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15,
+        columnNumber: 7
+      }
+    }), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
+  };
+
+  const content2 = () => {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21,
+        columnNumber: 12
+      }
+    }, "This is A3 tab", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23,
+        columnNumber: 7
+      }
+    }), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_syncfusion_ej2_react_navigations__WEBPACK_IMPORTED_MODULE_1__["TabComponent"], {
+    heightAdjustMode: "Auto",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_syncfusion_ej2_react_navigations__WEBPACK_IMPORTED_MODULE_1__["TabItemsDirective"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_syncfusion_ej2_react_navigations__WEBPACK_IMPORTED_MODULE_1__["TabItemDirective"], {
+    header: headerText[0],
+    content: content0,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32,
+      columnNumber: 13
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_syncfusion_ej2_react_navigations__WEBPACK_IMPORTED_MODULE_1__["TabItemDirective"], {
+    header: headerText[1],
+    content: content1,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 13
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_syncfusion_ej2_react_navigations__WEBPACK_IMPORTED_MODULE_1__["TabItemDirective"], {
+    header: headerText[2],
+    content: content2,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34,
+      columnNumber: 13
+    }
+  }))));
+}
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (Home);
+
+/***/ })
+
+}]);
+//# sourceMappingURL=16.chunk.js.map

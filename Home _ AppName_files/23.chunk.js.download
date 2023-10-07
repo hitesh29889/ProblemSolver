@@ -1,0 +1,1031 @@
+(this["webpackJsonpreactjs"] = this["webpackJsonpreactjs"] || []).push([[23],{
+
+/***/ "./node_modules/antd/es/badge/Ribbon.js":
+/*!**********************************************!*\
+  !*** ./node_modules/antd/es/badge/Ribbon.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _config_provider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config-provider */ "./node_modules/antd/es/config-provider/index.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils */ "./node_modules/antd/es/badge/utils.js");
+
+
+
+
+
+
+
+var Ribbon = function Ribbon(_ref) {
+  var _classNames;
+
+  var className = _ref.className,
+      customizePrefixCls = _ref.prefixCls,
+      style = _ref.style,
+      color = _ref.color,
+      children = _ref.children,
+      text = _ref.text,
+      _ref$placement = _ref.placement,
+      placement = _ref$placement === void 0 ? 'end' : _ref$placement;
+
+  var _React$useContext = react__WEBPACK_IMPORTED_MODULE_2__["useContext"](_config_provider__WEBPACK_IMPORTED_MODULE_4__["ConfigContext"]),
+      getPrefixCls = _React$useContext.getPrefixCls,
+      direction = _React$useContext.direction;
+
+  var prefixCls = getPrefixCls('ribbon', customizePrefixCls);
+  var colorInPreset = Object(_utils__WEBPACK_IMPORTED_MODULE_5__["isPresetColor"])(color);
+  var ribbonCls = classnames__WEBPACK_IMPORTED_MODULE_3___default()(prefixCls, "".concat(prefixCls, "-placement-").concat(placement), (_classNames = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_classNames, "".concat(prefixCls, "-rtl"), direction === 'rtl'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_classNames, "".concat(prefixCls, "-color-").concat(color), colorInPreset), _classNames), className);
+  var colorStyle = {};
+  var cornerColorStyle = {};
+
+  if (color && !colorInPreset) {
+    colorStyle.background = color;
+    cornerColorStyle.color = color;
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("div", {
+    className: "".concat(prefixCls, "-wrapper")
+  }, children, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("div", {
+    className: ribbonCls,
+    style: _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({}, colorStyle), style)
+  }, text, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("div", {
+    className: "".concat(prefixCls, "-corner"),
+    style: cornerColorStyle
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Ribbon);
+
+/***/ }),
+
+/***/ "./node_modules/antd/es/badge/ScrollNumber.js":
+/*!****************************************************!*\
+  !*** ./node_modules/antd/es/badge/ScrollNumber.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _config_provider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config-provider */ "./node_modules/antd/es/config-provider/index.js");
+/* harmony import */ var _util_reactNode__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../_util/reactNode */ "./node_modules/antd/es/_util/reactNode.js");
+
+
+
+var __rest = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+
+  for (var p in s) {
+    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  }
+
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+
+
+
+
+
+
+function getNumberArray(num) {
+  return num ? num.toString().split('').reverse().map(function (i) {
+    var current = Number(i);
+    return isNaN(current) ? i : current;
+  }) : [];
+}
+
+function renderNumberList(position, className) {
+  var childrenToReturn = [];
+
+  for (var i = 0; i < 30; i++) {
+    childrenToReturn.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("p", {
+      key: i.toString(),
+      className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(className, {
+        current: position === i
+      })
+    }, i % 10));
+  }
+
+  return childrenToReturn;
+}
+
+var ScrollNumber = function ScrollNumber(_a) {
+  var customizePrefixCls = _a.prefixCls,
+      customizeCount = _a.count,
+      className = _a.className,
+      style = _a.style,
+      title = _a.title,
+      _a$component = _a.component,
+      component = _a$component === void 0 ? 'sup' : _a$component,
+      displayComponent = _a.displayComponent,
+      _a$onAnimated = _a.onAnimated,
+      onAnimated = _a$onAnimated === void 0 ? function () {} : _a$onAnimated,
+      restProps = __rest(_a, ["prefixCls", "count", "className", "style", "title", "component", "displayComponent", "onAnimated"]);
+
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_2__["useState"](true),
+      _React$useState2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default()(_React$useState, 2),
+      animateStarted = _React$useState2[0],
+      setAnimateStarted = _React$useState2[1];
+
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_2__["useState"](customizeCount),
+      _React$useState4 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default()(_React$useState3, 2),
+      count = _React$useState4[0],
+      setCount = _React$useState4[1];
+
+  var _React$useState5 = react__WEBPACK_IMPORTED_MODULE_2__["useState"](customizeCount),
+      _React$useState6 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default()(_React$useState5, 2),
+      prevCount = _React$useState6[0],
+      setPrevCount = _React$useState6[1];
+
+  var _React$useState7 = react__WEBPACK_IMPORTED_MODULE_2__["useState"](customizeCount),
+      _React$useState8 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default()(_React$useState7, 2),
+      lastCount = _React$useState8[0],
+      setLastCount = _React$useState8[1];
+
+  var _React$useContext = react__WEBPACK_IMPORTED_MODULE_2__["useContext"](_config_provider__WEBPACK_IMPORTED_MODULE_4__["ConfigContext"]),
+      getPrefixCls = _React$useContext.getPrefixCls;
+
+  var prefixCls = getPrefixCls('scroll-number', customizePrefixCls);
+
+  if (prevCount !== customizeCount) {
+    setAnimateStarted(true);
+    setPrevCount(customizeCount);
+  }
+
+  react__WEBPACK_IMPORTED_MODULE_2__["useEffect"](function () {
+    setLastCount(count);
+    var timeout;
+
+    if (animateStarted) {
+      // Let browser has time to reset the scroller before actually
+      // performing the transition.
+      timeout = setTimeout(function () {
+        setAnimateStarted(false);
+        setCount(customizeCount);
+        onAnimated();
+      });
+    }
+
+    return function () {
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+    };
+  }, [animateStarted, customizeCount, onAnimated]);
+
+  var getPositionByNum = function getPositionByNum(num, i) {
+    var currentCount = Math.abs(Number(count));
+    var lstCount = Math.abs(Number(lastCount));
+    var currentDigit = Math.abs(getNumberArray(count)[i]);
+    var lastDigit = Math.abs(getNumberArray(lstCount)[i]);
+
+    if (animateStarted) {
+      return 10 + num;
+    } // 同方向则在同一侧切换数字
+
+
+    if (currentCount > lstCount) {
+      if (currentDigit >= lastDigit) {
+        return 10 + num;
+      }
+
+      return 20 + num;
+    }
+
+    if (currentDigit <= lastDigit) {
+      return 10 + num;
+    }
+
+    return num;
+  };
+
+  var renderCurrentNumber = function renderCurrentNumber(num, i) {
+    if (typeof num === 'number') {
+      var position = getPositionByNum(num, i);
+      var removeTransition = animateStarted || getNumberArray(lastCount)[i] === undefined;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]('span', {
+        className: "".concat(prefixCls, "-only"),
+        style: {
+          transition: removeTransition ? 'none' : undefined,
+          msTransform: "translateY(".concat(-position * 100, "%)"),
+          WebkitTransform: "translateY(".concat(-position * 100, "%)"),
+          transform: "translateY(".concat(-position * 100, "%)")
+        },
+        key: i
+      }, renderNumberList(position, "".concat(prefixCls, "-only-unit")));
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("span", {
+      key: "symbol",
+      className: "".concat(prefixCls, "-symbol")
+    }, num);
+  };
+
+  var renderNumberElement = function renderNumberElement() {
+    if (count && Number(count) % 1 === 0) {
+      return getNumberArray(count).map(function (num, i) {
+        return renderCurrentNumber(num, i);
+      }).reverse();
+    }
+
+    return count;
+  };
+
+  var newProps = _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({}, restProps), {
+    style: style,
+    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(prefixCls, className),
+    title: title
+  }); // allow specify the border
+  // mock border-color by box-shadow for compatible with old usage:
+  // <Badge count={4} style={{ backgroundColor: '#fff', color: '#999', borderColor: '#d9d9d9' }} />
+
+
+  if (style && style.borderColor) {
+    newProps.style = _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({}, style), {
+      boxShadow: "0 0 0 1px ".concat(style.borderColor, " inset")
+    });
+  }
+
+  if (displayComponent) {
+    return Object(_util_reactNode__WEBPACK_IMPORTED_MODULE_5__["cloneElement"])(displayComponent, {
+      className: classnames__WEBPACK_IMPORTED_MODULE_3___default()("".concat(prefixCls, "-custom-component"), displayComponent.props && displayComponent.props.className)
+    });
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](component, newProps, renderNumberElement());
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ScrollNumber);
+
+/***/ }),
+
+/***/ "./node_modules/antd/es/badge/index.js":
+/*!*********************************************!*\
+  !*** ./node_modules/antd/es/badge/index.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "./node_modules/@babel/runtime/helpers/typeof.js");
+/* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var rc_animate__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rc-animate */ "./node_modules/rc-animate/es/Animate.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _ScrollNumber__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ScrollNumber */ "./node_modules/antd/es/badge/ScrollNumber.js");
+/* harmony import */ var _Ribbon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Ribbon */ "./node_modules/antd/es/badge/Ribbon.js");
+/* harmony import */ var _config_provider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../config-provider */ "./node_modules/antd/es/config-provider/index.js");
+/* harmony import */ var _util_reactNode__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../_util/reactNode */ "./node_modules/antd/es/_util/reactNode.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./utils */ "./node_modules/antd/es/badge/utils.js");
+
+
+
+
+var __rest = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+
+  for (var p in s) {
+    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  }
+
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+
+
+
+
+
+
+
+
+
+
+var Badge = function Badge(_a) {
+  var _classNames2, _classNames3;
+
+  var customizePrefixCls = _a.prefixCls,
+      customizeScrollNumberPrefixCls = _a.scrollNumberPrefixCls,
+      children = _a.children,
+      status = _a.status,
+      text = _a.text,
+      color = _a.color,
+      _a$count = _a.count,
+      count = _a$count === void 0 ? null : _a$count,
+      _a$overflowCount = _a.overflowCount,
+      overflowCount = _a$overflowCount === void 0 ? 99 : _a$overflowCount,
+      _a$dot = _a.dot,
+      dot = _a$dot === void 0 ? false : _a$dot,
+      _a$size = _a.size,
+      size = _a$size === void 0 ? 'default' : _a$size,
+      title = _a.title,
+      offset = _a.offset,
+      style = _a.style,
+      className = _a.className,
+      _a$showZero = _a.showZero,
+      showZero = _a$showZero === void 0 ? false : _a$showZero,
+      restProps = __rest(_a, ["prefixCls", "scrollNumberPrefixCls", "children", "status", "text", "color", "count", "overflowCount", "dot", "size", "title", "offset", "style", "className", "showZero"]);
+
+  var _React$useContext = react__WEBPACK_IMPORTED_MODULE_3__["useContext"](_config_provider__WEBPACK_IMPORTED_MODULE_8__["ConfigContext"]),
+      getPrefixCls = _React$useContext.getPrefixCls,
+      direction = _React$useContext.direction;
+
+  var prefixCls = getPrefixCls('badge', customizePrefixCls);
+
+  var getNumberedDisplayCount = function getNumberedDisplayCount() {
+    var displayCount = count > overflowCount ? "".concat(overflowCount, "+") : count;
+    return displayCount;
+  };
+
+  var hasStatus = function hasStatus() {
+    return status !== null && status !== undefined || color !== null && color !== undefined;
+  };
+
+  var isZero = function isZero() {
+    var numberedDisplayCount = getNumberedDisplayCount();
+    return numberedDisplayCount === '0' || numberedDisplayCount === 0;
+  };
+
+  var isDot = function isDot() {
+    return dot && !isZero() || hasStatus();
+  };
+
+  var getDisplayCount = function getDisplayCount() {
+    // dot mode don't need count
+    if (isDot()) {
+      return '';
+    }
+
+    return getNumberedDisplayCount();
+  };
+
+  var getScrollNumberTitle = function getScrollNumberTitle() {
+    if (title) {
+      return title;
+    }
+
+    return typeof count === 'string' || typeof count === 'number' ? count : undefined;
+  };
+
+  var getStyleWithOffset = function getStyleWithOffset() {
+    if (direction === 'rtl') {
+      return offset ? _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_2___default()({
+        left: parseInt(offset[0], 10),
+        marginTop: offset[1]
+      }, style) : style;
+    }
+
+    return offset ? _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_2___default()({
+      right: -parseInt(offset[0], 10),
+      marginTop: offset[1]
+    }, style) : style;
+  };
+
+  var isHidden = function isHidden() {
+    var displayCount = getDisplayCount();
+    var isEmpty = displayCount === null || displayCount === undefined || displayCount === '';
+    return (isEmpty || isZero() && !showZero) && !isDot();
+  };
+
+  var renderStatusText = function renderStatusText() {
+    var hidden = isHidden();
+    return hidden || !text ? null : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"]("span", {
+      className: "".concat(prefixCls, "-status-text")
+    }, text);
+  };
+
+  var renderDisplayComponent = function renderDisplayComponent() {
+    var customNode = count;
+
+    if (!customNode || _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_1___default()(customNode) !== 'object') {
+      return undefined;
+    }
+
+    return Object(_util_reactNode__WEBPACK_IMPORTED_MODULE_9__["cloneElement"])(customNode, {
+      style: _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_2___default()(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_2___default()({}, getStyleWithOffset()), customNode.props && customNode.props.style)
+    });
+  };
+
+  var renderBadgeNumber = function renderBadgeNumber() {
+    var _classNames;
+
+    var scrollNumberPrefixCls = getPrefixCls('scroll-number', customizeScrollNumberPrefixCls);
+    var displayCount = getDisplayCount();
+    var bDot = isDot();
+    var hidden = isHidden();
+    var scrollNumberCls = classnames__WEBPACK_IMPORTED_MODULE_5___default()((_classNames = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classNames, "".concat(prefixCls, "-dot"), bDot), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classNames, "".concat(prefixCls, "-count"), !bDot), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classNames, "".concat(prefixCls, "-count-sm"), size === 'small'), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classNames, "".concat(prefixCls, "-multiple-words"), !bDot && count && count.toString && count.toString().length > 1), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classNames, "".concat(prefixCls, "-status-").concat(status), !!status), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classNames, "".concat(prefixCls, "-status-").concat(color), Object(_utils__WEBPACK_IMPORTED_MODULE_10__["isPresetColor"])(color)), _classNames));
+    var statusStyle = getStyleWithOffset();
+
+    if (color && !Object(_utils__WEBPACK_IMPORTED_MODULE_10__["isPresetColor"])(color)) {
+      statusStyle = statusStyle || {};
+      statusStyle.background = color;
+    }
+
+    return hidden ? null : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"](_ScrollNumber__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      prefixCls: scrollNumberPrefixCls,
+      "data-show": !hidden,
+      className: scrollNumberCls,
+      count: displayCount,
+      displayComponent: renderDisplayComponent() // <Badge status="success" count={<Icon type="xxx" />}></Badge>
+      ,
+      title: getScrollNumberTitle(),
+      style: statusStyle,
+      key: "scrollNumber"
+    });
+  };
+
+  var statusCls = classnames__WEBPACK_IMPORTED_MODULE_5___default()((_classNames2 = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classNames2, "".concat(prefixCls, "-status-dot"), hasStatus()), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classNames2, "".concat(prefixCls, "-status-").concat(status), !!status), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classNames2, "".concat(prefixCls, "-status-").concat(color), Object(_utils__WEBPACK_IMPORTED_MODULE_10__["isPresetColor"])(color)), _classNames2));
+  var statusStyle = {};
+
+  if (color && !Object(_utils__WEBPACK_IMPORTED_MODULE_10__["isPresetColor"])(color)) {
+    statusStyle.background = color;
+  }
+
+  var badgeClassName = classnames__WEBPACK_IMPORTED_MODULE_5___default()(prefixCls, (_classNames3 = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classNames3, "".concat(prefixCls, "-status"), hasStatus()), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classNames3, "".concat(prefixCls, "-not-a-wrapper"), !children), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classNames3, "".concat(prefixCls, "-rtl"), direction === 'rtl'), _classNames3), className); // <Badge status="success" />
+
+  if (!children && hasStatus()) {
+    var styleWithOffset = getStyleWithOffset();
+    var statusTextColor = styleWithOffset && styleWithOffset.color;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"]("span", _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_2___default()({}, restProps, {
+      className: badgeClassName,
+      style: styleWithOffset
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"]("span", {
+      className: statusCls,
+      style: statusStyle
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"]("span", {
+      style: {
+        color: statusTextColor
+      },
+      className: "".concat(prefixCls, "-status-text")
+    }, text));
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"]("span", _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_2___default()({}, restProps, {
+    className: badgeClassName
+  }), children, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"](rc_animate__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    component: "",
+    showProp: "data-show",
+    transitionName: children ? "".concat(prefixCls, "-zoom") : '',
+    transitionAppear: true
+  }, renderBadgeNumber()), renderStatusText());
+};
+
+Badge.Ribbon = _Ribbon__WEBPACK_IMPORTED_MODULE_7__["default"];
+/* harmony default export */ __webpack_exports__["default"] = (Badge);
+
+/***/ }),
+
+/***/ "./node_modules/antd/es/badge/style/index.js":
+/*!***************************************************!*\
+  !*** ./node_modules/antd/es/badge/style/index.js ***!
+  \***************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _style_index_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../style/index.less */ "./node_modules/antd/es/style/index.less");
+/* harmony import */ var _style_index_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_index_less__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.less */ "./node_modules/antd/es/badge/style/index.less");
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/antd/es/badge/style/index.less":
+/*!*****************************************************!*\
+  !*** ./node_modules/antd/es/badge/style/index.less ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../css-loader/dist/cjs.js??ref--6-oneOf-8-1!../../../../postcss-loader/src??postcss!../../../../resolve-url-loader??ref--6-oneOf-8-3!../../../../less-loader/dist/cjs.js??ref--6-oneOf-8-4!./index.less */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/resolve-url-loader/index.js?!./node_modules/less-loader/dist/cjs.js?!./node_modules/antd/es/badge/style/index.less");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../../css-loader/dist/cjs.js??ref--6-oneOf-8-1!../../../../postcss-loader/src??postcss!../../../../resolve-url-loader??ref--6-oneOf-8-3!../../../../less-loader/dist/cjs.js??ref--6-oneOf-8-4!./index.less */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/resolve-url-loader/index.js?!./node_modules/less-loader/dist/cjs.js?!./node_modules/antd/es/badge/style/index.less", function() {
+		var newContent = __webpack_require__(/*! !../../../../css-loader/dist/cjs.js??ref--6-oneOf-8-1!../../../../postcss-loader/src??postcss!../../../../resolve-url-loader??ref--6-oneOf-8-3!../../../../less-loader/dist/cjs.js??ref--6-oneOf-8-4!./index.less */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/resolve-url-loader/index.js?!./node_modules/less-loader/dist/cjs.js?!./node_modules/antd/es/badge/style/index.less");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./node_modules/antd/es/badge/utils.js":
+/*!*********************************************!*\
+  !*** ./node_modules/antd/es/badge/utils.js ***!
+  \*********************************************/
+/*! exports provided: isPresetColor */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isPresetColor", function() { return isPresetColor; });
+/* harmony import */ var _util_colors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_util/colors */ "./node_modules/antd/es/_util/colors.js");
+ // eslint-disable-next-line import/prefer-default-export
+
+function isPresetColor(color) {
+  return _util_colors__WEBPACK_IMPORTED_MODULE_0__["PresetColorTypes"].indexOf(color) !== -1;
+}
+
+/***/ }),
+
+/***/ "./node_modules/antd/es/row/index.js":
+/*!*******************************************!*\
+  !*** ./node_modules/antd/es/row/index.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _grid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../grid */ "./node_modules/antd/es/grid/index.js");
+
+/* harmony default export */ __webpack_exports__["default"] = (_grid__WEBPACK_IMPORTED_MODULE_0__["Row"]);
+
+/***/ }),
+
+/***/ "./node_modules/antd/es/row/style/index.js":
+/*!*************************************************!*\
+  !*** ./node_modules/antd/es/row/style/index.js ***!
+  \*************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _style_index_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../style/index.less */ "./node_modules/antd/es/style/index.less");
+/* harmony import */ var _style_index_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_index_less__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _grid_style__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../grid/style */ "./node_modules/antd/es/grid/style/index.js");
+ // style dependencies
+// deps-lint-skip: grid
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/resolve-url-loader/index.js?!./node_modules/less-loader/dist/cjs.js?!./node_modules/antd/es/badge/style/index.less":
+/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-8-1!./node_modules/postcss-loader/src??postcss!./node_modules/resolve-url-loader??ref--6-oneOf-8-3!./node_modules/less-loader/dist/cjs.js??ref--6-oneOf-8-4!./node_modules/antd/es/badge/style/index.less ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, "/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */\n/* stylelint-disable no-duplicate-selectors */\n/* stylelint-disable */\n/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */\n.ant-modal,\n.ant-image-preview {\n  pointer-events: none;\n}\n.ant-modal.zoom-enter,\n.ant-modal.zoom-appear,\n.ant-image-preview.zoom-enter,\n.ant-image-preview.zoom-appear {\n  -webkit-transform: none;\n          transform: none;\n  opacity: 0;\n  -webkit-animation-duration: 0.3s;\n          animation-duration: 0.3s;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n.ant-modal-mask,\n.ant-image-preview-mask {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1000;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.45);\n  filter: alpha(opacity=50);\n}\n.ant-modal-mask-hidden,\n.ant-image-preview-mask-hidden {\n  display: none;\n}\n.ant-modal-wrap,\n.ant-image-preview-wrap {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  overflow: auto;\n  outline: 0;\n  -webkit-overflow-scrolling: touch;\n}\n.ant-badge {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  list-style: none;\n  -webkit-font-feature-settings: 'tnum', \"tnum\";\n          font-feature-settings: 'tnum', \"tnum\";\n  position: relative;\n  display: inline-block;\n  color: unset;\n  line-height: 1;\n}\n.ant-badge-count {\n  z-index: auto;\n  min-width: 20px;\n  height: 20px;\n  padding: 0 6px;\n  color: #fff;\n  font-weight: normal;\n  font-size: 12px;\n  line-height: 20px;\n  white-space: nowrap;\n  text-align: center;\n  background: #ff4d4f;\n  border-radius: 10px;\n  -webkit-box-shadow: 0 0 0 1px #fff;\n          box-shadow: 0 0 0 1px #fff;\n}\n.ant-badge-count a,\n.ant-badge-count a:hover {\n  color: #fff;\n}\n.ant-badge-count-sm {\n  min-width: 14px;\n  height: 14px;\n  padding: 0;\n  font-size: 12px;\n  line-height: 14px;\n  border-radius: 7px;\n}\n.ant-badge-multiple-words {\n  padding: 0 8px;\n}\n.ant-badge-dot {\n  z-index: auto;\n  width: 6px;\n  height: 6px;\n  background: #ff4d4f;\n  border-radius: 100%;\n  -webkit-box-shadow: 0 0 0 1px #fff;\n          box-shadow: 0 0 0 1px #fff;\n}\n.ant-badge-count,\n.ant-badge-dot,\n.ant-badge .ant-scroll-number-custom-component {\n  position: absolute;\n  top: 0;\n  right: 0;\n  -webkit-transform: translate(50%, -50%);\n          transform: translate(50%, -50%);\n  -webkit-transform-origin: 100% 0%;\n          transform-origin: 100% 0%;\n}\n.ant-badge-status {\n  line-height: inherit;\n  vertical-align: baseline;\n}\n.ant-badge-status-dot {\n  position: relative;\n  top: -1px;\n  display: inline-block;\n  width: 6px;\n  height: 6px;\n  vertical-align: middle;\n  border-radius: 50%;\n}\n.ant-badge-status-success {\n  background-color: #52c41a;\n}\n.ant-badge-status-processing {\n  position: relative;\n  background-color: #1890ff;\n}\n.ant-badge-status-processing::after {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  border: 1px solid #1890ff;\n  border-radius: 50%;\n  -webkit-animation: antStatusProcessing 1.2s infinite ease-in-out;\n          animation: antStatusProcessing 1.2s infinite ease-in-out;\n  content: '';\n}\n.ant-badge-status-default {\n  background-color: #d9d9d9;\n}\n.ant-badge-status-error {\n  background-color: #ff4d4f;\n}\n.ant-badge-status-warning {\n  background-color: #faad14;\n}\n.ant-badge-status-pink {\n  background: #eb2f96;\n}\n.ant-badge-status-magenta {\n  background: #eb2f96;\n}\n.ant-badge-status-red {\n  background: #f5222d;\n}\n.ant-badge-status-volcano {\n  background: #fa541c;\n}\n.ant-badge-status-orange {\n  background: #fa8c16;\n}\n.ant-badge-status-yellow {\n  background: #fadb14;\n}\n.ant-badge-status-gold {\n  background: #faad14;\n}\n.ant-badge-status-cyan {\n  background: #13c2c2;\n}\n.ant-badge-status-lime {\n  background: #a0d911;\n}\n.ant-badge-status-green {\n  background: #52c41a;\n}\n.ant-badge-status-blue {\n  background: #1890ff;\n}\n.ant-badge-status-geekblue {\n  background: #2f54eb;\n}\n.ant-badge-status-purple {\n  background: #722ed1;\n}\n.ant-badge-status-text {\n  margin-left: 8px;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n}\n.ant-badge-zoom-appear,\n.ant-badge-zoom-enter {\n  -webkit-animation: antZoomBadgeIn 0.3s cubic-bezier(0.12, 0.4, 0.29, 1.46);\n          animation: antZoomBadgeIn 0.3s cubic-bezier(0.12, 0.4, 0.29, 1.46);\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n}\n.ant-badge-zoom-leave {\n  -webkit-animation: antZoomBadgeOut 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6);\n          animation: antZoomBadgeOut 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6);\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n}\n.ant-badge-not-a-wrapper:not(.ant-badge-status) {\n  vertical-align: middle;\n}\n.ant-badge-not-a-wrapper .ant-scroll-number {\n  position: relative;\n  top: auto;\n  display: block;\n}\n.ant-badge-not-a-wrapper .ant-badge-count {\n  -webkit-transform: none;\n          transform: none;\n}\n@-webkit-keyframes antStatusProcessing {\n  0% {\n    -webkit-transform: scale(0.8);\n            transform: scale(0.8);\n    opacity: 0.5;\n  }\n  100% {\n    -webkit-transform: scale(2.4);\n            transform: scale(2.4);\n    opacity: 0;\n  }\n}\n@keyframes antStatusProcessing {\n  0% {\n    -webkit-transform: scale(0.8);\n            transform: scale(0.8);\n    opacity: 0.5;\n  }\n  100% {\n    -webkit-transform: scale(2.4);\n            transform: scale(2.4);\n    opacity: 0;\n  }\n}\n.ant-scroll-number {\n  overflow: hidden;\n}\n.ant-scroll-number-only {\n  display: inline-block;\n  height: 20px;\n  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n}\n.ant-scroll-number-only > p.ant-scroll-number-only-unit {\n  height: 20px;\n  margin: 0;\n}\n.ant-scroll-number-symbol {\n  vertical-align: top;\n}\n@-webkit-keyframes antZoomBadgeIn {\n  0% {\n    -webkit-transform: scale(0) translate(50%, -50%);\n            transform: scale(0) translate(50%, -50%);\n    opacity: 0;\n  }\n  100% {\n    -webkit-transform: scale(1) translate(50%, -50%);\n            transform: scale(1) translate(50%, -50%);\n  }\n}\n@keyframes antZoomBadgeIn {\n  0% {\n    -webkit-transform: scale(0) translate(50%, -50%);\n            transform: scale(0) translate(50%, -50%);\n    opacity: 0;\n  }\n  100% {\n    -webkit-transform: scale(1) translate(50%, -50%);\n            transform: scale(1) translate(50%, -50%);\n  }\n}\n@-webkit-keyframes antZoomBadgeOut {\n  0% {\n    -webkit-transform: scale(1) translate(50%, -50%);\n            transform: scale(1) translate(50%, -50%);\n  }\n  100% {\n    -webkit-transform: scale(0) translate(50%, -50%);\n            transform: scale(0) translate(50%, -50%);\n    opacity: 0;\n  }\n}\n@keyframes antZoomBadgeOut {\n  0% {\n    -webkit-transform: scale(1) translate(50%, -50%);\n            transform: scale(1) translate(50%, -50%);\n  }\n  100% {\n    -webkit-transform: scale(0) translate(50%, -50%);\n            transform: scale(0) translate(50%, -50%);\n    opacity: 0;\n  }\n}\n.ant-ribbon-wrapper {\n  position: relative;\n}\n.ant-ribbon {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5715;\n  list-style: none;\n  -webkit-font-feature-settings: 'tnum', \"tnum\";\n          font-feature-settings: 'tnum', \"tnum\";\n  position: absolute;\n  top: 8px;\n  height: 22px;\n  padding: 0 8px;\n  color: #fff;\n  line-height: 22px;\n  white-space: nowrap;\n  background-color: #1DA57A;\n  border-radius: 2px;\n}\n.ant-ribbon-corner {\n  position: absolute;\n  top: 100%;\n  width: 8px;\n  height: 8px;\n  color: #1DA57A;\n  border: 4px solid;\n  -webkit-transform: scaleY(0.75);\n          transform: scaleY(0.75);\n  -webkit-transform-origin: top;\n          transform-origin: top;\n}\n.ant-ribbon-corner::after {\n  position: absolute;\n  top: -4px;\n  left: -4px;\n  width: inherit;\n  height: inherit;\n  color: rgba(0, 0, 0, 0.25);\n  border: inherit;\n  content: '';\n}\n.ant-ribbon-color-pink {\n  background-color: #eb2f96;\n}\n.ant-ribbon-color-pink .ant-ribbon-corner {\n  color: #eb2f96;\n}\n.ant-ribbon-color-magenta {\n  background-color: #eb2f96;\n}\n.ant-ribbon-color-magenta .ant-ribbon-corner {\n  color: #eb2f96;\n}\n.ant-ribbon-color-red {\n  background-color: #f5222d;\n}\n.ant-ribbon-color-red .ant-ribbon-corner {\n  color: #f5222d;\n}\n.ant-ribbon-color-volcano {\n  background-color: #fa541c;\n}\n.ant-ribbon-color-volcano .ant-ribbon-corner {\n  color: #fa541c;\n}\n.ant-ribbon-color-orange {\n  background-color: #fa8c16;\n}\n.ant-ribbon-color-orange .ant-ribbon-corner {\n  color: #fa8c16;\n}\n.ant-ribbon-color-yellow {\n  background-color: #fadb14;\n}\n.ant-ribbon-color-yellow .ant-ribbon-corner {\n  color: #fadb14;\n}\n.ant-ribbon-color-gold {\n  background-color: #faad14;\n}\n.ant-ribbon-color-gold .ant-ribbon-corner {\n  color: #faad14;\n}\n.ant-ribbon-color-cyan {\n  background-color: #13c2c2;\n}\n.ant-ribbon-color-cyan .ant-ribbon-corner {\n  color: #13c2c2;\n}\n.ant-ribbon-color-lime {\n  background-color: #a0d911;\n}\n.ant-ribbon-color-lime .ant-ribbon-corner {\n  color: #a0d911;\n}\n.ant-ribbon-color-green {\n  background-color: #52c41a;\n}\n.ant-ribbon-color-green .ant-ribbon-corner {\n  color: #52c41a;\n}\n.ant-ribbon-color-blue {\n  background-color: #1890ff;\n}\n.ant-ribbon-color-blue .ant-ribbon-corner {\n  color: #1890ff;\n}\n.ant-ribbon-color-geekblue {\n  background-color: #2f54eb;\n}\n.ant-ribbon-color-geekblue .ant-ribbon-corner {\n  color: #2f54eb;\n}\n.ant-ribbon-color-purple {\n  background-color: #722ed1;\n}\n.ant-ribbon-color-purple .ant-ribbon-corner {\n  color: #722ed1;\n}\n.ant-ribbon.ant-ribbon-placement-end {\n  right: -8px;\n  border-bottom-right-radius: 0;\n}\n.ant-ribbon.ant-ribbon-placement-end .ant-ribbon-corner {\n  right: 0;\n  border-color: currentColor transparent transparent currentColor;\n}\n.ant-ribbon.ant-ribbon-placement-end .ant-ribbon-corner::after {\n  border-color: currentColor transparent transparent currentColor;\n}\n.ant-ribbon.ant-ribbon-placement-start {\n  left: -8px;\n  border-bottom-left-radius: 0;\n}\n.ant-ribbon.ant-ribbon-placement-start .ant-ribbon-corner {\n  left: 0;\n  border-color: currentColor currentColor transparent transparent;\n}\n.ant-ribbon.ant-ribbon-placement-start .ant-ribbon-corner::after {\n  border-color: currentColor currentColor transparent transparent;\n}\n.ant-badge-rtl {\n  direction: rtl;\n}\n.ant-badge-rtl .ant-badge-count,\n.ant-badge-rtl .ant-badge-dot,\n.ant-badge-rtl .ant-badge .ant-scroll-number-custom-component {\n  right: auto;\n  left: 0;\n  direction: ltr;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  -webkit-transform-origin: 0% 0%;\n          transform-origin: 0% 0%;\n}\n.ant-badge-rtl.ant-badge .ant-scroll-number-custom-component {\n  right: auto;\n  left: 0;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  -webkit-transform-origin: 0% 0%;\n          transform-origin: 0% 0%;\n}\n.ant-badge-rtl .ant-badge-status-text {\n  margin-right: 8px;\n  margin-left: 0;\n}\n.ant-badge-rtl .ant-badge-zoom-appear,\n.ant-badge-rtl .ant-badge-zoom-enter {\n  -webkit-animation-name: antZoomBadgeInRtl;\n          animation-name: antZoomBadgeInRtl;\n}\n.ant-badge-rtl .ant-badge-zoom-leave {\n  -webkit-animation-name: antZoomBadgeOutRtl;\n          animation-name: antZoomBadgeOutRtl;\n}\n.ant-badge-not-a-wrapper .ant-badge-count {\n  -webkit-transform: none;\n          transform: none;\n}\n.ant-ribbon-rtl {\n  direction: rtl;\n}\n.ant-ribbon-rtl.ant-ribbon-placement-end {\n  right: unset;\n  left: -8px;\n  border-bottom-right-radius: 2px;\n  border-bottom-left-radius: 0;\n}\n.ant-ribbon-rtl.ant-ribbon-placement-end .ant-ribbon-corner {\n  right: unset;\n  left: 0;\n  border-color: currentColor currentColor transparent transparent;\n}\n.ant-ribbon-rtl.ant-ribbon-placement-end .ant-ribbon-corner::after {\n  border-color: currentColor currentColor transparent transparent;\n}\n.ant-ribbon-rtl.ant-ribbon-placement-start {\n  right: -8px;\n  left: unset;\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 2px;\n}\n.ant-ribbon-rtl.ant-ribbon-placement-start .ant-ribbon-corner {\n  right: 0;\n  left: unset;\n  border-color: currentColor transparent transparent currentColor;\n}\n.ant-ribbon-rtl.ant-ribbon-placement-start .ant-ribbon-corner::after {\n  border-color: currentColor transparent transparent currentColor;\n}\n@-webkit-keyframes antZoomBadgeInRtl {\n  0% {\n    -webkit-transform: scale(0) translate(-50%, -50%);\n            transform: scale(0) translate(-50%, -50%);\n    opacity: 0;\n  }\n  100% {\n    -webkit-transform: scale(1) translate(-50%, -50%);\n            transform: scale(1) translate(-50%, -50%);\n  }\n}\n@keyframes antZoomBadgeInRtl {\n  0% {\n    -webkit-transform: scale(0) translate(-50%, -50%);\n            transform: scale(0) translate(-50%, -50%);\n    opacity: 0;\n  }\n  100% {\n    -webkit-transform: scale(1) translate(-50%, -50%);\n            transform: scale(1) translate(-50%, -50%);\n  }\n}\n@-webkit-keyframes antZoomBadgeOutRtl {\n  0% {\n    -webkit-transform: scale(1) translate(-50%, -50%);\n            transform: scale(1) translate(-50%, -50%);\n  }\n  100% {\n    -webkit-transform: scale(0) translate(-50%, -50%);\n            transform: scale(0) translate(-50%, -50%);\n    opacity: 0;\n  }\n}\n@keyframes antZoomBadgeOutRtl {\n  0% {\n    -webkit-transform: scale(1) translate(-50%, -50%);\n            transform: scale(1) translate(-50%, -50%);\n  }\n  100% {\n    -webkit-transform: scale(0) translate(-50%, -50%);\n            transform: scale(0) translate(-50%, -50%);\n    opacity: 0;\n  }\n}\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/rc-resize-observer/es/index.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/rc-resize-observer/es/index.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectSpread2 */ "./node_modules/@babel/runtime/helpers/esm/objectSpread2.js");
+/* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_esm_createSuper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createSuper */ "./node_modules/@babel/runtime/helpers/esm/createSuper.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var rc_util_es_Dom_findDOMNode__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rc-util/es/Dom/findDOMNode */ "./node_modules/rc-resize-observer/node_modules/rc-util/es/Dom/findDOMNode.js");
+/* harmony import */ var rc_util_es_Children_toArray__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rc-util/es/Children/toArray */ "./node_modules/rc-resize-observer/node_modules/rc-util/es/Children/toArray.js");
+/* harmony import */ var rc_util_es_warning__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rc-util/es/warning */ "./node_modules/rc-resize-observer/node_modules/rc-util/es/warning.js");
+/* harmony import */ var rc_util_es_ref__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rc-util/es/ref */ "./node_modules/rc-resize-observer/node_modules/rc-util/es/ref.js");
+/* harmony import */ var resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! resize-observer-polyfill */ "./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js");
+
+
+
+
+
+
+
+
+
+
+
+var INTERNAL_PREFIX_KEY = 'rc-observer-key'; // Still need to be compatible with React 15, we use class component here
+
+var ReactResizeObserver = /*#__PURE__*/function (_React$Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_3__["default"])(ReactResizeObserver, _React$Component);
+
+  var _super = Object(_babel_runtime_helpers_esm_createSuper__WEBPACK_IMPORTED_MODULE_4__["default"])(ReactResizeObserver);
+
+  function ReactResizeObserver() {
+    var _this;
+
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, ReactResizeObserver);
+
+    _this = _super.apply(this, arguments);
+    _this.resizeObserver = null;
+    _this.childNode = null;
+    _this.currentElement = null;
+    _this.state = {
+      width: 0,
+      height: 0,
+      offsetHeight: 0,
+      offsetWidth: 0
+    };
+
+    _this.onResize = function (entries) {
+      var onResize = _this.props.onResize;
+      var target = entries[0].target;
+
+      var _target$getBoundingCl = target.getBoundingClientRect(),
+          width = _target$getBoundingCl.width,
+          height = _target$getBoundingCl.height;
+
+      var offsetWidth = target.offsetWidth,
+          offsetHeight = target.offsetHeight;
+      /**
+       * Resize observer trigger when content size changed.
+       * In most case we just care about element size,
+       * let's use `boundary` instead of `contentRect` here to avoid shaking.
+       */
+
+      var fixedWidth = Math.floor(width);
+      var fixedHeight = Math.floor(height);
+
+      if (_this.state.width !== fixedWidth || _this.state.height !== fixedHeight || _this.state.offsetWidth !== offsetWidth || _this.state.offsetHeight !== offsetHeight) {
+        var size = {
+          width: fixedWidth,
+          height: fixedHeight,
+          offsetWidth: offsetWidth,
+          offsetHeight: offsetHeight
+        };
+
+        _this.setState(size);
+
+        if (onResize) {
+          // defer the callback but not defer to next frame
+          Promise.resolve().then(function () {
+            onResize(Object(_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__["default"])(Object(_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__["default"])({}, size), {}, {
+              offsetWidth: offsetWidth,
+              offsetHeight: offsetHeight
+            }));
+          });
+        }
+      }
+    };
+
+    _this.setChildNode = function (node) {
+      _this.childNode = node;
+    };
+
+    return _this;
+  }
+
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(ReactResizeObserver, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.onComponentUpdated();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      this.onComponentUpdated();
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.destroyObserver();
+    }
+  }, {
+    key: "onComponentUpdated",
+    value: function onComponentUpdated() {
+      var disabled = this.props.disabled; // Unregister if disabled
+
+      if (disabled) {
+        this.destroyObserver();
+        return;
+      } // Unregister if element changed
+
+
+      var element = Object(rc_util_es_Dom_findDOMNode__WEBPACK_IMPORTED_MODULE_6__["default"])(this.childNode || this);
+      var elementChanged = element !== this.currentElement;
+
+      if (elementChanged) {
+        this.destroyObserver();
+        this.currentElement = element;
+      }
+
+      if (!this.resizeObserver && element) {
+        this.resizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_10__["default"](this.onResize);
+        this.resizeObserver.observe(element);
+      }
+    }
+  }, {
+    key: "destroyObserver",
+    value: function destroyObserver() {
+      if (this.resizeObserver) {
+        this.resizeObserver.disconnect();
+        this.resizeObserver = null;
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var children = this.props.children;
+      var childNodes = Object(rc_util_es_Children_toArray__WEBPACK_IMPORTED_MODULE_7__["default"])(children);
+
+      if (childNodes.length > 1) {
+        Object(rc_util_es_warning__WEBPACK_IMPORTED_MODULE_8__["default"])(false, 'Find more than one child node with `children` in ResizeObserver. Will only observe first one.');
+      } else if (childNodes.length === 0) {
+        Object(rc_util_es_warning__WEBPACK_IMPORTED_MODULE_8__["default"])(false, '`children` of ResizeObserver is empty. Nothing is in observe.');
+        return null;
+      }
+
+      var childNode = childNodes[0];
+
+      if (react__WEBPACK_IMPORTED_MODULE_5__["isValidElement"](childNode) && Object(rc_util_es_ref__WEBPACK_IMPORTED_MODULE_9__["supportRef"])(childNode)) {
+        var ref = childNode.ref;
+        childNodes[0] = react__WEBPACK_IMPORTED_MODULE_5__["cloneElement"](childNode, {
+          ref: Object(rc_util_es_ref__WEBPACK_IMPORTED_MODULE_9__["composeRef"])(ref, this.setChildNode)
+        });
+      }
+
+      return childNodes.length === 1 ? childNodes[0] : childNodes.map(function (node, index) {
+        if (!react__WEBPACK_IMPORTED_MODULE_5__["isValidElement"](node) || 'key' in node && node.key !== null) {
+          return node;
+        }
+
+        return react__WEBPACK_IMPORTED_MODULE_5__["cloneElement"](node, {
+          key: "".concat(INTERNAL_PREFIX_KEY, "-").concat(index)
+        });
+      });
+    }
+  }]);
+
+  return ReactResizeObserver;
+}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
+
+ReactResizeObserver.displayName = 'ResizeObserver';
+/* harmony default export */ __webpack_exports__["default"] = (ReactResizeObserver);
+
+/***/ }),
+
+/***/ "./node_modules/rc-resize-observer/node_modules/rc-util/es/Children/toArray.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/rc-resize-observer/node_modules/rc-util/es/Children/toArray.js ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return toArray; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_is__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-is */ "./node_modules/react-is/index.js");
+/* harmony import */ var react_is__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_is__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function toArray(children) {
+  var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var ret = [];
+  react__WEBPACK_IMPORTED_MODULE_0___default.a.Children.forEach(children, function (child) {
+    if ((child === undefined || child === null) && !option.keepEmpty) {
+      return;
+    }
+
+    if (Array.isArray(child)) {
+      ret = ret.concat(toArray(child));
+    } else if (Object(react_is__WEBPACK_IMPORTED_MODULE_1__["isFragment"])(child) && child.props) {
+      ret = ret.concat(toArray(child.props.children, option));
+    } else {
+      ret.push(child);
+    }
+  });
+  return ret;
+}
+
+/***/ }),
+
+/***/ "./node_modules/rc-resize-observer/node_modules/rc-util/es/Dom/findDOMNode.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/rc-resize-observer/node_modules/rc-util/es/Dom/findDOMNode.js ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return findDOMNode; });
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_0__);
+
+/**
+ * Return if a node is a DOM node. Else will return by `findDOMNode`
+ */
+
+function findDOMNode(node) {
+  if (node instanceof HTMLElement) {
+    return node;
+  }
+
+  return react_dom__WEBPACK_IMPORTED_MODULE_0___default.a.findDOMNode(node);
+}
+
+/***/ }),
+
+/***/ "./node_modules/rc-resize-observer/node_modules/rc-util/es/ref.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/rc-resize-observer/node_modules/rc-util/es/ref.js ***!
+  \************************************************************************/
+/*! exports provided: fillRef, composeRef, supportRef */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fillRef", function() { return fillRef; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "composeRef", function() { return composeRef; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "supportRef", function() { return supportRef; });
+/* harmony import */ var react_is__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-is */ "./node_modules/react-is/index.js");
+/* harmony import */ var react_is__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_is__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+
+function fillRef(ref, node) {
+  if (typeof ref === 'function') {
+    ref(node);
+  } else if (_typeof(ref) === 'object' && ref && 'current' in ref) {
+    ref.current = node;
+  }
+}
+/**
+ * Merge refs into one ref function to support ref passing.
+ */
+
+function composeRef() {
+  for (var _len = arguments.length, refs = new Array(_len), _key = 0; _key < _len; _key++) {
+    refs[_key] = arguments[_key];
+  }
+
+  return function (node) {
+    refs.forEach(function (ref) {
+      fillRef(ref, node);
+    });
+  };
+}
+function supportRef(nodeOrComponent) {
+  var _type$prototype, _nodeOrComponent$prot;
+
+  var type = Object(react_is__WEBPACK_IMPORTED_MODULE_0__["isMemo"])(nodeOrComponent) ? nodeOrComponent.type.type : nodeOrComponent.type; // Function component node
+
+  if (typeof type === 'function' && !((_type$prototype = type.prototype) === null || _type$prototype === void 0 ? void 0 : _type$prototype.render)) {
+    return false;
+  } // Class component
+
+
+  if (typeof nodeOrComponent === 'function' && !((_nodeOrComponent$prot = nodeOrComponent.prototype) === null || _nodeOrComponent$prot === void 0 ? void 0 : _nodeOrComponent$prot.render)) {
+    return false;
+  }
+
+  return true;
+}
+/* eslint-enable */
+
+/***/ }),
+
+/***/ "./node_modules/rc-resize-observer/node_modules/rc-util/es/warning.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/rc-resize-observer/node_modules/rc-util/es/warning.js ***!
+  \****************************************************************************/
+/*! exports provided: warning, note, resetWarned, call, warningOnce, noteOnce, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "warning", function() { return warning; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "note", function() { return note; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resetWarned", function() { return resetWarned; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "call", function() { return call; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "warningOnce", function() { return warningOnce; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "noteOnce", function() { return noteOnce; });
+/* eslint-disable no-console */
+var warned = {};
+function warning(valid, message) {
+  // Support uglify
+  if ( true && !valid && console !== undefined) {
+    console.error("Warning: ".concat(message));
+  }
+}
+function note(valid, message) {
+  // Support uglify
+  if ( true && !valid && console !== undefined) {
+    console.warn("Note: ".concat(message));
+  }
+}
+function resetWarned() {
+  warned = {};
+}
+function call(method, valid, message) {
+  if (!valid && !warned[message]) {
+    method(false, message);
+    warned[message] = true;
+  }
+}
+function warningOnce(valid, message) {
+  call(warning, valid, message);
+}
+function noteOnce(valid, message) {
+  call(note, valid, message);
+}
+/* harmony default export */ __webpack_exports__["default"] = (warningOnce);
+/* eslint-enable */
+
+/***/ })
+
+}]);
+//# sourceMappingURL=23.chunk.js.map

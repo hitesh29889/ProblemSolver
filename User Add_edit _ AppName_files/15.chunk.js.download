@@ -1,0 +1,1811 @@
+(this["webpackJsonpreactjs"] = this["webpackJsonpreactjs"] || []).push([[15],{
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/index.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/index.js ***!
+  \*****************************************************************/
+/*! exports provided: AccordionItemDirective, AccordionItemsDirective, AccordionComponent, ItemDirective, ItemsDirective, ToolbarComponent, ContextMenuComponent, BreadcrumbItemDirective, BreadcrumbItemsDirective, BreadcrumbComponent, CarouselItemDirective, CarouselItemsDirective, CarouselComponent, TabItemDirective, TabItemsDirective, TabComponent, TreeViewComponent, SidebarComponent, MenuItemDirective, MenuItemsDirective, MenuComponent, AppBarComponent, Inject, HScroll, VScroll, addScrolling, destroyScroll, MenuAnimationSettings, MenuItem, FieldSettings, Item, Toolbar, AccordionActionSettings, AccordionAnimationSettings, AccordionItem, Accordion, ContextMenu, Menu, TabActionSettings, TabAnimationSettings, Header, TabItem, Tab, FieldsSettings, ActionSettings, NodeAnimationSettings, TreeView, Sidebar, BreadcrumbOverflowMode, BreadcrumbItem, Breadcrumb, CarouselSwipeMode, CarouselItem, Carousel, AppBar */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _src_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/index */ "./node_modules/@syncfusion/ej2-react-navigations/src/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccordionItemDirective", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["AccordionItemDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccordionItemsDirective", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["AccordionItemsDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccordionComponent", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["AccordionComponent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ItemDirective", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["ItemDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ItemsDirective", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["ItemsDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ToolbarComponent", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["ToolbarComponent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContextMenuComponent", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["ContextMenuComponent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbItemDirective", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["BreadcrumbItemDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbItemsDirective", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["BreadcrumbItemsDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbComponent", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["BreadcrumbComponent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CarouselItemDirective", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["CarouselItemDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CarouselItemsDirective", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["CarouselItemsDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CarouselComponent", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["CarouselComponent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabItemDirective", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["TabItemDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabItemsDirective", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["TabItemsDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabComponent", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["TabComponent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TreeViewComponent", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["TreeViewComponent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SidebarComponent", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["SidebarComponent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MenuItemDirective", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["MenuItemDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MenuItemsDirective", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["MenuItemsDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MenuComponent", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["MenuComponent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AppBarComponent", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["AppBarComponent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Inject", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["Inject"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HScroll", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["HScroll"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VScroll", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["VScroll"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addScrolling", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["addScrolling"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "destroyScroll", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["destroyScroll"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MenuAnimationSettings", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["MenuAnimationSettings"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MenuItem", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["MenuItem"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FieldSettings", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["FieldSettings"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Item", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["Item"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Toolbar", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["Toolbar"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccordionActionSettings", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["AccordionActionSettings"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccordionAnimationSettings", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["AccordionAnimationSettings"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccordionItem", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["AccordionItem"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Accordion", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["Accordion"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContextMenu", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["ContextMenu"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Menu", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["Menu"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabActionSettings", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["TabActionSettings"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabAnimationSettings", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["TabAnimationSettings"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["Header"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabItem", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["TabItem"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Tab", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["Tab"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FieldsSettings", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["FieldsSettings"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ActionSettings", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["ActionSettings"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NodeAnimationSettings", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["NodeAnimationSettings"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TreeView", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["TreeView"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Sidebar", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["Sidebar"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbOverflowMode", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["BreadcrumbOverflowMode"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbItem", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["BreadcrumbItem"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Breadcrumb", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["Breadcrumb"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CarouselSwipeMode", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["CarouselSwipeMode"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CarouselItem", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["CarouselItem"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Carousel", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["Carousel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AppBar", function() { return _src_index__WEBPACK_IMPORTED_MODULE_0__["AppBar"]; });
+
+/**
+ * index
+ */
+
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/accordion/accordion.component.js":
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/accordion/accordion.component.js ***!
+  \*********************************************************************************************/
+/*! exports provided: AccordionComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccordionComponent", function() { return AccordionComponent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @syncfusion/ej2-navigations */ "./node_modules/@syncfusion/ej2-navigations/index.js");
+/* harmony import */ var _syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @syncfusion/ej2-react-base */ "./node_modules/@syncfusion/ej2-react-base/index.js");
+var __extends = undefined && undefined.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+
+
+
+/**
+ * Represents the React Accordion Component.
+ * ```html
+ * <AccordionComponent></AccordionComponent
+ * ```
+ */
+
+var AccordionComponent =
+/** @class */
+function (_super) {
+  __extends(AccordionComponent, _super);
+
+  function AccordionComponent(props) {
+    var _this = _super.call(this, props) || this;
+
+    _this.initRenderCalled = false;
+    _this.checkInjectedModules = false;
+    _this.directivekeys = {
+      'accordionItems': 'accordionItem'
+    };
+    _this.statelessTemplateProps = ["itemTemplate", "headerTemplate"];
+    _this.templateProps = null;
+    _this.immediateRender = false;
+    _this.portals = [];
+    return _this;
+  }
+
+  AccordionComponent.prototype.render = function () {
+    if ((this.element && !this.initRenderCalled || this.refreshing) && !this.isReactForeceUpdate) {
+      _super.prototype.render.call(this);
+
+      this.initRenderCalled = true;
+    } else {
+      return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]('div', this.getDefaultAttributes(), [].concat(this.props.children, this.portals));
+    }
+  };
+
+  return AccordionComponent;
+}(_syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__["Accordion"]);
+
+
+Object(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["applyMixins"])(AccordionComponent, [_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["ComponentBase"], react__WEBPACK_IMPORTED_MODULE_0__["Component"]]);
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/accordion/index.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/accordion/index.js ***!
+  \*******************************************************************************/
+/*! exports provided: AccordionItemDirective, AccordionItemsDirective, AccordionComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _items_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./items-directive */ "./node_modules/@syncfusion/ej2-react-navigations/src/accordion/items-directive.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccordionItemDirective", function() { return _items_directive__WEBPACK_IMPORTED_MODULE_0__["AccordionItemDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccordionItemsDirective", function() { return _items_directive__WEBPACK_IMPORTED_MODULE_0__["AccordionItemsDirective"]; });
+
+/* harmony import */ var _accordion_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./accordion.component */ "./node_modules/@syncfusion/ej2-react-navigations/src/accordion/accordion.component.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccordionComponent", function() { return _accordion_component__WEBPACK_IMPORTED_MODULE_1__["AccordionComponent"]; });
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/accordion/items-directive.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/accordion/items-directive.js ***!
+  \*****************************************************************************************/
+/*! exports provided: AccordionItemDirective, AccordionItemsDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccordionItemDirective", function() { return AccordionItemDirective; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccordionItemsDirective", function() { return AccordionItemsDirective; });
+/* harmony import */ var _syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @syncfusion/ej2-react-base */ "./node_modules/@syncfusion/ej2-react-base/index.js");
+var __extends = undefined && undefined.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+
+/**
+ * `AccordionItemDirective` represent a item of the React Accordion.
+ * It must be contained in a Accordion component(`AccordionComponent`).
+ * ```tsx
+ * <AccordionComponent>
+ *   <AccordionItemsDirective>
+ *    <AccordionItemDirective  header='Header1'></AccordionItemDirective>
+ *    <AccordionItemDirective  header='Header2' content='Content2'></AccordionItemDirective>
+ *   <AccordionItemsDirective>
+ * </AccordionComponent>
+ * ```
+ */
+
+var AccordionItemDirective =
+/** @class */
+function (_super) {
+  __extends(AccordionItemDirective, _super);
+
+  function AccordionItemDirective() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  AccordionItemDirective.moduleName = 'accordionItem';
+  return AccordionItemDirective;
+}(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_0__["ComplexBase"]);
+
+
+
+var AccordionItemsDirective =
+/** @class */
+function (_super) {
+  __extends(AccordionItemsDirective, _super);
+
+  function AccordionItemsDirective() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  AccordionItemsDirective.propertyName = 'items';
+  AccordionItemsDirective.moduleName = 'accordionItems';
+  return AccordionItemsDirective;
+}(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_0__["ComplexBase"]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/appbar/appbar.component.js":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/appbar/appbar.component.js ***!
+  \***************************************************************************************/
+/*! exports provided: AppBarComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppBarComponent", function() { return AppBarComponent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @syncfusion/ej2-navigations */ "./node_modules/@syncfusion/ej2-navigations/index.js");
+/* harmony import */ var _syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @syncfusion/ej2-react-base */ "./node_modules/@syncfusion/ej2-react-base/index.js");
+var __extends = undefined && undefined.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+
+
+
+/**
+ * `AppBarComponent` represents the Essential JS 2 React AppBar Component.
+ * ```ts
+ * <AppBarComponent></AppBarComponent>
+ * ```
+ */
+
+var AppBarComponent =
+/** @class */
+function (_super) {
+  __extends(AppBarComponent, _super);
+
+  function AppBarComponent(props) {
+    var _this = _super.call(this, props) || this;
+
+    _this.initRenderCalled = false;
+    _this.checkInjectedModules = true;
+    _this.statelessTemplateProps = null;
+    _this.templateProps = null;
+    _this.immediateRender = true;
+    _this.portals = [];
+    return _this;
+  }
+
+  AppBarComponent.prototype.render = function () {
+    if ((this.element && !this.initRenderCalled || this.refreshing) && !this.isReactForeceUpdate) {
+      _super.prototype.render.call(this);
+
+      this.initRenderCalled = true;
+    } else {
+      return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]('header', this.getDefaultAttributes(), [].concat(this.props.children, this.portals));
+    }
+  };
+
+  return AppBarComponent;
+}(_syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__["AppBar"]);
+
+
+Object(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["applyMixins"])(AppBarComponent, [_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["ComponentBase"], react__WEBPACK_IMPORTED_MODULE_0__["Component"]]);
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/appbar/index.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/appbar/index.js ***!
+  \****************************************************************************/
+/*! exports provided: AppBarComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _appbar_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./appbar.component */ "./node_modules/@syncfusion/ej2-react-navigations/src/appbar/appbar.component.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AppBarComponent", function() { return _appbar_component__WEBPACK_IMPORTED_MODULE_0__["AppBarComponent"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/breadcrumb/breadcrumb.component.js":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/breadcrumb/breadcrumb.component.js ***!
+  \***********************************************************************************************/
+/*! exports provided: BreadcrumbComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbComponent", function() { return BreadcrumbComponent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @syncfusion/ej2-navigations */ "./node_modules/@syncfusion/ej2-navigations/index.js");
+/* harmony import */ var _syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @syncfusion/ej2-react-base */ "./node_modules/@syncfusion/ej2-react-base/index.js");
+var __extends = undefined && undefined.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+
+
+
+/**
+ * `BreadcrumbComponent` represents the react Breadcrumb Component.
+ * ```ts
+ * <BreadcrumbComponent items={breadcrumbItems} />
+ * ```
+ */
+
+var BreadcrumbComponent =
+/** @class */
+function (_super) {
+  __extends(BreadcrumbComponent, _super);
+
+  function BreadcrumbComponent(props) {
+    var _this = _super.call(this, props) || this;
+
+    _this.initRenderCalled = false;
+    _this.checkInjectedModules = false;
+    _this.directivekeys = {
+      'breadcrumbItems': 'breadcrumbItem'
+    };
+    _this.statelessTemplateProps = ["itemTemplate"];
+    _this.templateProps = null;
+    _this.immediateRender = false;
+    _this.portals = [];
+    return _this;
+  }
+
+  BreadcrumbComponent.prototype.render = function () {
+    if ((this.element && !this.initRenderCalled || this.refreshing) && !this.isReactForeceUpdate) {
+      _super.prototype.render.call(this);
+
+      this.initRenderCalled = true;
+    } else {
+      return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]('nav', this.getDefaultAttributes(), [].concat(this.props.children, this.portals));
+    }
+  };
+
+  return BreadcrumbComponent;
+}(_syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__["Breadcrumb"]);
+
+
+Object(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["applyMixins"])(BreadcrumbComponent, [_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["ComponentBase"], react__WEBPACK_IMPORTED_MODULE_0__["Component"]]);
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/breadcrumb/index.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/breadcrumb/index.js ***!
+  \********************************************************************************/
+/*! exports provided: BreadcrumbItemDirective, BreadcrumbItemsDirective, BreadcrumbComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _items_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./items-directive */ "./node_modules/@syncfusion/ej2-react-navigations/src/breadcrumb/items-directive.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbItemDirective", function() { return _items_directive__WEBPACK_IMPORTED_MODULE_0__["BreadcrumbItemDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbItemsDirective", function() { return _items_directive__WEBPACK_IMPORTED_MODULE_0__["BreadcrumbItemsDirective"]; });
+
+/* harmony import */ var _breadcrumb_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./breadcrumb.component */ "./node_modules/@syncfusion/ej2-react-navigations/src/breadcrumb/breadcrumb.component.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbComponent", function() { return _breadcrumb_component__WEBPACK_IMPORTED_MODULE_1__["BreadcrumbComponent"]; });
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/breadcrumb/items-directive.js":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/breadcrumb/items-directive.js ***!
+  \******************************************************************************************/
+/*! exports provided: BreadcrumbItemDirective, BreadcrumbItemsDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbItemDirective", function() { return BreadcrumbItemDirective; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbItemsDirective", function() { return BreadcrumbItemsDirective; });
+/* harmony import */ var _syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @syncfusion/ej2-react-base */ "./node_modules/@syncfusion/ej2-react-base/index.js");
+var __extends = undefined && undefined.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+
+/**
+ * `BreadcrumbItemDirective` represent a item of the React Breadcrumb.
+ * It must be contained in a Breadcrumb component(`BreadcrumbComponent`).
+ * ```tsx
+ * <BreadcrumbComponent>
+ *   <BreadcrumbItemsDirective>
+ *    <BreadcrumbItemDirective text='Home' url='/'></BreadcrumbItemDirective>
+ *    <BreadcrumbItemDirective text='Index' url='./index'></BreadcrumbItemDirective>
+ *   </BreadcrumbItemsDirective>
+ * </BreadcrumbComponent>
+ * ```
+ */
+
+var BreadcrumbItemDirective =
+/** @class */
+function (_super) {
+  __extends(BreadcrumbItemDirective, _super);
+
+  function BreadcrumbItemDirective() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  BreadcrumbItemDirective.moduleName = 'breadcrumbItem';
+  return BreadcrumbItemDirective;
+}(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_0__["ComplexBase"]);
+
+
+
+var BreadcrumbItemsDirective =
+/** @class */
+function (_super) {
+  __extends(BreadcrumbItemsDirective, _super);
+
+  function BreadcrumbItemsDirective() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  BreadcrumbItemsDirective.propertyName = 'items';
+  BreadcrumbItemsDirective.moduleName = 'breadcrumbItems';
+  return BreadcrumbItemsDirective;
+}(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_0__["ComplexBase"]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/carousel/carousel.component.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/carousel/carousel.component.js ***!
+  \*******************************************************************************************/
+/*! exports provided: CarouselComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CarouselComponent", function() { return CarouselComponent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @syncfusion/ej2-navigations */ "./node_modules/@syncfusion/ej2-navigations/index.js");
+/* harmony import */ var _syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @syncfusion/ej2-react-base */ "./node_modules/@syncfusion/ej2-react-base/index.js");
+var __extends = undefined && undefined.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+
+
+
+/**
+ * `CarouselComponent` represents the react Carousel Component.
+ * ```ts
+ * <CarouselComponent items={carouselItems} />
+ * ```
+ */
+
+var CarouselComponent =
+/** @class */
+function (_super) {
+  __extends(CarouselComponent, _super);
+
+  function CarouselComponent(props) {
+    var _this = _super.call(this, props) || this;
+
+    _this.initRenderCalled = false;
+    _this.checkInjectedModules = false;
+    _this.directivekeys = {
+      'carouselItems': 'carouselItem'
+    };
+    _this.statelessTemplateProps = ["itemTemplate"];
+    _this.templateProps = null;
+    _this.immediateRender = false;
+    _this.portals = [];
+    return _this;
+  }
+
+  CarouselComponent.prototype.render = function () {
+    if ((this.element && !this.initRenderCalled || this.refreshing) && !this.isReactForeceUpdate) {
+      _super.prototype.render.call(this);
+
+      this.initRenderCalled = true;
+    } else {
+      return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]('div', this.getDefaultAttributes(), [].concat(this.props.children, this.portals));
+    }
+  };
+
+  return CarouselComponent;
+}(_syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__["Carousel"]);
+
+
+Object(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["applyMixins"])(CarouselComponent, [_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["ComponentBase"], react__WEBPACK_IMPORTED_MODULE_0__["Component"]]);
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/carousel/index.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/carousel/index.js ***!
+  \******************************************************************************/
+/*! exports provided: CarouselItemDirective, CarouselItemsDirective, CarouselComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _items_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./items-directive */ "./node_modules/@syncfusion/ej2-react-navigations/src/carousel/items-directive.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CarouselItemDirective", function() { return _items_directive__WEBPACK_IMPORTED_MODULE_0__["CarouselItemDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CarouselItemsDirective", function() { return _items_directive__WEBPACK_IMPORTED_MODULE_0__["CarouselItemsDirective"]; });
+
+/* harmony import */ var _carousel_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./carousel.component */ "./node_modules/@syncfusion/ej2-react-navigations/src/carousel/carousel.component.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CarouselComponent", function() { return _carousel_component__WEBPACK_IMPORTED_MODULE_1__["CarouselComponent"]; });
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/carousel/items-directive.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/carousel/items-directive.js ***!
+  \****************************************************************************************/
+/*! exports provided: CarouselItemDirective, CarouselItemsDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CarouselItemDirective", function() { return CarouselItemDirective; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CarouselItemsDirective", function() { return CarouselItemsDirective; });
+/* harmony import */ var _syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @syncfusion/ej2-react-base */ "./node_modules/@syncfusion/ej2-react-base/index.js");
+var __extends = undefined && undefined.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+
+/**
+ * `CarouselItemDirective` represent a item of the React Carousel.
+ * It must be contained in a Carousel component(`CarouselComponent`).
+ * ```tsx
+ * <CarouselComponent>
+ *   <CarouselItemsDirective>
+ *    <CarouselItemDirective template='#item1'></CarouselItemDirective>
+ *    <CarouselItemDirective template='#item2'></CarouselItemDirective>
+ *   </CarouselItemsDirective>
+ * </CarouselComponent>
+ * ```
+ */
+
+var CarouselItemDirective =
+/** @class */
+function (_super) {
+  __extends(CarouselItemDirective, _super);
+
+  function CarouselItemDirective() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  CarouselItemDirective.moduleName = 'carouselItem';
+  return CarouselItemDirective;
+}(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_0__["ComplexBase"]);
+
+
+
+var CarouselItemsDirective =
+/** @class */
+function (_super) {
+  __extends(CarouselItemsDirective, _super);
+
+  function CarouselItemsDirective() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  CarouselItemsDirective.propertyName = 'items';
+  CarouselItemsDirective.moduleName = 'carouselItems';
+  return CarouselItemsDirective;
+}(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_0__["ComplexBase"]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/context-menu/contextmenu.component.js":
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/context-menu/contextmenu.component.js ***!
+  \**************************************************************************************************/
+/*! exports provided: ContextMenuComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContextMenuComponent", function() { return ContextMenuComponent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @syncfusion/ej2-navigations */ "./node_modules/@syncfusion/ej2-navigations/index.js");
+/* harmony import */ var _syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @syncfusion/ej2-react-base */ "./node_modules/@syncfusion/ej2-react-base/index.js");
+var __extends = undefined && undefined.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+
+
+
+/**
+ * `ContextMenuComponent` represents the react ContextMenu Component.
+ * ```ts
+ * <div id='target'>Right click / Touch hold to open the ContextMenu</div>
+ * <ContextMenuComponent target='#target' items={menuItems} />
+ * ```
+ */
+
+var ContextMenuComponent =
+/** @class */
+function (_super) {
+  __extends(ContextMenuComponent, _super);
+
+  function ContextMenuComponent(props) {
+    var _this = _super.call(this, props) || this;
+
+    _this.initRenderCalled = false;
+    _this.checkInjectedModules = false;
+    _this.statelessTemplateProps = null;
+    _this.templateProps = null;
+    _this.immediateRender = true;
+    _this.portals = [];
+    return _this;
+  }
+
+  ContextMenuComponent.prototype.render = function () {
+    if ((this.element && !this.initRenderCalled || this.refreshing) && !this.isReactForeceUpdate) {
+      _super.prototype.render.call(this);
+
+      this.initRenderCalled = true;
+    } else {
+      return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]('ul', this.getDefaultAttributes(), [].concat(this.props.children, this.portals));
+    }
+  };
+
+  return ContextMenuComponent;
+}(_syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__["ContextMenu"]);
+
+
+Object(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["applyMixins"])(ContextMenuComponent, [_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["ComponentBase"], react__WEBPACK_IMPORTED_MODULE_0__["Component"]]);
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/context-menu/index.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/context-menu/index.js ***!
+  \**********************************************************************************/
+/*! exports provided: ContextMenuComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _contextmenu_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./contextmenu.component */ "./node_modules/@syncfusion/ej2-react-navigations/src/context-menu/contextmenu.component.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContextMenuComponent", function() { return _contextmenu_component__WEBPACK_IMPORTED_MODULE_0__["ContextMenuComponent"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/index.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/index.js ***!
+  \*********************************************************************/
+/*! exports provided: AccordionItemDirective, AccordionItemsDirective, AccordionComponent, ItemDirective, ItemsDirective, ToolbarComponent, ContextMenuComponent, BreadcrumbItemDirective, BreadcrumbItemsDirective, BreadcrumbComponent, CarouselItemDirective, CarouselItemsDirective, CarouselComponent, TabItemDirective, TabItemsDirective, TabComponent, TreeViewComponent, SidebarComponent, MenuItemDirective, MenuItemsDirective, MenuComponent, AppBarComponent, Inject, HScroll, VScroll, addScrolling, destroyScroll, MenuAnimationSettings, MenuItem, FieldSettings, Item, Toolbar, AccordionActionSettings, AccordionAnimationSettings, AccordionItem, Accordion, ContextMenu, Menu, TabActionSettings, TabAnimationSettings, Header, TabItem, Tab, FieldsSettings, ActionSettings, NodeAnimationSettings, TreeView, Sidebar, BreadcrumbOverflowMode, BreadcrumbItem, Breadcrumb, CarouselSwipeMode, CarouselItem, Carousel, AppBar */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _accordion__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./accordion */ "./node_modules/@syncfusion/ej2-react-navigations/src/accordion/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccordionItemDirective", function() { return _accordion__WEBPACK_IMPORTED_MODULE_0__["AccordionItemDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccordionItemsDirective", function() { return _accordion__WEBPACK_IMPORTED_MODULE_0__["AccordionItemsDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccordionComponent", function() { return _accordion__WEBPACK_IMPORTED_MODULE_0__["AccordionComponent"]; });
+
+/* harmony import */ var _toolbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./toolbar */ "./node_modules/@syncfusion/ej2-react-navigations/src/toolbar/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ItemDirective", function() { return _toolbar__WEBPACK_IMPORTED_MODULE_1__["ItemDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ItemsDirective", function() { return _toolbar__WEBPACK_IMPORTED_MODULE_1__["ItemsDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ToolbarComponent", function() { return _toolbar__WEBPACK_IMPORTED_MODULE_1__["ToolbarComponent"]; });
+
+/* harmony import */ var _context_menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./context-menu */ "./node_modules/@syncfusion/ej2-react-navigations/src/context-menu/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContextMenuComponent", function() { return _context_menu__WEBPACK_IMPORTED_MODULE_2__["ContextMenuComponent"]; });
+
+/* harmony import */ var _breadcrumb__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./breadcrumb */ "./node_modules/@syncfusion/ej2-react-navigations/src/breadcrumb/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbItemDirective", function() { return _breadcrumb__WEBPACK_IMPORTED_MODULE_3__["BreadcrumbItemDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbItemsDirective", function() { return _breadcrumb__WEBPACK_IMPORTED_MODULE_3__["BreadcrumbItemsDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbComponent", function() { return _breadcrumb__WEBPACK_IMPORTED_MODULE_3__["BreadcrumbComponent"]; });
+
+/* harmony import */ var _carousel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./carousel */ "./node_modules/@syncfusion/ej2-react-navigations/src/carousel/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CarouselItemDirective", function() { return _carousel__WEBPACK_IMPORTED_MODULE_4__["CarouselItemDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CarouselItemsDirective", function() { return _carousel__WEBPACK_IMPORTED_MODULE_4__["CarouselItemsDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CarouselComponent", function() { return _carousel__WEBPACK_IMPORTED_MODULE_4__["CarouselComponent"]; });
+
+/* harmony import */ var _tab__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tab */ "./node_modules/@syncfusion/ej2-react-navigations/src/tab/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabItemDirective", function() { return _tab__WEBPACK_IMPORTED_MODULE_5__["TabItemDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabItemsDirective", function() { return _tab__WEBPACK_IMPORTED_MODULE_5__["TabItemsDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabComponent", function() { return _tab__WEBPACK_IMPORTED_MODULE_5__["TabComponent"]; });
+
+/* harmony import */ var _treeview__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./treeview */ "./node_modules/@syncfusion/ej2-react-navigations/src/treeview/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TreeViewComponent", function() { return _treeview__WEBPACK_IMPORTED_MODULE_6__["TreeViewComponent"]; });
+
+/* harmony import */ var _sidebar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./sidebar */ "./node_modules/@syncfusion/ej2-react-navigations/src/sidebar/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SidebarComponent", function() { return _sidebar__WEBPACK_IMPORTED_MODULE_7__["SidebarComponent"]; });
+
+/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./menu */ "./node_modules/@syncfusion/ej2-react-navigations/src/menu/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MenuItemDirective", function() { return _menu__WEBPACK_IMPORTED_MODULE_8__["MenuItemDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MenuItemsDirective", function() { return _menu__WEBPACK_IMPORTED_MODULE_8__["MenuItemsDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MenuComponent", function() { return _menu__WEBPACK_IMPORTED_MODULE_8__["MenuComponent"]; });
+
+/* harmony import */ var _appbar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./appbar */ "./node_modules/@syncfusion/ej2-react-navigations/src/appbar/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AppBarComponent", function() { return _appbar__WEBPACK_IMPORTED_MODULE_9__["AppBarComponent"]; });
+
+/* harmony import */ var _syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @syncfusion/ej2-react-base */ "./node_modules/@syncfusion/ej2-react-base/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Inject", function() { return _syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_10__["Inject"]; });
+
+/* harmony import */ var _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @syncfusion/ej2-navigations */ "./node_modules/@syncfusion/ej2-navigations/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HScroll", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["HScroll"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VScroll", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["VScroll"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addScrolling", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["addScrolling"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "destroyScroll", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["destroyScroll"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MenuAnimationSettings", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["MenuAnimationSettings"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MenuItem", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["MenuItem"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FieldSettings", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["FieldSettings"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Item", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["Item"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Toolbar", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["Toolbar"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccordionActionSettings", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["AccordionActionSettings"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccordionAnimationSettings", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["AccordionAnimationSettings"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccordionItem", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["AccordionItem"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Accordion", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["Accordion"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContextMenu", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["ContextMenu"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Menu", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["Menu"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabActionSettings", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["TabActionSettings"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabAnimationSettings", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["TabAnimationSettings"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["Header"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabItem", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["TabItem"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Tab", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["Tab"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FieldsSettings", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["FieldsSettings"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ActionSettings", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["ActionSettings"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NodeAnimationSettings", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["NodeAnimationSettings"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TreeView", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["TreeView"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Sidebar", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["Sidebar"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbOverflowMode", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["BreadcrumbOverflowMode"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbItem", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["BreadcrumbItem"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Breadcrumb", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["Breadcrumb"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CarouselSwipeMode", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["CarouselSwipeMode"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CarouselItem", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["CarouselItem"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Carousel", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["Carousel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AppBar", function() { return _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_11__["AppBar"]; });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/menu/index.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/menu/index.js ***!
+  \**************************************************************************/
+/*! exports provided: MenuItemDirective, MenuItemsDirective, MenuComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _items_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./items-directive */ "./node_modules/@syncfusion/ej2-react-navigations/src/menu/items-directive.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MenuItemDirective", function() { return _items_directive__WEBPACK_IMPORTED_MODULE_0__["MenuItemDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MenuItemsDirective", function() { return _items_directive__WEBPACK_IMPORTED_MODULE_0__["MenuItemsDirective"]; });
+
+/* harmony import */ var _menu_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu.component */ "./node_modules/@syncfusion/ej2-react-navigations/src/menu/menu.component.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MenuComponent", function() { return _menu_component__WEBPACK_IMPORTED_MODULE_1__["MenuComponent"]; });
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/menu/items-directive.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/menu/items-directive.js ***!
+  \************************************************************************************/
+/*! exports provided: MenuItemDirective, MenuItemsDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuItemDirective", function() { return MenuItemDirective; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuItemsDirective", function() { return MenuItemsDirective; });
+/* harmony import */ var _syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @syncfusion/ej2-react-base */ "./node_modules/@syncfusion/ej2-react-base/index.js");
+var __extends = undefined && undefined.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+
+
+var MenuItemDirective =
+/** @class */
+function (_super) {
+  __extends(MenuItemDirective, _super);
+
+  function MenuItemDirective() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  MenuItemDirective.moduleName = 'menuItem';
+  return MenuItemDirective;
+}(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_0__["ComplexBase"]);
+
+
+
+var MenuItemsDirective =
+/** @class */
+function (_super) {
+  __extends(MenuItemsDirective, _super);
+
+  function MenuItemsDirective() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  MenuItemsDirective.propertyName = 'items';
+  MenuItemsDirective.moduleName = 'menuItems';
+  return MenuItemsDirective;
+}(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_0__["ComplexBase"]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/menu/menu.component.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/menu/menu.component.js ***!
+  \***********************************************************************************/
+/*! exports provided: MenuComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuComponent", function() { return MenuComponent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @syncfusion/ej2-navigations */ "./node_modules/@syncfusion/ej2-navigations/index.js");
+/* harmony import */ var _syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @syncfusion/ej2-react-base */ "./node_modules/@syncfusion/ej2-react-base/index.js");
+var __extends = undefined && undefined.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+
+
+
+/**
+ * `MenuComponent` represents the react Menu Component.
+ * ```ts
+ * <MenuComponent items={menuItems} />
+ * ```
+ */
+
+var MenuComponent =
+/** @class */
+function (_super) {
+  __extends(MenuComponent, _super);
+
+  function MenuComponent(props) {
+    var _this = _super.call(this, props) || this;
+
+    _this.initRenderCalled = false;
+    _this.checkInjectedModules = false;
+    _this.directivekeys = {
+      'menuItems': 'menuItem'
+    };
+    _this.statelessTemplateProps = null;
+    _this.templateProps = null;
+    _this.immediateRender = false;
+    _this.portals = [];
+    return _this;
+  }
+
+  MenuComponent.prototype.render = function () {
+    if ((this.element && !this.initRenderCalled || this.refreshing) && !this.isReactForeceUpdate) {
+      _super.prototype.render.call(this);
+
+      this.initRenderCalled = true;
+    } else {
+      return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]('ul', this.getDefaultAttributes(), [].concat(this.props.children, this.portals));
+    }
+  };
+
+  return MenuComponent;
+}(_syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__["Menu"]);
+
+
+Object(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["applyMixins"])(MenuComponent, [_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["ComponentBase"], react__WEBPACK_IMPORTED_MODULE_0__["Component"]]);
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/sidebar/index.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/sidebar/index.js ***!
+  \*****************************************************************************/
+/*! exports provided: SidebarComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _sidebar_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sidebar.component */ "./node_modules/@syncfusion/ej2-react-navigations/src/sidebar/sidebar.component.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SidebarComponent", function() { return _sidebar_component__WEBPACK_IMPORTED_MODULE_0__["SidebarComponent"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/sidebar/sidebar.component.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/sidebar/sidebar.component.js ***!
+  \*****************************************************************************************/
+/*! exports provided: SidebarComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SidebarComponent", function() { return SidebarComponent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @syncfusion/ej2-navigations */ "./node_modules/@syncfusion/ej2-navigations/index.js");
+/* harmony import */ var _syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @syncfusion/ej2-react-base */ "./node_modules/@syncfusion/ej2-react-base/index.js");
+var __extends = undefined && undefined.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+
+
+
+/**
+ * `SidebarComponent` represents the Essential JS 2 React Sidebar Component.
+ * ```ts
+ * <SidebarComponent></SidebarComponent>
+ * ```
+ */
+
+var SidebarComponent =
+/** @class */
+function (_super) {
+  __extends(SidebarComponent, _super);
+
+  function SidebarComponent(props) {
+    var _this = _super.call(this, props) || this;
+
+    _this.initRenderCalled = false;
+    _this.checkInjectedModules = true;
+    _this.statelessTemplateProps = null;
+    _this.templateProps = null;
+    _this.immediateRender = true;
+    _this.portals = [];
+    return _this;
+  }
+
+  SidebarComponent.prototype.render = function () {
+    if ((this.element && !this.initRenderCalled || this.refreshing) && !this.isReactForeceUpdate) {
+      _super.prototype.render.call(this);
+
+      this.initRenderCalled = true;
+    } else {
+      return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]('div', this.getDefaultAttributes(), [].concat(this.props.children, this.portals));
+    }
+  };
+
+  return SidebarComponent;
+}(_syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__["Sidebar"]);
+
+
+Object(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["applyMixins"])(SidebarComponent, [_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["ComponentBase"], react__WEBPACK_IMPORTED_MODULE_0__["Component"]]);
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/tab/index.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/tab/index.js ***!
+  \*************************************************************************/
+/*! exports provided: TabItemDirective, TabItemsDirective, TabComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _items_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./items-directive */ "./node_modules/@syncfusion/ej2-react-navigations/src/tab/items-directive.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabItemDirective", function() { return _items_directive__WEBPACK_IMPORTED_MODULE_0__["TabItemDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabItemsDirective", function() { return _items_directive__WEBPACK_IMPORTED_MODULE_0__["TabItemsDirective"]; });
+
+/* harmony import */ var _tab_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tab.component */ "./node_modules/@syncfusion/ej2-react-navigations/src/tab/tab.component.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabComponent", function() { return _tab_component__WEBPACK_IMPORTED_MODULE_1__["TabComponent"]; });
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/tab/items-directive.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/tab/items-directive.js ***!
+  \***********************************************************************************/
+/*! exports provided: TabItemDirective, TabItemsDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabItemDirective", function() { return TabItemDirective; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabItemsDirective", function() { return TabItemsDirective; });
+/* harmony import */ var _syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @syncfusion/ej2-react-base */ "./node_modules/@syncfusion/ej2-react-base/index.js");
+var __extends = undefined && undefined.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+
+/**
+ * `TabItemDirective` represent a item of the React Tab.
+ * It must be contained in a Tab component(`Tab`).
+ * ```tsx
+ * <TabComponent>
+ *  <TabItemsDirective>
+ *   <TabItemDirective header= { 'Header 1' } content= { 'Content 1' } />
+ *   <TabItemDirective header= { 'Header 2' } content= { 'Content 2' } />
+ *  <TabItemsDirective>
+ * </TabComponent>
+ * ```
+ */
+
+var TabItemDirective =
+/** @class */
+function (_super) {
+  __extends(TabItemDirective, _super);
+
+  function TabItemDirective() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  TabItemDirective.moduleName = 'tabItem';
+  TabItemDirective.complexTemplate = {
+    'header.text': 'header.text'
+  };
+  return TabItemDirective;
+}(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_0__["ComplexBase"]);
+
+
+
+var TabItemsDirective =
+/** @class */
+function (_super) {
+  __extends(TabItemsDirective, _super);
+
+  function TabItemsDirective() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  TabItemsDirective.propertyName = 'items';
+  TabItemsDirective.moduleName = 'tabItems';
+  return TabItemsDirective;
+}(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_0__["ComplexBase"]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/tab/tab.component.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/tab/tab.component.js ***!
+  \*********************************************************************************/
+/*! exports provided: TabComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabComponent", function() { return TabComponent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @syncfusion/ej2-navigations */ "./node_modules/@syncfusion/ej2-navigations/index.js");
+/* harmony import */ var _syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @syncfusion/ej2-react-base */ "./node_modules/@syncfusion/ej2-react-base/index.js");
+var __extends = undefined && undefined.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+
+
+
+/**
+ * Represents the React Tab Component.
+ * ```html
+ * <TabComponent></TabComponent>
+ * ```
+ */
+
+var TabComponent =
+/** @class */
+function (_super) {
+  __extends(TabComponent, _super);
+
+  function TabComponent(props) {
+    var _this = _super.call(this, props) || this;
+
+    _this.initRenderCalled = false;
+    _this.checkInjectedModules = false;
+    _this.directivekeys = {
+      'tabItems': 'tabItem'
+    };
+    _this.statelessTemplateProps = null;
+    _this.templateProps = null;
+    _this.immediateRender = false;
+    _this.portals = [];
+    return _this;
+  }
+
+  TabComponent.prototype.render = function () {
+    if ((this.element && !this.initRenderCalled || this.refreshing) && !this.isReactForeceUpdate) {
+      _super.prototype.render.call(this);
+
+      this.initRenderCalled = true;
+    } else {
+      return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]('div', this.getDefaultAttributes(), [].concat(this.props.children, this.portals));
+    }
+  };
+
+  return TabComponent;
+}(_syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__["Tab"]);
+
+
+Object(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["applyMixins"])(TabComponent, [_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["ComponentBase"], react__WEBPACK_IMPORTED_MODULE_0__["Component"]]);
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/toolbar/index.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/toolbar/index.js ***!
+  \*****************************************************************************/
+/*! exports provided: ItemDirective, ItemsDirective, ToolbarComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _items_directive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./items-directive */ "./node_modules/@syncfusion/ej2-react-navigations/src/toolbar/items-directive.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ItemDirective", function() { return _items_directive__WEBPACK_IMPORTED_MODULE_0__["ItemDirective"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ItemsDirective", function() { return _items_directive__WEBPACK_IMPORTED_MODULE_0__["ItemsDirective"]; });
+
+/* harmony import */ var _toolbar_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./toolbar.component */ "./node_modules/@syncfusion/ej2-react-navigations/src/toolbar/toolbar.component.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ToolbarComponent", function() { return _toolbar_component__WEBPACK_IMPORTED_MODULE_1__["ToolbarComponent"]; });
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/toolbar/items-directive.js":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/toolbar/items-directive.js ***!
+  \***************************************************************************************/
+/*! exports provided: ItemDirective, ItemsDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ItemDirective", function() { return ItemDirective; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ItemsDirective", function() { return ItemsDirective; });
+/* harmony import */ var _syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @syncfusion/ej2-react-base */ "./node_modules/@syncfusion/ej2-react-base/index.js");
+var __extends = undefined && undefined.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+
+/**
+ * `ItemDirective` directive represent a item of the React Toolbar.
+ * It must be contained in a Toolbar component(`ToolbarComponent`).
+ * ```tsx
+ * <ToolbarComponent>
+ *   <ItemsDirective>
+ *    <ItemDirective text='Cut'></ItemDirective>
+ *    <ItemDirective text='Copy'></ItemDirective>
+ *   <ItemsDirective>
+ * </ToolbarComponent>
+ * ```
+ */
+
+var ItemDirective =
+/** @class */
+function (_super) {
+  __extends(ItemDirective, _super);
+
+  function ItemDirective() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  ItemDirective.moduleName = 'item';
+  return ItemDirective;
+}(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_0__["ComplexBase"]);
+
+
+
+var ItemsDirective =
+/** @class */
+function (_super) {
+  __extends(ItemsDirective, _super);
+
+  function ItemsDirective() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  ItemsDirective.propertyName = 'items';
+  ItemsDirective.moduleName = 'items';
+  return ItemsDirective;
+}(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_0__["ComplexBase"]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/toolbar/toolbar.component.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/toolbar/toolbar.component.js ***!
+  \*****************************************************************************************/
+/*! exports provided: ToolbarComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ToolbarComponent", function() { return ToolbarComponent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @syncfusion/ej2-navigations */ "./node_modules/@syncfusion/ej2-navigations/index.js");
+/* harmony import */ var _syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @syncfusion/ej2-react-base */ "./node_modules/@syncfusion/ej2-react-base/index.js");
+var __extends = undefined && undefined.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+
+
+
+/**
+ * Represents the React Toolbar Component.
+ * ```html
+ * <ToolbarComponent></ToolbarComponent
+ * ```
+ */
+
+var ToolbarComponent =
+/** @class */
+function (_super) {
+  __extends(ToolbarComponent, _super);
+
+  function ToolbarComponent(props) {
+    var _this = _super.call(this, props) || this;
+
+    _this.initRenderCalled = false;
+    _this.checkInjectedModules = false;
+    _this.directivekeys = {
+      'items': 'item'
+    };
+    _this.statelessTemplateProps = null;
+    _this.templateProps = null;
+    _this.immediateRender = false;
+    _this.portals = [];
+    return _this;
+  }
+
+  ToolbarComponent.prototype.render = function () {
+    if ((this.element && !this.initRenderCalled || this.refreshing) && !this.isReactForeceUpdate) {
+      _super.prototype.render.call(this);
+
+      this.initRenderCalled = true;
+    } else {
+      return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]('div', this.getDefaultAttributes(), [].concat(this.props.children, this.portals));
+    }
+  };
+
+  return ToolbarComponent;
+}(_syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__["Toolbar"]);
+
+
+Object(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["applyMixins"])(ToolbarComponent, [_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["ComponentBase"], react__WEBPACK_IMPORTED_MODULE_0__["Component"]]);
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/treeview/index.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/treeview/index.js ***!
+  \******************************************************************************/
+/*! exports provided: TreeViewComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _treeview_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./treeview.component */ "./node_modules/@syncfusion/ej2-react-navigations/src/treeview/treeview.component.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TreeViewComponent", function() { return _treeview_component__WEBPACK_IMPORTED_MODULE_0__["TreeViewComponent"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@syncfusion/ej2-react-navigations/src/treeview/treeview.component.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/@syncfusion/ej2-react-navigations/src/treeview/treeview.component.js ***!
+  \*******************************************************************************************/
+/*! exports provided: TreeViewComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TreeViewComponent", function() { return TreeViewComponent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @syncfusion/ej2-navigations */ "./node_modules/@syncfusion/ej2-navigations/index.js");
+/* harmony import */ var _syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @syncfusion/ej2-react-base */ "./node_modules/@syncfusion/ej2-react-base/index.js");
+var __extends = undefined && undefined.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+
+
+
+/**
+ * `TreeViewComponent` represents the react TreeView Component.
+ * ```ts
+ * <TreeViewComponent allowDragAndDrop={true}></TreeViewComponent>
+ * ```
+ */
+
+var TreeViewComponent =
+/** @class */
+function (_super) {
+  __extends(TreeViewComponent, _super);
+
+  function TreeViewComponent(props) {
+    var _this = _super.call(this, props) || this;
+
+    _this.initRenderCalled = false;
+    _this.checkInjectedModules = true;
+    _this.statelessTemplateProps = null;
+    _this.templateProps = null;
+    _this.immediateRender = false;
+    _this.portals = [];
+    return _this;
+  }
+
+  TreeViewComponent.prototype.render = function () {
+    if ((this.element && !this.initRenderCalled || this.refreshing) && !this.isReactForeceUpdate) {
+      _super.prototype.render.call(this);
+
+      this.initRenderCalled = true;
+    } else {
+      return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]('div', this.getDefaultAttributes(), [].concat(this.props.children, this.portals));
+    }
+  };
+
+  return TreeViewComponent;
+}(_syncfusion_ej2_navigations__WEBPACK_IMPORTED_MODULE_1__["TreeView"]);
+
+
+Object(_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["applyMixins"])(TreeViewComponent, [_syncfusion_ej2_react_base__WEBPACK_IMPORTED_MODULE_2__["ComponentBase"], react__WEBPACK_IMPORTED_MODULE_0__["Component"]]);
+
+/***/ })
+
+}]);
+//# sourceMappingURL=15.chunk.js.map

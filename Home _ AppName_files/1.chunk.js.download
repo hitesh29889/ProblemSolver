@@ -1,0 +1,2946 @@
+(this["webpackJsonpreactjs"] = this["webpackJsonpreactjs"] || []).push([[1],{
+
+/***/ "./node_modules/dom-align/dist-web/index.js":
+/*!**************************************************!*\
+  !*** ./node_modules/dom-align/dist-web/index.js ***!
+  \**************************************************/
+/*! exports provided: default, alignElement, alignPoint */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "alignElement", function() { return alignElement; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "alignPoint", function() { return alignPoint; });
+function _typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function (obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function (obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(source, true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+var vendorPrefix;
+var jsCssMap = {
+  Webkit: '-webkit-',
+  Moz: '-moz-',
+  // IE did it wrong again ...
+  ms: '-ms-',
+  O: '-o-'
+};
+
+function getVendorPrefix() {
+  if (vendorPrefix !== undefined) {
+    return vendorPrefix;
+  }
+
+  vendorPrefix = '';
+  var style = document.createElement('p').style;
+  var testProp = 'Transform';
+
+  for (var key in jsCssMap) {
+    if (key + testProp in style) {
+      vendorPrefix = key;
+    }
+  }
+
+  return vendorPrefix;
+}
+
+function getTransitionName() {
+  return getVendorPrefix() ? "".concat(getVendorPrefix(), "TransitionProperty") : 'transitionProperty';
+}
+
+function getTransformName() {
+  return getVendorPrefix() ? "".concat(getVendorPrefix(), "Transform") : 'transform';
+}
+
+function setTransitionProperty(node, value) {
+  var name = getTransitionName();
+
+  if (name) {
+    node.style[name] = value;
+
+    if (name !== 'transitionProperty') {
+      node.style.transitionProperty = value;
+    }
+  }
+}
+
+function setTransform(node, value) {
+  var name = getTransformName();
+
+  if (name) {
+    node.style[name] = value;
+
+    if (name !== 'transform') {
+      node.style.transform = value;
+    }
+  }
+}
+
+function getTransitionProperty(node) {
+  return node.style.transitionProperty || node.style[getTransitionName()];
+}
+
+function getTransformXY(node) {
+  var style = window.getComputedStyle(node, null);
+  var transform = style.getPropertyValue('transform') || style.getPropertyValue(getTransformName());
+
+  if (transform && transform !== 'none') {
+    var matrix = transform.replace(/[^0-9\-.,]/g, '').split(',');
+    return {
+      x: parseFloat(matrix[12] || matrix[4], 0),
+      y: parseFloat(matrix[13] || matrix[5], 0)
+    };
+  }
+
+  return {
+    x: 0,
+    y: 0
+  };
+}
+
+var matrix2d = /matrix\((.*)\)/;
+var matrix3d = /matrix3d\((.*)\)/;
+
+function setTransformXY(node, xy) {
+  var style = window.getComputedStyle(node, null);
+  var transform = style.getPropertyValue('transform') || style.getPropertyValue(getTransformName());
+
+  if (transform && transform !== 'none') {
+    var arr;
+    var match2d = transform.match(matrix2d);
+
+    if (match2d) {
+      match2d = match2d[1];
+      arr = match2d.split(',').map(function (item) {
+        return parseFloat(item, 10);
+      });
+      arr[4] = xy.x;
+      arr[5] = xy.y;
+      setTransform(node, "matrix(".concat(arr.join(','), ")"));
+    } else {
+      var match3d = transform.match(matrix3d)[1];
+      arr = match3d.split(',').map(function (item) {
+        return parseFloat(item, 10);
+      });
+      arr[12] = xy.x;
+      arr[13] = xy.y;
+      setTransform(node, "matrix3d(".concat(arr.join(','), ")"));
+    }
+  } else {
+    setTransform(node, "translateX(".concat(xy.x, "px) translateY(").concat(xy.y, "px) translateZ(0)"));
+  }
+}
+
+var RE_NUM = /[\-+]?(?:\d*\.|)\d+(?:[eE][\-+]?\d+|)/.source;
+var getComputedStyleX; // https://stackoverflow.com/a/3485654/3040605
+
+function forceRelayout(elem) {
+  var originalStyle = elem.style.display;
+  elem.style.display = 'none';
+  elem.offsetHeight; // eslint-disable-line
+
+  elem.style.display = originalStyle;
+}
+
+function css(el, name, v) {
+  var value = v;
+
+  if (_typeof(name) === 'object') {
+    for (var i in name) {
+      if (name.hasOwnProperty(i)) {
+        css(el, i, name[i]);
+      }
+    }
+
+    return undefined;
+  }
+
+  if (typeof value !== 'undefined') {
+    if (typeof value === 'number') {
+      value = "".concat(value, "px");
+    }
+
+    el.style[name] = value;
+    return undefined;
+  }
+
+  return getComputedStyleX(el, name);
+}
+
+function getClientPosition(elem) {
+  var box;
+  var x;
+  var y;
+  var doc = elem.ownerDocument;
+  var body = doc.body;
+  var docElem = doc && doc.documentElement; // 根据 GBS 最新数据，A-Grade Browsers 都已支持 getBoundingClientRect 方法，不用再考虑传统的实现方式
+
+  box = elem.getBoundingClientRect(); // 注：jQuery 还考虑减去 docElem.clientLeft/clientTop
+  // 但测试发现，这样反而会导致当 html 和 body 有边距/边框样式时，获取的值不正确
+  // 此外，ie6 会忽略 html 的 margin 值，幸运地是没有谁会去设置 html 的 margin
+
+  x = box.left;
+  y = box.top; // In IE, most of the time, 2 extra pixels are added to the top and left
+  // due to the implicit 2-pixel inset border.  In IE6/7 quirks mode and
+  // IE6 standards mode, this border can be overridden by setting the
+  // document element's border to zero -- thus, we cannot rely on the
+  // offset always being 2 pixels.
+  // In quirks mode, the offset can be determined by querying the body's
+  // clientLeft/clientTop, but in standards mode, it is found by querying
+  // the document element's clientLeft/clientTop.  Since we already called
+  // getClientBoundingRect we have already forced a reflow, so it is not
+  // too expensive just to query them all.
+  // ie 下应该减去窗口的边框吧，毕竟默认 absolute 都是相对窗口定位的
+  // 窗口边框标准是设 documentElement ,quirks 时设置 body
+  // 最好禁止在 body 和 html 上边框 ，但 ie < 9 html 默认有 2px ，减去
+  // 但是非 ie 不可能设置窗口边框，body html 也不是窗口 ,ie 可以通过 html,body 设置
+  // 标准 ie 下 docElem.clientTop 就是 border-top
+  // ie7 html 即窗口边框改变不了。永远为 2
+  // 但标准 firefox/chrome/ie9 下 docElem.clientTop 是窗口边框，即使设了 border-top 也为 0
+
+  x -= docElem.clientLeft || body.clientLeft || 0;
+  y -= docElem.clientTop || body.clientTop || 0;
+  return {
+    left: x,
+    top: y
+  };
+}
+
+function getScroll(w, top) {
+  var ret = w["page".concat(top ? 'Y' : 'X', "Offset")];
+  var method = "scroll".concat(top ? 'Top' : 'Left');
+
+  if (typeof ret !== 'number') {
+    var d = w.document; // ie6,7,8 standard mode
+
+    ret = d.documentElement[method];
+
+    if (typeof ret !== 'number') {
+      // quirks mode
+      ret = d.body[method];
+    }
+  }
+
+  return ret;
+}
+
+function getScrollLeft(w) {
+  return getScroll(w);
+}
+
+function getScrollTop(w) {
+  return getScroll(w, true);
+}
+
+function getOffset(el) {
+  var pos = getClientPosition(el);
+  var doc = el.ownerDocument;
+  var w = doc.defaultView || doc.parentWindow;
+  pos.left += getScrollLeft(w);
+  pos.top += getScrollTop(w);
+  return pos;
+}
+/**
+ * A crude way of determining if an object is a window
+ * @member util
+ */
+
+
+function isWindow(obj) {
+  // must use == for ie8
+
+  /* eslint eqeqeq:0 */
+  return obj !== null && obj !== undefined && obj == obj.window;
+}
+
+function getDocument(node) {
+  if (isWindow(node)) {
+    return node.document;
+  }
+
+  if (node.nodeType === 9) {
+    return node;
+  }
+
+  return node.ownerDocument;
+}
+
+function _getComputedStyle(elem, name, cs) {
+  var computedStyle = cs;
+  var val = '';
+  var d = getDocument(elem);
+  computedStyle = computedStyle || d.defaultView.getComputedStyle(elem, null); // https://github.com/kissyteam/kissy/issues/61
+
+  if (computedStyle) {
+    val = computedStyle.getPropertyValue(name) || computedStyle[name];
+  }
+
+  return val;
+}
+
+var _RE_NUM_NO_PX = new RegExp("^(".concat(RE_NUM, ")(?!px)[a-z%]+$"), 'i');
+
+var RE_POS = /^(top|right|bottom|left)$/;
+var CURRENT_STYLE = 'currentStyle';
+var RUNTIME_STYLE = 'runtimeStyle';
+var LEFT = 'left';
+var PX = 'px';
+
+function _getComputedStyleIE(elem, name) {
+  // currentStyle maybe null
+  // http://msdn.microsoft.com/en-us/library/ms535231.aspx
+  var ret = elem[CURRENT_STYLE] && elem[CURRENT_STYLE][name]; // 当 width/height 设置为百分比时，通过 pixelLeft 方式转换的 width/height 值
+  // 一开始就处理了! CUSTOM_STYLE.height,CUSTOM_STYLE.width ,cssHook 解决@2011-08-19
+  // 在 ie 下不对，需要直接用 offset 方式
+  // borderWidth 等值也有问题，但考虑到 borderWidth 设为百分比的概率很小，这里就不考虑了
+  // From the awesome hack by Dean Edwards
+  // http://erik.eae.net/archives/2007/07/27/18.54.15/#comment-102291
+  // If we're not dealing with a regular pixel number
+  // but a number that has a weird ending, we need to convert it to pixels
+  // exclude left right for relativity
+
+  if (_RE_NUM_NO_PX.test(ret) && !RE_POS.test(name)) {
+    // Remember the original values
+    var style = elem.style;
+    var left = style[LEFT];
+    var rsLeft = elem[RUNTIME_STYLE][LEFT]; // prevent flashing of content
+
+    elem[RUNTIME_STYLE][LEFT] = elem[CURRENT_STYLE][LEFT]; // Put in the new values to get a computed value out
+
+    style[LEFT] = name === 'fontSize' ? '1em' : ret || 0;
+    ret = style.pixelLeft + PX; // Revert the changed values
+
+    style[LEFT] = left;
+    elem[RUNTIME_STYLE][LEFT] = rsLeft;
+  }
+
+  return ret === '' ? 'auto' : ret;
+}
+
+if (typeof window !== 'undefined') {
+  getComputedStyleX = window.getComputedStyle ? _getComputedStyle : _getComputedStyleIE;
+}
+
+function getOffsetDirection(dir, option) {
+  if (dir === 'left') {
+    return option.useCssRight ? 'right' : dir;
+  }
+
+  return option.useCssBottom ? 'bottom' : dir;
+}
+
+function oppositeOffsetDirection(dir) {
+  if (dir === 'left') {
+    return 'right';
+  } else if (dir === 'right') {
+    return 'left';
+  } else if (dir === 'top') {
+    return 'bottom';
+  } else if (dir === 'bottom') {
+    return 'top';
+  }
+} // 设置 elem 相对 elem.ownerDocument 的坐标
+
+
+function setLeftTop(elem, offset, option) {
+  // set position first, in-case top/left are set even on static elem
+  if (css(elem, 'position') === 'static') {
+    elem.style.position = 'relative';
+  }
+
+  var presetH = -999;
+  var presetV = -999;
+  var horizontalProperty = getOffsetDirection('left', option);
+  var verticalProperty = getOffsetDirection('top', option);
+  var oppositeHorizontalProperty = oppositeOffsetDirection(horizontalProperty);
+  var oppositeVerticalProperty = oppositeOffsetDirection(verticalProperty);
+
+  if (horizontalProperty !== 'left') {
+    presetH = 999;
+  }
+
+  if (verticalProperty !== 'top') {
+    presetV = 999;
+  }
+
+  var originalTransition = '';
+  var originalOffset = getOffset(elem);
+
+  if ('left' in offset || 'top' in offset) {
+    originalTransition = getTransitionProperty(elem) || '';
+    setTransitionProperty(elem, 'none');
+  }
+
+  if ('left' in offset) {
+    elem.style[oppositeHorizontalProperty] = '';
+    elem.style[horizontalProperty] = "".concat(presetH, "px");
+  }
+
+  if ('top' in offset) {
+    elem.style[oppositeVerticalProperty] = '';
+    elem.style[verticalProperty] = "".concat(presetV, "px");
+  } // force relayout
+
+
+  forceRelayout(elem);
+  var old = getOffset(elem);
+  var originalStyle = {};
+
+  for (var key in offset) {
+    if (offset.hasOwnProperty(key)) {
+      var dir = getOffsetDirection(key, option);
+      var preset = key === 'left' ? presetH : presetV;
+      var off = originalOffset[key] - old[key];
+
+      if (dir === key) {
+        originalStyle[dir] = preset + off;
+      } else {
+        originalStyle[dir] = preset - off;
+      }
+    }
+  }
+
+  css(elem, originalStyle); // force relayout
+
+  forceRelayout(elem);
+
+  if ('left' in offset || 'top' in offset) {
+    setTransitionProperty(elem, originalTransition);
+  }
+
+  var ret = {};
+
+  for (var _key in offset) {
+    if (offset.hasOwnProperty(_key)) {
+      var _dir = getOffsetDirection(_key, option);
+
+      var _off = offset[_key] - originalOffset[_key];
+
+      if (_key === _dir) {
+        ret[_dir] = originalStyle[_dir] + _off;
+      } else {
+        ret[_dir] = originalStyle[_dir] - _off;
+      }
+    }
+  }
+
+  css(elem, ret);
+}
+
+function setTransform$1(elem, offset) {
+  var originalOffset = getOffset(elem);
+  var originalXY = getTransformXY(elem);
+  var resultXY = {
+    x: originalXY.x,
+    y: originalXY.y
+  };
+
+  if ('left' in offset) {
+    resultXY.x = originalXY.x + offset.left - originalOffset.left;
+  }
+
+  if ('top' in offset) {
+    resultXY.y = originalXY.y + offset.top - originalOffset.top;
+  }
+
+  setTransformXY(elem, resultXY);
+}
+
+function setOffset(elem, offset, option) {
+  if (option.ignoreShake) {
+    var oriOffset = getOffset(elem);
+    var oLeft = oriOffset.left.toFixed(0);
+    var oTop = oriOffset.top.toFixed(0);
+    var tLeft = offset.left.toFixed(0);
+    var tTop = offset.top.toFixed(0);
+
+    if (oLeft === tLeft && oTop === tTop) {
+      return;
+    }
+  }
+
+  if (option.useCssRight || option.useCssBottom) {
+    setLeftTop(elem, offset, option);
+  } else if (option.useCssTransform && getTransformName() in document.body.style) {
+    setTransform$1(elem, offset);
+  } else {
+    setLeftTop(elem, offset, option);
+  }
+}
+
+function each(arr, fn) {
+  for (var i = 0; i < arr.length; i++) {
+    fn(arr[i]);
+  }
+}
+
+function isBorderBoxFn(elem) {
+  return getComputedStyleX(elem, 'boxSizing') === 'border-box';
+}
+
+var BOX_MODELS = ['margin', 'border', 'padding'];
+var CONTENT_INDEX = -1;
+var PADDING_INDEX = 2;
+var BORDER_INDEX = 1;
+var MARGIN_INDEX = 0;
+
+function swap(elem, options, callback) {
+  var old = {};
+  var style = elem.style;
+  var name; // Remember the old values, and insert the new ones
+
+  for (name in options) {
+    if (options.hasOwnProperty(name)) {
+      old[name] = style[name];
+      style[name] = options[name];
+    }
+  }
+
+  callback.call(elem); // Revert the old values
+
+  for (name in options) {
+    if (options.hasOwnProperty(name)) {
+      style[name] = old[name];
+    }
+  }
+}
+
+function getPBMWidth(elem, props, which) {
+  var value = 0;
+  var prop;
+  var j;
+  var i;
+
+  for (j = 0; j < props.length; j++) {
+    prop = props[j];
+
+    if (prop) {
+      for (i = 0; i < which.length; i++) {
+        var cssProp = void 0;
+
+        if (prop === 'border') {
+          cssProp = "".concat(prop).concat(which[i], "Width");
+        } else {
+          cssProp = prop + which[i];
+        }
+
+        value += parseFloat(getComputedStyleX(elem, cssProp)) || 0;
+      }
+    }
+  }
+
+  return value;
+}
+
+var domUtils = {
+  getParent: function getParent(element) {
+    var parent = element;
+
+    do {
+      if (parent.nodeType === 11 && parent.host) {
+        parent = parent.host;
+      } else {
+        parent = parent.parentNode;
+      }
+    } while (parent && parent.nodeType !== 1 && parent.nodeType !== 9);
+
+    return parent;
+  }
+};
+each(['Width', 'Height'], function (name) {
+  domUtils["doc".concat(name)] = function (refWin) {
+    var d = refWin.document;
+    return Math.max( // firefox chrome documentElement.scrollHeight< body.scrollHeight
+    // ie standard mode : documentElement.scrollHeight> body.scrollHeight
+    d.documentElement["scroll".concat(name)], // quirks : documentElement.scrollHeight 最大等于可视窗口多一点？
+    d.body["scroll".concat(name)], domUtils["viewport".concat(name)](d));
+  };
+
+  domUtils["viewport".concat(name)] = function (win) {
+    // pc browser includes scrollbar in window.innerWidth
+    var prop = "client".concat(name);
+    var doc = win.document;
+    var body = doc.body;
+    var documentElement = doc.documentElement;
+    var documentElementProp = documentElement[prop]; // 标准模式取 documentElement
+    // backcompat 取 body
+
+    return doc.compatMode === 'CSS1Compat' && documentElementProp || body && body[prop] || documentElementProp;
+  };
+});
+/*
+ 得到元素的大小信息
+ @param elem
+ @param name
+ @param {String} [extra]  'padding' : (css width) + padding
+ 'border' : (css width) + padding + border
+ 'margin' : (css width) + padding + border + margin
+ */
+
+function getWH(elem, name, ex) {
+  var extra = ex;
+
+  if (isWindow(elem)) {
+    return name === 'width' ? domUtils.viewportWidth(elem) : domUtils.viewportHeight(elem);
+  } else if (elem.nodeType === 9) {
+    return name === 'width' ? domUtils.docWidth(elem) : domUtils.docHeight(elem);
+  }
+
+  var which = name === 'width' ? ['Left', 'Right'] : ['Top', 'Bottom'];
+  var borderBoxValue = name === 'width' ? elem.getBoundingClientRect().width : elem.getBoundingClientRect().height;
+  var computedStyle = getComputedStyleX(elem);
+  var isBorderBox = isBorderBoxFn(elem);
+  var cssBoxValue = 0;
+
+  if (borderBoxValue === null || borderBoxValue === undefined || borderBoxValue <= 0) {
+    borderBoxValue = undefined; // Fall back to computed then un computed css if necessary
+
+    cssBoxValue = getComputedStyleX(elem, name);
+
+    if (cssBoxValue === null || cssBoxValue === undefined || Number(cssBoxValue) < 0) {
+      cssBoxValue = elem.style[name] || 0;
+    } // Normalize '', auto, and prepare for extra
+
+
+    cssBoxValue = parseFloat(cssBoxValue) || 0;
+  }
+
+  if (extra === undefined) {
+    extra = isBorderBox ? BORDER_INDEX : CONTENT_INDEX;
+  }
+
+  var borderBoxValueOrIsBorderBox = borderBoxValue !== undefined || isBorderBox;
+  var val = borderBoxValue || cssBoxValue;
+
+  if (extra === CONTENT_INDEX) {
+    if (borderBoxValueOrIsBorderBox) {
+      return val - getPBMWidth(elem, ['border', 'padding'], which);
+    }
+
+    return cssBoxValue;
+  } else if (borderBoxValueOrIsBorderBox) {
+    if (extra === BORDER_INDEX) {
+      return val;
+    }
+
+    return val + (extra === PADDING_INDEX ? -getPBMWidth(elem, ['border'], which) : getPBMWidth(elem, ['margin'], which));
+  }
+
+  return cssBoxValue + getPBMWidth(elem, BOX_MODELS.slice(extra), which);
+}
+
+var cssShow = {
+  position: 'absolute',
+  visibility: 'hidden',
+  display: 'block'
+}; // fix #119 : https://github.com/kissyteam/kissy/issues/119
+
+function getWHIgnoreDisplay() {
+  for (var _len = arguments.length, args = new Array(_len), _key2 = 0; _key2 < _len; _key2++) {
+    args[_key2] = arguments[_key2];
+  }
+
+  var val;
+  var elem = args[0]; // in case elem is window
+  // elem.offsetWidth === undefined
+
+  if (elem.offsetWidth !== 0) {
+    val = getWH.apply(undefined, args);
+  } else {
+    swap(elem, cssShow, function () {
+      val = getWH.apply(undefined, args);
+    });
+  }
+
+  return val;
+}
+
+each(['width', 'height'], function (name) {
+  var first = name.charAt(0).toUpperCase() + name.slice(1);
+
+  domUtils["outer".concat(first)] = function (el, includeMargin) {
+    return el && getWHIgnoreDisplay(el, name, includeMargin ? MARGIN_INDEX : BORDER_INDEX);
+  };
+
+  var which = name === 'width' ? ['Left', 'Right'] : ['Top', 'Bottom'];
+
+  domUtils[name] = function (elem, v) {
+    var val = v;
+
+    if (val !== undefined) {
+      if (elem) {
+        var computedStyle = getComputedStyleX(elem);
+        var isBorderBox = isBorderBoxFn(elem);
+
+        if (isBorderBox) {
+          val += getPBMWidth(elem, ['padding', 'border'], which);
+        }
+
+        return css(elem, name, val);
+      }
+
+      return undefined;
+    }
+
+    return elem && getWHIgnoreDisplay(elem, name, CONTENT_INDEX);
+  };
+});
+
+function mix(to, from) {
+  for (var i in from) {
+    if (from.hasOwnProperty(i)) {
+      to[i] = from[i];
+    }
+  }
+
+  return to;
+}
+
+var utils = {
+  getWindow: function getWindow(node) {
+    if (node && node.document && node.setTimeout) {
+      return node;
+    }
+
+    var doc = node.ownerDocument || node;
+    return doc.defaultView || doc.parentWindow;
+  },
+  getDocument: getDocument,
+  offset: function offset(el, value, option) {
+    if (typeof value !== 'undefined') {
+      setOffset(el, value, option || {});
+    } else {
+      return getOffset(el);
+    }
+  },
+  isWindow: isWindow,
+  each: each,
+  css: css,
+  clone: function clone(obj) {
+    var i;
+    var ret = {};
+
+    for (i in obj) {
+      if (obj.hasOwnProperty(i)) {
+        ret[i] = obj[i];
+      }
+    }
+
+    var overflow = obj.overflow;
+
+    if (overflow) {
+      for (i in obj) {
+        if (obj.hasOwnProperty(i)) {
+          ret.overflow[i] = obj.overflow[i];
+        }
+      }
+    }
+
+    return ret;
+  },
+  mix: mix,
+  getWindowScrollLeft: function getWindowScrollLeft(w) {
+    return getScrollLeft(w);
+  },
+  getWindowScrollTop: function getWindowScrollTop(w) {
+    return getScrollTop(w);
+  },
+  merge: function merge() {
+    var ret = {};
+
+    for (var i = 0; i < arguments.length; i++) {
+      utils.mix(ret, i < 0 || arguments.length <= i ? undefined : arguments[i]);
+    }
+
+    return ret;
+  },
+  viewportWidth: 0,
+  viewportHeight: 0
+};
+mix(utils, domUtils);
+/**
+ * 得到会导致元素显示不全的祖先元素
+ */
+
+var getParent = utils.getParent;
+
+function getOffsetParent(element) {
+  if (utils.isWindow(element) || element.nodeType === 9) {
+    return null;
+  } // ie 这个也不是完全可行
+
+  /*
+   <div style="width: 50px;height: 100px;overflow: hidden">
+   <div style="width: 50px;height: 100px;position: relative;" id="d6">
+   元素 6 高 100px 宽 50px<br/>
+   </div>
+   </div>
+   */
+  // element.offsetParent does the right thing in ie7 and below. Return parent with layout!
+  //  In other browsers it only includes elements with position absolute, relative or
+  // fixed, not elements with overflow set to auto or scroll.
+  //        if (UA.ie && ieMode < 8) {
+  //            return element.offsetParent;
+  //        }
+  // 统一的 offsetParent 方法
+
+
+  var doc = utils.getDocument(element);
+  var body = doc.body;
+  var parent;
+  var positionStyle = utils.css(element, 'position');
+  var skipStatic = positionStyle === 'fixed' || positionStyle === 'absolute';
+
+  if (!skipStatic) {
+    return element.nodeName.toLowerCase() === 'html' ? null : getParent(element);
+  }
+
+  for (parent = getParent(element); parent && parent !== body && parent.nodeType !== 9; parent = getParent(parent)) {
+    positionStyle = utils.css(parent, 'position');
+
+    if (positionStyle !== 'static') {
+      return parent;
+    }
+  }
+
+  return null;
+}
+
+var getParent$1 = utils.getParent;
+
+function isAncestorFixed(element) {
+  if (utils.isWindow(element) || element.nodeType === 9) {
+    return false;
+  }
+
+  var doc = utils.getDocument(element);
+  var body = doc.body;
+  var parent = null;
+
+  for (parent = getParent$1(element); parent && parent !== body; parent = getParent$1(parent)) {
+    var positionStyle = utils.css(parent, 'position');
+
+    if (positionStyle === 'fixed') {
+      return true;
+    }
+  }
+
+  return false;
+}
+/**
+ * 获得元素的显示部分的区域
+ */
+
+
+function getVisibleRectForElement(element, alwaysByViewport) {
+  var visibleRect = {
+    left: 0,
+    right: Infinity,
+    top: 0,
+    bottom: Infinity
+  };
+  var el = getOffsetParent(element);
+  var doc = utils.getDocument(element);
+  var win = doc.defaultView || doc.parentWindow;
+  var body = doc.body;
+  var documentElement = doc.documentElement; // Determine the size of the visible rect by climbing the dom accounting for
+  // all scrollable containers.
+
+  while (el) {
+    // clientWidth is zero for inline block elements in ie.
+    if ((navigator.userAgent.indexOf('MSIE') === -1 || el.clientWidth !== 0) && // body may have overflow set on it, yet we still get the entire
+    // viewport. In some browsers, el.offsetParent may be
+    // document.documentElement, so check for that too.
+    el !== body && el !== documentElement && utils.css(el, 'overflow') !== 'visible') {
+      var pos = utils.offset(el); // add border
+
+      pos.left += el.clientLeft;
+      pos.top += el.clientTop;
+      visibleRect.top = Math.max(visibleRect.top, pos.top);
+      visibleRect.right = Math.min(visibleRect.right, // consider area without scrollBar
+      pos.left + el.clientWidth);
+      visibleRect.bottom = Math.min(visibleRect.bottom, pos.top + el.clientHeight);
+      visibleRect.left = Math.max(visibleRect.left, pos.left);
+    } else if (el === body || el === documentElement) {
+      break;
+    }
+
+    el = getOffsetParent(el);
+  } // Set element position to fixed
+  // make sure absolute element itself don't affect it's visible area
+  // https://github.com/ant-design/ant-design/issues/7601
+
+
+  var originalPosition = null;
+
+  if (!utils.isWindow(element) && element.nodeType !== 9) {
+    originalPosition = element.style.position;
+    var position = utils.css(element, 'position');
+
+    if (position === 'absolute') {
+      element.style.position = 'fixed';
+    }
+  }
+
+  var scrollX = utils.getWindowScrollLeft(win);
+  var scrollY = utils.getWindowScrollTop(win);
+  var viewportWidth = utils.viewportWidth(win);
+  var viewportHeight = utils.viewportHeight(win);
+  var documentWidth = documentElement.scrollWidth;
+  var documentHeight = documentElement.scrollHeight; // scrollXXX on html is sync with body which means overflow: hidden on body gets wrong scrollXXX.
+  // We should cut this ourself.
+
+  var bodyStyle = window.getComputedStyle(body);
+
+  if (bodyStyle.overflowX === 'hidden') {
+    documentWidth = win.innerWidth;
+  }
+
+  if (bodyStyle.overflowY === 'hidden') {
+    documentHeight = win.innerHeight;
+  } // Reset element position after calculate the visible area
+
+
+  if (element.style) {
+    element.style.position = originalPosition;
+  }
+
+  if (alwaysByViewport || isAncestorFixed(element)) {
+    // Clip by viewport's size.
+    visibleRect.left = Math.max(visibleRect.left, scrollX);
+    visibleRect.top = Math.max(visibleRect.top, scrollY);
+    visibleRect.right = Math.min(visibleRect.right, scrollX + viewportWidth);
+    visibleRect.bottom = Math.min(visibleRect.bottom, scrollY + viewportHeight);
+  } else {
+    // Clip by document's size.
+    var maxVisibleWidth = Math.max(documentWidth, scrollX + viewportWidth);
+    visibleRect.right = Math.min(visibleRect.right, maxVisibleWidth);
+    var maxVisibleHeight = Math.max(documentHeight, scrollY + viewportHeight);
+    visibleRect.bottom = Math.min(visibleRect.bottom, maxVisibleHeight);
+  }
+
+  return visibleRect.top >= 0 && visibleRect.left >= 0 && visibleRect.bottom > visibleRect.top && visibleRect.right > visibleRect.left ? visibleRect : null;
+}
+
+function adjustForViewport(elFuturePos, elRegion, visibleRect, overflow) {
+  var pos = utils.clone(elFuturePos);
+  var size = {
+    width: elRegion.width,
+    height: elRegion.height
+  };
+
+  if (overflow.adjustX && pos.left < visibleRect.left) {
+    pos.left = visibleRect.left;
+  } // Left edge inside and right edge outside viewport, try to resize it.
+
+
+  if (overflow.resizeWidth && pos.left >= visibleRect.left && pos.left + size.width > visibleRect.right) {
+    size.width -= pos.left + size.width - visibleRect.right;
+  } // Right edge outside viewport, try to move it.
+
+
+  if (overflow.adjustX && pos.left + size.width > visibleRect.right) {
+    // 保证左边界和可视区域左边界对齐
+    pos.left = Math.max(visibleRect.right - size.width, visibleRect.left);
+  } // Top edge outside viewport, try to move it.
+
+
+  if (overflow.adjustY && pos.top < visibleRect.top) {
+    pos.top = visibleRect.top;
+  } // Top edge inside and bottom edge outside viewport, try to resize it.
+
+
+  if (overflow.resizeHeight && pos.top >= visibleRect.top && pos.top + size.height > visibleRect.bottom) {
+    size.height -= pos.top + size.height - visibleRect.bottom;
+  } // Bottom edge outside viewport, try to move it.
+
+
+  if (overflow.adjustY && pos.top + size.height > visibleRect.bottom) {
+    // 保证上边界和可视区域上边界对齐
+    pos.top = Math.max(visibleRect.bottom - size.height, visibleRect.top);
+  }
+
+  return utils.mix(pos, size);
+}
+
+function getRegion(node) {
+  var offset;
+  var w;
+  var h;
+
+  if (!utils.isWindow(node) && node.nodeType !== 9) {
+    offset = utils.offset(node);
+    w = utils.outerWidth(node);
+    h = utils.outerHeight(node);
+  } else {
+    var win = utils.getWindow(node);
+    offset = {
+      left: utils.getWindowScrollLeft(win),
+      top: utils.getWindowScrollTop(win)
+    };
+    w = utils.viewportWidth(win);
+    h = utils.viewportHeight(win);
+  }
+
+  offset.width = w;
+  offset.height = h;
+  return offset;
+}
+/**
+ * 获取 node 上的 align 对齐点 相对于页面的坐标
+ */
+
+
+function getAlignOffset(region, align) {
+  var V = align.charAt(0);
+  var H = align.charAt(1);
+  var w = region.width;
+  var h = region.height;
+  var x = region.left;
+  var y = region.top;
+
+  if (V === 'c') {
+    y += h / 2;
+  } else if (V === 'b') {
+    y += h;
+  }
+
+  if (H === 'c') {
+    x += w / 2;
+  } else if (H === 'r') {
+    x += w;
+  }
+
+  return {
+    left: x,
+    top: y
+  };
+}
+
+function getElFuturePos(elRegion, refNodeRegion, points, offset, targetOffset) {
+  var p1 = getAlignOffset(refNodeRegion, points[1]);
+  var p2 = getAlignOffset(elRegion, points[0]);
+  var diff = [p2.left - p1.left, p2.top - p1.top];
+  return {
+    left: Math.round(elRegion.left - diff[0] + offset[0] - targetOffset[0]),
+    top: Math.round(elRegion.top - diff[1] + offset[1] - targetOffset[1])
+  };
+}
+/**
+ * align dom node flexibly
+ * @author yiminghe@gmail.com
+ */
+
+
+function isFailX(elFuturePos, elRegion, visibleRect) {
+  return elFuturePos.left < visibleRect.left || elFuturePos.left + elRegion.width > visibleRect.right;
+}
+
+function isFailY(elFuturePos, elRegion, visibleRect) {
+  return elFuturePos.top < visibleRect.top || elFuturePos.top + elRegion.height > visibleRect.bottom;
+}
+
+function isCompleteFailX(elFuturePos, elRegion, visibleRect) {
+  return elFuturePos.left > visibleRect.right || elFuturePos.left + elRegion.width < visibleRect.left;
+}
+
+function isCompleteFailY(elFuturePos, elRegion, visibleRect) {
+  return elFuturePos.top > visibleRect.bottom || elFuturePos.top + elRegion.height < visibleRect.top;
+}
+
+function flip(points, reg, map) {
+  var ret = [];
+  utils.each(points, function (p) {
+    ret.push(p.replace(reg, function (m) {
+      return map[m];
+    }));
+  });
+  return ret;
+}
+
+function flipOffset(offset, index) {
+  offset[index] = -offset[index];
+  return offset;
+}
+
+function convertOffset(str, offsetLen) {
+  var n;
+
+  if (/%$/.test(str)) {
+    n = parseInt(str.substring(0, str.length - 1), 10) / 100 * offsetLen;
+  } else {
+    n = parseInt(str, 10);
+  }
+
+  return n || 0;
+}
+
+function normalizeOffset(offset, el) {
+  offset[0] = convertOffset(offset[0], el.width);
+  offset[1] = convertOffset(offset[1], el.height);
+}
+/**
+ * @param el
+ * @param tgtRegion 参照节点所占的区域: { left, top, width, height }
+ * @param align
+ */
+
+
+function doAlign(el, tgtRegion, align, isTgtRegionVisible) {
+  var points = align.points;
+  var offset = align.offset || [0, 0];
+  var targetOffset = align.targetOffset || [0, 0];
+  var overflow = align.overflow;
+  var source = align.source || el;
+  offset = [].concat(offset);
+  targetOffset = [].concat(targetOffset);
+  overflow = overflow || {};
+  var newOverflowCfg = {};
+  var fail = 0;
+  var alwaysByViewport = !!(overflow && overflow.alwaysByViewport); // 当前节点可以被放置的显示区域
+
+  var visibleRect = getVisibleRectForElement(source, alwaysByViewport); // 当前节点所占的区域, left/top/width/height
+
+  var elRegion = getRegion(source); // 将 offset 转换成数值，支持百分比
+
+  normalizeOffset(offset, elRegion);
+  normalizeOffset(targetOffset, tgtRegion); // 当前节点将要被放置的位置
+
+  var elFuturePos = getElFuturePos(elRegion, tgtRegion, points, offset, targetOffset); // 当前节点将要所处的区域
+
+  var newElRegion = utils.merge(elRegion, elFuturePos); // 如果可视区域不能完全放置当前节点时允许调整
+
+  if (visibleRect && (overflow.adjustX || overflow.adjustY) && isTgtRegionVisible) {
+    if (overflow.adjustX) {
+      // 如果横向不能放下
+      if (isFailX(elFuturePos, elRegion, visibleRect)) {
+        // 对齐位置反下
+        var newPoints = flip(points, /[lr]/gi, {
+          l: 'r',
+          r: 'l'
+        }); // 偏移量也反下
+
+        var newOffset = flipOffset(offset, 0);
+        var newTargetOffset = flipOffset(targetOffset, 0);
+        var newElFuturePos = getElFuturePos(elRegion, tgtRegion, newPoints, newOffset, newTargetOffset);
+
+        if (!isCompleteFailX(newElFuturePos, elRegion, visibleRect)) {
+          fail = 1;
+          points = newPoints;
+          offset = newOffset;
+          targetOffset = newTargetOffset;
+        }
+      }
+    }
+
+    if (overflow.adjustY) {
+      // 如果纵向不能放下
+      if (isFailY(elFuturePos, elRegion, visibleRect)) {
+        // 对齐位置反下
+        var _newPoints = flip(points, /[tb]/gi, {
+          t: 'b',
+          b: 't'
+        }); // 偏移量也反下
+
+
+        var _newOffset = flipOffset(offset, 1);
+
+        var _newTargetOffset = flipOffset(targetOffset, 1);
+
+        var _newElFuturePos = getElFuturePos(elRegion, tgtRegion, _newPoints, _newOffset, _newTargetOffset);
+
+        if (!isCompleteFailY(_newElFuturePos, elRegion, visibleRect)) {
+          fail = 1;
+          points = _newPoints;
+          offset = _newOffset;
+          targetOffset = _newTargetOffset;
+        }
+      }
+    } // 如果失败，重新计算当前节点将要被放置的位置
+
+
+    if (fail) {
+      elFuturePos = getElFuturePos(elRegion, tgtRegion, points, offset, targetOffset);
+      utils.mix(newElRegion, elFuturePos);
+    }
+
+    var isStillFailX = isFailX(elFuturePos, elRegion, visibleRect);
+    var isStillFailY = isFailY(elFuturePos, elRegion, visibleRect); // 检查反下后的位置是否可以放下了，如果仍然放不下：
+    // 1. 复原修改过的定位参数
+
+    if (isStillFailX || isStillFailY) {
+      var _newPoints2 = points; // 重置对应部分的翻转逻辑
+
+      if (isStillFailX) {
+        _newPoints2 = flip(points, /[lr]/gi, {
+          l: 'r',
+          r: 'l'
+        });
+      }
+
+      if (isStillFailY) {
+        _newPoints2 = flip(points, /[tb]/gi, {
+          t: 'b',
+          b: 't'
+        });
+      }
+
+      points = _newPoints2;
+      offset = align.offset || [0, 0];
+      targetOffset = align.targetOffset || [0, 0];
+    } // 2. 只有指定了可以调整当前方向才调整
+
+
+    newOverflowCfg.adjustX = overflow.adjustX && isStillFailX;
+    newOverflowCfg.adjustY = overflow.adjustY && isStillFailY; // 确实要调整，甚至可能会调整高度宽度
+
+    if (newOverflowCfg.adjustX || newOverflowCfg.adjustY) {
+      newElRegion = adjustForViewport(elFuturePos, elRegion, visibleRect, newOverflowCfg);
+    }
+  } // need judge to in case set fixed with in css on height auto element
+
+
+  if (newElRegion.width !== elRegion.width) {
+    utils.css(source, 'width', utils.width(source) + newElRegion.width - elRegion.width);
+  }
+
+  if (newElRegion.height !== elRegion.height) {
+    utils.css(source, 'height', utils.height(source) + newElRegion.height - elRegion.height);
+  } // https://github.com/kissyteam/kissy/issues/190
+  // 相对于屏幕位置没变，而 left/top 变了
+  // 例如 <div 'relative'><el absolute></div>
+
+
+  utils.offset(source, {
+    left: newElRegion.left,
+    top: newElRegion.top
+  }, {
+    useCssRight: align.useCssRight,
+    useCssBottom: align.useCssBottom,
+    useCssTransform: align.useCssTransform,
+    ignoreShake: align.ignoreShake
+  });
+  return {
+    points: points,
+    offset: offset,
+    targetOffset: targetOffset,
+    overflow: newOverflowCfg
+  };
+}
+/**
+ *  2012-04-26 yiminghe@gmail.com
+ *   - 优化智能对齐算法
+ *   - 慎用 resizeXX
+ *
+ *  2011-07-13 yiminghe@gmail.com note:
+ *   - 增加智能对齐，以及大小调整选项
+ **/
+
+
+function isOutOfVisibleRect(target, alwaysByViewport) {
+  var visibleRect = getVisibleRectForElement(target, alwaysByViewport);
+  var targetRegion = getRegion(target);
+  return !visibleRect || targetRegion.left + targetRegion.width <= visibleRect.left || targetRegion.top + targetRegion.height <= visibleRect.top || targetRegion.left >= visibleRect.right || targetRegion.top >= visibleRect.bottom;
+}
+
+function alignElement(el, refNode, align) {
+  var target = align.target || refNode;
+  var refNodeRegion = getRegion(target);
+  var isTargetNotOutOfVisible = !isOutOfVisibleRect(target, align.overflow && align.overflow.alwaysByViewport);
+  return doAlign(el, refNodeRegion, align, isTargetNotOutOfVisible);
+}
+
+alignElement.__getOffsetParent = getOffsetParent;
+alignElement.__getVisibleRectForElement = getVisibleRectForElement;
+/**
+ * `tgtPoint`: { pageX, pageY } or { clientX, clientY }.
+ * If client position provided, will internal convert to page position.
+ */
+
+function alignPoint(el, tgtPoint, align) {
+  var pageX;
+  var pageY;
+  var doc = utils.getDocument(el);
+  var win = doc.defaultView || doc.parentWindow;
+  var scrollX = utils.getWindowScrollLeft(win);
+  var scrollY = utils.getWindowScrollTop(win);
+  var viewportWidth = utils.viewportWidth(win);
+  var viewportHeight = utils.viewportHeight(win);
+
+  if ('pageX' in tgtPoint) {
+    pageX = tgtPoint.pageX;
+  } else {
+    pageX = scrollX + tgtPoint.clientX;
+  }
+
+  if ('pageY' in tgtPoint) {
+    pageY = tgtPoint.pageY;
+  } else {
+    pageY = scrollY + tgtPoint.clientY;
+  }
+
+  var tgtRegion = {
+    left: pageX,
+    top: pageY,
+    width: 0,
+    height: 0
+  };
+  var pointInView = pageX >= 0 && pageX <= scrollX + viewportWidth && pageY >= 0 && pageY <= scrollY + viewportHeight; // Provide default target point
+
+  var points = [align.points[0], 'cc'];
+  return doAlign(el, tgtRegion, _objectSpread2({}, align, {
+    points: points
+  }), pointInView);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (alignElement);
+
+
+/***/ }),
+
+/***/ "./node_modules/rc-align/es/Align.js":
+/*!*******************************************!*\
+  !*** ./node_modules/rc-align/es/Align.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/typeof */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var rc_util_es_ref__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rc-util/es/ref */ "./node_modules/rc-align/node_modules/rc-util/es/ref.js");
+/* harmony import */ var dom_align__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! dom-align */ "./node_modules/dom-align/dist-web/index.js");
+/* harmony import */ var rc_util_es_Dom_addEventListener__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rc-util/es/Dom/addEventListener */ "./node_modules/rc-align/node_modules/rc-util/es/Dom/addEventListener.js");
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./util */ "./node_modules/rc-align/es/util.js");
+/* harmony import */ var _hooks_useBuffer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./hooks/useBuffer */ "./node_modules/rc-align/es/hooks/useBuffer.js");
+
+
+/**
+ * Removed props:
+ *  - childrenProps
+ */
+
+
+
+
+
+
+
+
+function getElement(func) {
+  if (typeof func !== 'function') return null;
+  return func();
+}
+
+function getPoint(point) {
+  if (Object(_babel_runtime_helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_1__["default"])(point) !== 'object' || !point) return null;
+  return point;
+}
+
+var Align = function Align(_ref, ref) {
+  var children = _ref.children,
+      disabled = _ref.disabled,
+      target = _ref.target,
+      align = _ref.align,
+      onAlign = _ref.onAlign,
+      monitorWindowResize = _ref.monitorWindowResize,
+      _ref$monitorBufferTim = _ref.monitorBufferTime,
+      monitorBufferTime = _ref$monitorBufferTim === void 0 ? 0 : _ref$monitorBufferTim;
+  var cacheRef = react__WEBPACK_IMPORTED_MODULE_2___default.a.useRef({});
+  var nodeRef = react__WEBPACK_IMPORTED_MODULE_2___default.a.useRef();
+  var childNode = react__WEBPACK_IMPORTED_MODULE_2___default.a.Children.only(children); // ===================== Align ======================
+  // We save the props here to avoid closure makes props ood
+
+  var forceAlignPropsRef = react__WEBPACK_IMPORTED_MODULE_2___default.a.useRef({});
+  forceAlignPropsRef.current.disabled = disabled;
+  forceAlignPropsRef.current.target = target;
+  forceAlignPropsRef.current.onAlign = onAlign;
+
+  var _useBuffer = Object(_hooks_useBuffer__WEBPACK_IMPORTED_MODULE_7__["default"])(function () {
+    var _forceAlignPropsRef$c = forceAlignPropsRef.current,
+        latestDisabled = _forceAlignPropsRef$c.disabled,
+        latestTarget = _forceAlignPropsRef$c.target;
+
+    if (!latestDisabled && latestTarget) {
+      var source = nodeRef.current;
+      var result;
+      var element = getElement(latestTarget);
+      var point = getPoint(latestTarget);
+      cacheRef.current.element = element;
+      cacheRef.current.point = point; // IE lose focus after element realign
+      // We should record activeElement and restore later
+
+      var _document = document,
+          activeElement = _document.activeElement;
+
+      if (element) {
+        result = Object(dom_align__WEBPACK_IMPORTED_MODULE_4__["alignElement"])(source, element, align);
+      } else if (point) {
+        result = Object(dom_align__WEBPACK_IMPORTED_MODULE_4__["alignPoint"])(source, point, align);
+      }
+
+      Object(_util__WEBPACK_IMPORTED_MODULE_6__["restoreFocus"])(activeElement, source);
+
+      if (onAlign) {
+        onAlign(source, result);
+      }
+
+      return true;
+    }
+
+    return false;
+  }, monitorBufferTime),
+      _useBuffer2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useBuffer, 2),
+      _forceAlign = _useBuffer2[0],
+      cancelForceAlign = _useBuffer2[1]; // ===================== Effect =====================
+  // Listen for target updated
+
+
+  var resizeMonitor = react__WEBPACK_IMPORTED_MODULE_2___default.a.useRef({
+    cancel: function cancel() {}
+  }); // Listen for source updated
+
+  var sourceResizeMonitor = react__WEBPACK_IMPORTED_MODULE_2___default.a.useRef({
+    cancel: function cancel() {}
+  });
+  react__WEBPACK_IMPORTED_MODULE_2___default.a.useEffect(function () {
+    var element = getElement(target);
+    var point = getPoint(target);
+
+    if (nodeRef.current !== sourceResizeMonitor.current.element) {
+      sourceResizeMonitor.current.cancel();
+      sourceResizeMonitor.current.element = nodeRef.current;
+      sourceResizeMonitor.current.cancel = Object(_util__WEBPACK_IMPORTED_MODULE_6__["monitorResize"])(nodeRef.current, _forceAlign);
+    }
+
+    if (cacheRef.current.element !== element || !Object(_util__WEBPACK_IMPORTED_MODULE_6__["isSamePoint"])(cacheRef.current.point, point)) {
+      _forceAlign(); // Add resize observer
+
+
+      if (resizeMonitor.current.element !== element) {
+        resizeMonitor.current.cancel();
+        resizeMonitor.current.element = element;
+        resizeMonitor.current.cancel = Object(_util__WEBPACK_IMPORTED_MODULE_6__["monitorResize"])(element, _forceAlign);
+      }
+    }
+  }); // Listen for disabled change
+
+  react__WEBPACK_IMPORTED_MODULE_2___default.a.useEffect(function () {
+    if (!disabled) {
+      _forceAlign();
+    } else {
+      cancelForceAlign();
+    }
+  }, [disabled]); // Listen for window resize
+
+  var winResizeRef = react__WEBPACK_IMPORTED_MODULE_2___default.a.useRef(null);
+  react__WEBPACK_IMPORTED_MODULE_2___default.a.useEffect(function () {
+    if (monitorWindowResize) {
+      if (!winResizeRef.current) {
+        winResizeRef.current = Object(rc_util_es_Dom_addEventListener__WEBPACK_IMPORTED_MODULE_5__["default"])(window, 'resize', _forceAlign);
+      }
+    } else if (winResizeRef.current) {
+      winResizeRef.current.remove();
+      winResizeRef.current = null;
+    }
+  }, [monitorWindowResize]); // Clear all if unmount
+
+  react__WEBPACK_IMPORTED_MODULE_2___default.a.useEffect(function () {
+    return function () {
+      resizeMonitor.current.cancel();
+      sourceResizeMonitor.current.cancel();
+      if (winResizeRef.current) winResizeRef.current.remove();
+      cancelForceAlign();
+    };
+  }, []); // ====================== Ref =======================
+
+  react__WEBPACK_IMPORTED_MODULE_2___default.a.useImperativeHandle(ref, function () {
+    return {
+      forceAlign: function forceAlign() {
+        return _forceAlign(true);
+      }
+    };
+  }); // ===================== Render =====================
+
+  if (react__WEBPACK_IMPORTED_MODULE_2___default.a.isValidElement(childNode)) {
+    childNode = react__WEBPACK_IMPORTED_MODULE_2___default.a.cloneElement(childNode, {
+      ref: Object(rc_util_es_ref__WEBPACK_IMPORTED_MODULE_3__["composeRef"])(childNode.ref, nodeRef)
+    });
+  }
+
+  return childNode;
+};
+
+var RefAlign = react__WEBPACK_IMPORTED_MODULE_2___default.a.forwardRef(Align);
+RefAlign.displayName = 'Align';
+/* harmony default export */ __webpack_exports__["default"] = (RefAlign);
+
+/***/ }),
+
+/***/ "./node_modules/rc-align/es/hooks/useBuffer.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/rc-align/es/hooks/useBuffer.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ __webpack_exports__["default"] = (function (callback, buffer) {
+  var calledRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef(false);
+  var timeoutRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef(null);
+
+  function cancelTrigger() {
+    window.clearTimeout(timeoutRef.current);
+  }
+
+  function trigger(force) {
+    if (!calledRef.current || force === true) {
+      if (callback() === false) {
+        // Not delay since callback cancelled self
+        return;
+      }
+
+      calledRef.current = true;
+      cancelTrigger();
+      timeoutRef.current = window.setTimeout(function () {
+        calledRef.current = false;
+      }, buffer);
+    } else {
+      cancelTrigger();
+      timeoutRef.current = window.setTimeout(function () {
+        calledRef.current = false;
+        trigger();
+      }, buffer);
+    }
+  }
+
+  return [trigger, function () {
+    calledRef.current = false;
+    cancelTrigger();
+  }];
+});
+
+/***/ }),
+
+/***/ "./node_modules/rc-align/es/index.js":
+/*!*******************************************!*\
+  !*** ./node_modules/rc-align/es/index.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Align__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Align */ "./node_modules/rc-align/es/Align.js");
+// export this package's api
+
+/* harmony default export */ __webpack_exports__["default"] = (_Align__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+/***/ }),
+
+/***/ "./node_modules/rc-align/es/util.js":
+/*!******************************************!*\
+  !*** ./node_modules/rc-align/es/util.js ***!
+  \******************************************/
+/*! exports provided: isSamePoint, restoreFocus, monitorResize */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isSamePoint", function() { return isSamePoint; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "restoreFocus", function() { return restoreFocus; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "monitorResize", function() { return monitorResize; });
+/* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! resize-observer-polyfill */ "./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js");
+/* harmony import */ var rc_util_es_Dom_contains__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rc-util/es/Dom/contains */ "./node_modules/rc-align/node_modules/rc-util/es/Dom/contains.js");
+
+
+
+function isSamePoint(prev, next) {
+  if (prev === next) return true;
+  if (!prev || !next) return false;
+
+  if ('pageX' in next && 'pageY' in next) {
+    return prev.pageX === next.pageX && prev.pageY === next.pageY;
+  }
+
+  if ('clientX' in next && 'clientY' in next) {
+    return prev.clientX === next.clientX && prev.clientY === next.clientY;
+  }
+
+  return false;
+}
+function restoreFocus(activeElement, container) {
+  // Focus back if is in the container
+  if (activeElement !== document.activeElement && Object(rc_util_es_Dom_contains__WEBPACK_IMPORTED_MODULE_2__["default"])(container, activeElement) && typeof activeElement.focus === 'function') {
+    activeElement.focus();
+  }
+}
+function monitorResize(element, callback) {
+  var prevWidth = null;
+  var prevHeight = null;
+
+  function onResize(_ref) {
+    var _ref2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, 1),
+        target = _ref2[0].target;
+
+    if (!document.contains(target)) return;
+
+    var _target$getBoundingCl = target.getBoundingClientRect(),
+        width = _target$getBoundingCl.width,
+        height = _target$getBoundingCl.height;
+
+    var fixedWidth = Math.floor(width);
+    var fixedHeight = Math.floor(height);
+
+    if (prevWidth !== fixedWidth || prevHeight !== fixedHeight) {
+      // https://webkit.org/blog/9997/resizeobserver-in-webkit/
+      Promise.resolve().then(function () {
+        callback({
+          width: fixedWidth,
+          height: fixedHeight
+        });
+      });
+    }
+
+    prevWidth = fixedWidth;
+    prevHeight = fixedHeight;
+  }
+
+  var resizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_1__["default"](onResize);
+
+  if (element) {
+    resizeObserver.observe(element);
+  }
+
+  return function () {
+    resizeObserver.disconnect();
+  };
+}
+
+/***/ }),
+
+/***/ "./node_modules/rc-align/node_modules/rc-util/es/Dom/addEventListener.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/rc-align/node_modules/rc-util/es/Dom/addEventListener.js ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return addEventListenerWrap; });
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_0__);
+
+function addEventListenerWrap(target, eventType, cb, option) {
+  /* eslint camelcase: 2 */
+  var callback = react_dom__WEBPACK_IMPORTED_MODULE_0___default.a.unstable_batchedUpdates ? function run(e) {
+    react_dom__WEBPACK_IMPORTED_MODULE_0___default.a.unstable_batchedUpdates(cb, e);
+  } : cb;
+
+  if (target.addEventListener) {
+    target.addEventListener(eventType, callback, option);
+  }
+
+  return {
+    remove: function remove() {
+      if (target.removeEventListener) {
+        target.removeEventListener(eventType, callback);
+      }
+    }
+  };
+}
+
+/***/ }),
+
+/***/ "./node_modules/rc-align/node_modules/rc-util/es/Dom/contains.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/rc-align/node_modules/rc-util/es/Dom/contains.js ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return contains; });
+function contains(root, n) {
+  var node = n;
+
+  while (node) {
+    if (node === root) {
+      return true;
+    }
+
+    node = node.parentNode;
+  }
+
+  return false;
+}
+
+/***/ }),
+
+/***/ "./node_modules/rc-align/node_modules/rc-util/es/ref.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/rc-align/node_modules/rc-util/es/ref.js ***!
+  \**************************************************************/
+/*! exports provided: fillRef, composeRef, supportRef */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fillRef", function() { return fillRef; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "composeRef", function() { return composeRef; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "supportRef", function() { return supportRef; });
+/* harmony import */ var react_is__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-is */ "./node_modules/react-is/index.js");
+/* harmony import */ var react_is__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_is__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+
+function fillRef(ref, node) {
+  if (typeof ref === 'function') {
+    ref(node);
+  } else if (_typeof(ref) === 'object' && ref && 'current' in ref) {
+    ref.current = node;
+  }
+}
+/**
+ * Merge refs into one ref function to support ref passing.
+ */
+
+function composeRef() {
+  for (var _len = arguments.length, refs = new Array(_len), _key = 0; _key < _len; _key++) {
+    refs[_key] = arguments[_key];
+  }
+
+  return function (node) {
+    refs.forEach(function (ref) {
+      fillRef(ref, node);
+    });
+  };
+}
+function supportRef(nodeOrComponent) {
+  var _type$prototype, _nodeOrComponent$prot;
+
+  var type = Object(react_is__WEBPACK_IMPORTED_MODULE_0__["isMemo"])(nodeOrComponent) ? nodeOrComponent.type.type : nodeOrComponent.type; // Function component node
+
+  if (typeof type === 'function' && !((_type$prototype = type.prototype) === null || _type$prototype === void 0 ? void 0 : _type$prototype.render)) {
+    return false;
+  } // Class component
+
+
+  if (typeof nodeOrComponent === 'function' && !((_nodeOrComponent$prot = nodeOrComponent.prototype) === null || _nodeOrComponent$prot === void 0 ? void 0 : _nodeOrComponent$prot.render)) {
+    return false;
+  }
+
+  return true;
+}
+/* eslint-enable */
+
+/***/ }),
+
+/***/ "./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(global) {/**
+ * A collection of shims that provide minimal functionality of the ES6 collections.
+ *
+ * These implementations are not meant to be used outside of the ResizeObserver
+ * modules as they cover only a limited range of use cases.
+ */
+
+/* eslint-disable require-jsdoc, valid-jsdoc */
+var MapShim = function () {
+  if (typeof Map !== 'undefined') {
+    return Map;
+  }
+  /**
+   * Returns index in provided array that matches the specified key.
+   *
+   * @param {Array<Array>} arr
+   * @param {*} key
+   * @returns {number}
+   */
+
+
+  function getIndex(arr, key) {
+    var result = -1;
+    arr.some(function (entry, index) {
+      if (entry[0] === key) {
+        result = index;
+        return true;
+      }
+
+      return false;
+    });
+    return result;
+  }
+
+  return (
+    /** @class */
+    function () {
+      function class_1() {
+        this.__entries__ = [];
+      }
+
+      Object.defineProperty(class_1.prototype, "size", {
+        /**
+         * @returns {boolean}
+         */
+        get: function () {
+          return this.__entries__.length;
+        },
+        enumerable: true,
+        configurable: true
+      });
+      /**
+       * @param {*} key
+       * @returns {*}
+       */
+
+      class_1.prototype.get = function (key) {
+        var index = getIndex(this.__entries__, key);
+        var entry = this.__entries__[index];
+        return entry && entry[1];
+      };
+      /**
+       * @param {*} key
+       * @param {*} value
+       * @returns {void}
+       */
+
+
+      class_1.prototype.set = function (key, value) {
+        var index = getIndex(this.__entries__, key);
+
+        if (~index) {
+          this.__entries__[index][1] = value;
+        } else {
+          this.__entries__.push([key, value]);
+        }
+      };
+      /**
+       * @param {*} key
+       * @returns {void}
+       */
+
+
+      class_1.prototype.delete = function (key) {
+        var entries = this.__entries__;
+        var index = getIndex(entries, key);
+
+        if (~index) {
+          entries.splice(index, 1);
+        }
+      };
+      /**
+       * @param {*} key
+       * @returns {void}
+       */
+
+
+      class_1.prototype.has = function (key) {
+        return !!~getIndex(this.__entries__, key);
+      };
+      /**
+       * @returns {void}
+       */
+
+
+      class_1.prototype.clear = function () {
+        this.__entries__.splice(0);
+      };
+      /**
+       * @param {Function} callback
+       * @param {*} [ctx=null]
+       * @returns {void}
+       */
+
+
+      class_1.prototype.forEach = function (callback, ctx) {
+        if (ctx === void 0) {
+          ctx = null;
+        }
+
+        for (var _i = 0, _a = this.__entries__; _i < _a.length; _i++) {
+          var entry = _a[_i];
+          callback.call(ctx, entry[1], entry[0]);
+        }
+      };
+
+      return class_1;
+    }()
+  );
+}();
+/**
+ * Detects whether window and document objects are available in current environment.
+ */
+
+
+var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined' && window.document === document; // Returns global object of a current environment.
+
+var global$1 = function () {
+  if (typeof global !== 'undefined' && global.Math === Math) {
+    return global;
+  }
+
+  if (typeof self !== 'undefined' && self.Math === Math) {
+    return self;
+  }
+
+  if (typeof window !== 'undefined' && window.Math === Math) {
+    return window;
+  } // eslint-disable-next-line no-new-func
+
+
+  return Function('return this')();
+}();
+/**
+ * A shim for the requestAnimationFrame which falls back to the setTimeout if
+ * first one is not supported.
+ *
+ * @returns {number} Requests' identifier.
+ */
+
+
+var requestAnimationFrame$1 = function () {
+  if (typeof requestAnimationFrame === 'function') {
+    // It's required to use a bounded function because IE sometimes throws
+    // an "Invalid calling object" error if rAF is invoked without the global
+    // object on the left hand side.
+    return requestAnimationFrame.bind(global$1);
+  }
+
+  return function (callback) {
+    return setTimeout(function () {
+      return callback(Date.now());
+    }, 1000 / 60);
+  };
+}(); // Defines minimum timeout before adding a trailing call.
+
+
+var trailingTimeout = 2;
+/**
+ * Creates a wrapper function which ensures that provided callback will be
+ * invoked only once during the specified delay period.
+ *
+ * @param {Function} callback - Function to be invoked after the delay period.
+ * @param {number} delay - Delay after which to invoke callback.
+ * @returns {Function}
+ */
+
+function throttle(callback, delay) {
+  var leadingCall = false,
+      trailingCall = false,
+      lastCallTime = 0;
+  /**
+   * Invokes the original callback function and schedules new invocation if
+   * the "proxy" was called during current request.
+   *
+   * @returns {void}
+   */
+
+  function resolvePending() {
+    if (leadingCall) {
+      leadingCall = false;
+      callback();
+    }
+
+    if (trailingCall) {
+      proxy();
+    }
+  }
+  /**
+   * Callback invoked after the specified delay. It will further postpone
+   * invocation of the original function delegating it to the
+   * requestAnimationFrame.
+   *
+   * @returns {void}
+   */
+
+
+  function timeoutCallback() {
+    requestAnimationFrame$1(resolvePending);
+  }
+  /**
+   * Schedules invocation of the original function.
+   *
+   * @returns {void}
+   */
+
+
+  function proxy() {
+    var timeStamp = Date.now();
+
+    if (leadingCall) {
+      // Reject immediately following calls.
+      if (timeStamp - lastCallTime < trailingTimeout) {
+        return;
+      } // Schedule new call to be in invoked when the pending one is resolved.
+      // This is important for "transitions" which never actually start
+      // immediately so there is a chance that we might miss one if change
+      // happens amids the pending invocation.
+
+
+      trailingCall = true;
+    } else {
+      leadingCall = true;
+      trailingCall = false;
+      setTimeout(timeoutCallback, delay);
+    }
+
+    lastCallTime = timeStamp;
+  }
+
+  return proxy;
+} // Minimum delay before invoking the update of observers.
+
+
+var REFRESH_DELAY = 20; // A list of substrings of CSS properties used to find transition events that
+// might affect dimensions of observed elements.
+
+var transitionKeys = ['top', 'right', 'bottom', 'left', 'width', 'height', 'size', 'weight']; // Check if MutationObserver is available.
+
+var mutationObserverSupported = typeof MutationObserver !== 'undefined';
+/**
+ * Singleton controller class which handles updates of ResizeObserver instances.
+ */
+
+var ResizeObserverController =
+/** @class */
+function () {
+  /**
+   * Creates a new instance of ResizeObserverController.
+   *
+   * @private
+   */
+  function ResizeObserverController() {
+    /**
+     * Indicates whether DOM listeners have been added.
+     *
+     * @private {boolean}
+     */
+    this.connected_ = false;
+    /**
+     * Tells that controller has subscribed for Mutation Events.
+     *
+     * @private {boolean}
+     */
+
+    this.mutationEventsAdded_ = false;
+    /**
+     * Keeps reference to the instance of MutationObserver.
+     *
+     * @private {MutationObserver}
+     */
+
+    this.mutationsObserver_ = null;
+    /**
+     * A list of connected observers.
+     *
+     * @private {Array<ResizeObserverSPI>}
+     */
+
+    this.observers_ = [];
+    this.onTransitionEnd_ = this.onTransitionEnd_.bind(this);
+    this.refresh = throttle(this.refresh.bind(this), REFRESH_DELAY);
+  }
+  /**
+   * Adds observer to observers list.
+   *
+   * @param {ResizeObserverSPI} observer - Observer to be added.
+   * @returns {void}
+   */
+
+
+  ResizeObserverController.prototype.addObserver = function (observer) {
+    if (!~this.observers_.indexOf(observer)) {
+      this.observers_.push(observer);
+    } // Add listeners if they haven't been added yet.
+
+
+    if (!this.connected_) {
+      this.connect_();
+    }
+  };
+  /**
+   * Removes observer from observers list.
+   *
+   * @param {ResizeObserverSPI} observer - Observer to be removed.
+   * @returns {void}
+   */
+
+
+  ResizeObserverController.prototype.removeObserver = function (observer) {
+    var observers = this.observers_;
+    var index = observers.indexOf(observer); // Remove observer if it's present in registry.
+
+    if (~index) {
+      observers.splice(index, 1);
+    } // Remove listeners if controller has no connected observers.
+
+
+    if (!observers.length && this.connected_) {
+      this.disconnect_();
+    }
+  };
+  /**
+   * Invokes the update of observers. It will continue running updates insofar
+   * it detects changes.
+   *
+   * @returns {void}
+   */
+
+
+  ResizeObserverController.prototype.refresh = function () {
+    var changesDetected = this.updateObservers_(); // Continue running updates if changes have been detected as there might
+    // be future ones caused by CSS transitions.
+
+    if (changesDetected) {
+      this.refresh();
+    }
+  };
+  /**
+   * Updates every observer from observers list and notifies them of queued
+   * entries.
+   *
+   * @private
+   * @returns {boolean} Returns "true" if any observer has detected changes in
+   *      dimensions of it's elements.
+   */
+
+
+  ResizeObserverController.prototype.updateObservers_ = function () {
+    // Collect observers that have active observations.
+    var activeObservers = this.observers_.filter(function (observer) {
+      return observer.gatherActive(), observer.hasActive();
+    }); // Deliver notifications in a separate cycle in order to avoid any
+    // collisions between observers, e.g. when multiple instances of
+    // ResizeObserver are tracking the same element and the callback of one
+    // of them changes content dimensions of the observed target. Sometimes
+    // this may result in notifications being blocked for the rest of observers.
+
+    activeObservers.forEach(function (observer) {
+      return observer.broadcastActive();
+    });
+    return activeObservers.length > 0;
+  };
+  /**
+   * Initializes DOM listeners.
+   *
+   * @private
+   * @returns {void}
+   */
+
+
+  ResizeObserverController.prototype.connect_ = function () {
+    // Do nothing if running in a non-browser environment or if listeners
+    // have been already added.
+    if (!isBrowser || this.connected_) {
+      return;
+    } // Subscription to the "Transitionend" event is used as a workaround for
+    // delayed transitions. This way it's possible to capture at least the
+    // final state of an element.
+
+
+    document.addEventListener('transitionend', this.onTransitionEnd_);
+    window.addEventListener('resize', this.refresh);
+
+    if (mutationObserverSupported) {
+      this.mutationsObserver_ = new MutationObserver(this.refresh);
+      this.mutationsObserver_.observe(document, {
+        attributes: true,
+        childList: true,
+        characterData: true,
+        subtree: true
+      });
+    } else {
+      document.addEventListener('DOMSubtreeModified', this.refresh);
+      this.mutationEventsAdded_ = true;
+    }
+
+    this.connected_ = true;
+  };
+  /**
+   * Removes DOM listeners.
+   *
+   * @private
+   * @returns {void}
+   */
+
+
+  ResizeObserverController.prototype.disconnect_ = function () {
+    // Do nothing if running in a non-browser environment or if listeners
+    // have been already removed.
+    if (!isBrowser || !this.connected_) {
+      return;
+    }
+
+    document.removeEventListener('transitionend', this.onTransitionEnd_);
+    window.removeEventListener('resize', this.refresh);
+
+    if (this.mutationsObserver_) {
+      this.mutationsObserver_.disconnect();
+    }
+
+    if (this.mutationEventsAdded_) {
+      document.removeEventListener('DOMSubtreeModified', this.refresh);
+    }
+
+    this.mutationsObserver_ = null;
+    this.mutationEventsAdded_ = false;
+    this.connected_ = false;
+  };
+  /**
+   * "Transitionend" event handler.
+   *
+   * @private
+   * @param {TransitionEvent} event
+   * @returns {void}
+   */
+
+
+  ResizeObserverController.prototype.onTransitionEnd_ = function (_a) {
+    var _b = _a.propertyName,
+        propertyName = _b === void 0 ? '' : _b; // Detect whether transition may affect dimensions of an element.
+
+    var isReflowProperty = transitionKeys.some(function (key) {
+      return !!~propertyName.indexOf(key);
+    });
+
+    if (isReflowProperty) {
+      this.refresh();
+    }
+  };
+  /**
+   * Returns instance of the ResizeObserverController.
+   *
+   * @returns {ResizeObserverController}
+   */
+
+
+  ResizeObserverController.getInstance = function () {
+    if (!this.instance_) {
+      this.instance_ = new ResizeObserverController();
+    }
+
+    return this.instance_;
+  };
+  /**
+   * Holds reference to the controller's instance.
+   *
+   * @private {ResizeObserverController}
+   */
+
+
+  ResizeObserverController.instance_ = null;
+  return ResizeObserverController;
+}();
+/**
+ * Defines non-writable/enumerable properties of the provided target object.
+ *
+ * @param {Object} target - Object for which to define properties.
+ * @param {Object} props - Properties to be defined.
+ * @returns {Object} Target object.
+ */
+
+
+var defineConfigurable = function (target, props) {
+  for (var _i = 0, _a = Object.keys(props); _i < _a.length; _i++) {
+    var key = _a[_i];
+    Object.defineProperty(target, key, {
+      value: props[key],
+      enumerable: false,
+      writable: false,
+      configurable: true
+    });
+  }
+
+  return target;
+};
+/**
+ * Returns the global object associated with provided element.
+ *
+ * @param {Object} target
+ * @returns {Object}
+ */
+
+
+var getWindowOf = function (target) {
+  // Assume that the element is an instance of Node, which means that it
+  // has the "ownerDocument" property from which we can retrieve a
+  // corresponding global object.
+  var ownerGlobal = target && target.ownerDocument && target.ownerDocument.defaultView; // Return the local global object if it's not possible extract one from
+  // provided element.
+
+  return ownerGlobal || global$1;
+}; // Placeholder of an empty content rectangle.
+
+
+var emptyRect = createRectInit(0, 0, 0, 0);
+/**
+ * Converts provided string to a number.
+ *
+ * @param {number|string} value
+ * @returns {number}
+ */
+
+function toFloat(value) {
+  return parseFloat(value) || 0;
+}
+/**
+ * Extracts borders size from provided styles.
+ *
+ * @param {CSSStyleDeclaration} styles
+ * @param {...string} positions - Borders positions (top, right, ...)
+ * @returns {number}
+ */
+
+
+function getBordersSize(styles) {
+  var positions = [];
+
+  for (var _i = 1; _i < arguments.length; _i++) {
+    positions[_i - 1] = arguments[_i];
+  }
+
+  return positions.reduce(function (size, position) {
+    var value = styles['border-' + position + '-width'];
+    return size + toFloat(value);
+  }, 0);
+}
+/**
+ * Extracts paddings sizes from provided styles.
+ *
+ * @param {CSSStyleDeclaration} styles
+ * @returns {Object} Paddings box.
+ */
+
+
+function getPaddings(styles) {
+  var positions = ['top', 'right', 'bottom', 'left'];
+  var paddings = {};
+
+  for (var _i = 0, positions_1 = positions; _i < positions_1.length; _i++) {
+    var position = positions_1[_i];
+    var value = styles['padding-' + position];
+    paddings[position] = toFloat(value);
+  }
+
+  return paddings;
+}
+/**
+ * Calculates content rectangle of provided SVG element.
+ *
+ * @param {SVGGraphicsElement} target - Element content rectangle of which needs
+ *      to be calculated.
+ * @returns {DOMRectInit}
+ */
+
+
+function getSVGContentRect(target) {
+  var bbox = target.getBBox();
+  return createRectInit(0, 0, bbox.width, bbox.height);
+}
+/**
+ * Calculates content rectangle of provided HTMLElement.
+ *
+ * @param {HTMLElement} target - Element for which to calculate the content rectangle.
+ * @returns {DOMRectInit}
+ */
+
+
+function getHTMLElementContentRect(target) {
+  // Client width & height properties can't be
+  // used exclusively as they provide rounded values.
+  var clientWidth = target.clientWidth,
+      clientHeight = target.clientHeight; // By this condition we can catch all non-replaced inline, hidden and
+  // detached elements. Though elements with width & height properties less
+  // than 0.5 will be discarded as well.
+  //
+  // Without it we would need to implement separate methods for each of
+  // those cases and it's not possible to perform a precise and performance
+  // effective test for hidden elements. E.g. even jQuery's ':visible' filter
+  // gives wrong results for elements with width & height less than 0.5.
+
+  if (!clientWidth && !clientHeight) {
+    return emptyRect;
+  }
+
+  var styles = getWindowOf(target).getComputedStyle(target);
+  var paddings = getPaddings(styles);
+  var horizPad = paddings.left + paddings.right;
+  var vertPad = paddings.top + paddings.bottom; // Computed styles of width & height are being used because they are the
+  // only dimensions available to JS that contain non-rounded values. It could
+  // be possible to utilize the getBoundingClientRect if only it's data wasn't
+  // affected by CSS transformations let alone paddings, borders and scroll bars.
+
+  var width = toFloat(styles.width),
+      height = toFloat(styles.height); // Width & height include paddings and borders when the 'border-box' box
+  // model is applied (except for IE).
+
+  if (styles.boxSizing === 'border-box') {
+    // Following conditions are required to handle Internet Explorer which
+    // doesn't include paddings and borders to computed CSS dimensions.
+    //
+    // We can say that if CSS dimensions + paddings are equal to the "client"
+    // properties then it's either IE, and thus we don't need to subtract
+    // anything, or an element merely doesn't have paddings/borders styles.
+    if (Math.round(width + horizPad) !== clientWidth) {
+      width -= getBordersSize(styles, 'left', 'right') + horizPad;
+    }
+
+    if (Math.round(height + vertPad) !== clientHeight) {
+      height -= getBordersSize(styles, 'top', 'bottom') + vertPad;
+    }
+  } // Following steps can't be applied to the document's root element as its
+  // client[Width/Height] properties represent viewport area of the window.
+  // Besides, it's as well not necessary as the <html> itself neither has
+  // rendered scroll bars nor it can be clipped.
+
+
+  if (!isDocumentElement(target)) {
+    // In some browsers (only in Firefox, actually) CSS width & height
+    // include scroll bars size which can be removed at this step as scroll
+    // bars are the only difference between rounded dimensions + paddings
+    // and "client" properties, though that is not always true in Chrome.
+    var vertScrollbar = Math.round(width + horizPad) - clientWidth;
+    var horizScrollbar = Math.round(height + vertPad) - clientHeight; // Chrome has a rather weird rounding of "client" properties.
+    // E.g. for an element with content width of 314.2px it sometimes gives
+    // the client width of 315px and for the width of 314.7px it may give
+    // 314px. And it doesn't happen all the time. So just ignore this delta
+    // as a non-relevant.
+
+    if (Math.abs(vertScrollbar) !== 1) {
+      width -= vertScrollbar;
+    }
+
+    if (Math.abs(horizScrollbar) !== 1) {
+      height -= horizScrollbar;
+    }
+  }
+
+  return createRectInit(paddings.left, paddings.top, width, height);
+}
+/**
+ * Checks whether provided element is an instance of the SVGGraphicsElement.
+ *
+ * @param {Element} target - Element to be checked.
+ * @returns {boolean}
+ */
+
+
+var isSVGGraphicsElement = function () {
+  // Some browsers, namely IE and Edge, don't have the SVGGraphicsElement
+  // interface.
+  if (typeof SVGGraphicsElement !== 'undefined') {
+    return function (target) {
+      return target instanceof getWindowOf(target).SVGGraphicsElement;
+    };
+  } // If it's so, then check that element is at least an instance of the
+  // SVGElement and that it has the "getBBox" method.
+  // eslint-disable-next-line no-extra-parens
+
+
+  return function (target) {
+    return target instanceof getWindowOf(target).SVGElement && typeof target.getBBox === 'function';
+  };
+}();
+/**
+ * Checks whether provided element is a document element (<html>).
+ *
+ * @param {Element} target - Element to be checked.
+ * @returns {boolean}
+ */
+
+
+function isDocumentElement(target) {
+  return target === getWindowOf(target).document.documentElement;
+}
+/**
+ * Calculates an appropriate content rectangle for provided html or svg element.
+ *
+ * @param {Element} target - Element content rectangle of which needs to be calculated.
+ * @returns {DOMRectInit}
+ */
+
+
+function getContentRect(target) {
+  if (!isBrowser) {
+    return emptyRect;
+  }
+
+  if (isSVGGraphicsElement(target)) {
+    return getSVGContentRect(target);
+  }
+
+  return getHTMLElementContentRect(target);
+}
+/**
+ * Creates rectangle with an interface of the DOMRectReadOnly.
+ * Spec: https://drafts.fxtf.org/geometry/#domrectreadonly
+ *
+ * @param {DOMRectInit} rectInit - Object with rectangle's x/y coordinates and dimensions.
+ * @returns {DOMRectReadOnly}
+ */
+
+
+function createReadOnlyRect(_a) {
+  var x = _a.x,
+      y = _a.y,
+      width = _a.width,
+      height = _a.height; // If DOMRectReadOnly is available use it as a prototype for the rectangle.
+
+  var Constr = typeof DOMRectReadOnly !== 'undefined' ? DOMRectReadOnly : Object;
+  var rect = Object.create(Constr.prototype); // Rectangle's properties are not writable and non-enumerable.
+
+  defineConfigurable(rect, {
+    x: x,
+    y: y,
+    width: width,
+    height: height,
+    top: y,
+    right: x + width,
+    bottom: height + y,
+    left: x
+  });
+  return rect;
+}
+/**
+ * Creates DOMRectInit object based on the provided dimensions and the x/y coordinates.
+ * Spec: https://drafts.fxtf.org/geometry/#dictdef-domrectinit
+ *
+ * @param {number} x - X coordinate.
+ * @param {number} y - Y coordinate.
+ * @param {number} width - Rectangle's width.
+ * @param {number} height - Rectangle's height.
+ * @returns {DOMRectInit}
+ */
+
+
+function createRectInit(x, y, width, height) {
+  return {
+    x: x,
+    y: y,
+    width: width,
+    height: height
+  };
+}
+/**
+ * Class that is responsible for computations of the content rectangle of
+ * provided DOM element and for keeping track of it's changes.
+ */
+
+
+var ResizeObservation =
+/** @class */
+function () {
+  /**
+   * Creates an instance of ResizeObservation.
+   *
+   * @param {Element} target - Element to be observed.
+   */
+  function ResizeObservation(target) {
+    /**
+     * Broadcasted width of content rectangle.
+     *
+     * @type {number}
+     */
+    this.broadcastWidth = 0;
+    /**
+     * Broadcasted height of content rectangle.
+     *
+     * @type {number}
+     */
+
+    this.broadcastHeight = 0;
+    /**
+     * Reference to the last observed content rectangle.
+     *
+     * @private {DOMRectInit}
+     */
+
+    this.contentRect_ = createRectInit(0, 0, 0, 0);
+    this.target = target;
+  }
+  /**
+   * Updates content rectangle and tells whether it's width or height properties
+   * have changed since the last broadcast.
+   *
+   * @returns {boolean}
+   */
+
+
+  ResizeObservation.prototype.isActive = function () {
+    var rect = getContentRect(this.target);
+    this.contentRect_ = rect;
+    return rect.width !== this.broadcastWidth || rect.height !== this.broadcastHeight;
+  };
+  /**
+   * Updates 'broadcastWidth' and 'broadcastHeight' properties with a data
+   * from the corresponding properties of the last observed content rectangle.
+   *
+   * @returns {DOMRectInit} Last observed content rectangle.
+   */
+
+
+  ResizeObservation.prototype.broadcastRect = function () {
+    var rect = this.contentRect_;
+    this.broadcastWidth = rect.width;
+    this.broadcastHeight = rect.height;
+    return rect;
+  };
+
+  return ResizeObservation;
+}();
+
+var ResizeObserverEntry =
+/** @class */
+function () {
+  /**
+   * Creates an instance of ResizeObserverEntry.
+   *
+   * @param {Element} target - Element that is being observed.
+   * @param {DOMRectInit} rectInit - Data of the element's content rectangle.
+   */
+  function ResizeObserverEntry(target, rectInit) {
+    var contentRect = createReadOnlyRect(rectInit); // According to the specification following properties are not writable
+    // and are also not enumerable in the native implementation.
+    //
+    // Property accessors are not being used as they'd require to define a
+    // private WeakMap storage which may cause memory leaks in browsers that
+    // don't support this type of collections.
+
+    defineConfigurable(this, {
+      target: target,
+      contentRect: contentRect
+    });
+  }
+
+  return ResizeObserverEntry;
+}();
+
+var ResizeObserverSPI =
+/** @class */
+function () {
+  /**
+   * Creates a new instance of ResizeObserver.
+   *
+   * @param {ResizeObserverCallback} callback - Callback function that is invoked
+   *      when one of the observed elements changes it's content dimensions.
+   * @param {ResizeObserverController} controller - Controller instance which
+   *      is responsible for the updates of observer.
+   * @param {ResizeObserver} callbackCtx - Reference to the public
+   *      ResizeObserver instance which will be passed to callback function.
+   */
+  function ResizeObserverSPI(callback, controller, callbackCtx) {
+    /**
+     * Collection of resize observations that have detected changes in dimensions
+     * of elements.
+     *
+     * @private {Array<ResizeObservation>}
+     */
+    this.activeObservations_ = [];
+    /**
+     * Registry of the ResizeObservation instances.
+     *
+     * @private {Map<Element, ResizeObservation>}
+     */
+
+    this.observations_ = new MapShim();
+
+    if (typeof callback !== 'function') {
+      throw new TypeError('The callback provided as parameter 1 is not a function.');
+    }
+
+    this.callback_ = callback;
+    this.controller_ = controller;
+    this.callbackCtx_ = callbackCtx;
+  }
+  /**
+   * Starts observing provided element.
+   *
+   * @param {Element} target - Element to be observed.
+   * @returns {void}
+   */
+
+
+  ResizeObserverSPI.prototype.observe = function (target) {
+    if (!arguments.length) {
+      throw new TypeError('1 argument required, but only 0 present.');
+    } // Do nothing if current environment doesn't have the Element interface.
+
+
+    if (typeof Element === 'undefined' || !(Element instanceof Object)) {
+      return;
+    }
+
+    if (!(target instanceof getWindowOf(target).Element)) {
+      throw new TypeError('parameter 1 is not of type "Element".');
+    }
+
+    var observations = this.observations_; // Do nothing if element is already being observed.
+
+    if (observations.has(target)) {
+      return;
+    }
+
+    observations.set(target, new ResizeObservation(target));
+    this.controller_.addObserver(this); // Force the update of observations.
+
+    this.controller_.refresh();
+  };
+  /**
+   * Stops observing provided element.
+   *
+   * @param {Element} target - Element to stop observing.
+   * @returns {void}
+   */
+
+
+  ResizeObserverSPI.prototype.unobserve = function (target) {
+    if (!arguments.length) {
+      throw new TypeError('1 argument required, but only 0 present.');
+    } // Do nothing if current environment doesn't have the Element interface.
+
+
+    if (typeof Element === 'undefined' || !(Element instanceof Object)) {
+      return;
+    }
+
+    if (!(target instanceof getWindowOf(target).Element)) {
+      throw new TypeError('parameter 1 is not of type "Element".');
+    }
+
+    var observations = this.observations_; // Do nothing if element is not being observed.
+
+    if (!observations.has(target)) {
+      return;
+    }
+
+    observations.delete(target);
+
+    if (!observations.size) {
+      this.controller_.removeObserver(this);
+    }
+  };
+  /**
+   * Stops observing all elements.
+   *
+   * @returns {void}
+   */
+
+
+  ResizeObserverSPI.prototype.disconnect = function () {
+    this.clearActive();
+    this.observations_.clear();
+    this.controller_.removeObserver(this);
+  };
+  /**
+   * Collects observation instances the associated element of which has changed
+   * it's content rectangle.
+   *
+   * @returns {void}
+   */
+
+
+  ResizeObserverSPI.prototype.gatherActive = function () {
+    var _this = this;
+
+    this.clearActive();
+    this.observations_.forEach(function (observation) {
+      if (observation.isActive()) {
+        _this.activeObservations_.push(observation);
+      }
+    });
+  };
+  /**
+   * Invokes initial callback function with a list of ResizeObserverEntry
+   * instances collected from active resize observations.
+   *
+   * @returns {void}
+   */
+
+
+  ResizeObserverSPI.prototype.broadcastActive = function () {
+    // Do nothing if observer doesn't have active observations.
+    if (!this.hasActive()) {
+      return;
+    }
+
+    var ctx = this.callbackCtx_; // Create ResizeObserverEntry instance for every active observation.
+
+    var entries = this.activeObservations_.map(function (observation) {
+      return new ResizeObserverEntry(observation.target, observation.broadcastRect());
+    });
+    this.callback_.call(ctx, entries, ctx);
+    this.clearActive();
+  };
+  /**
+   * Clears the collection of active observations.
+   *
+   * @returns {void}
+   */
+
+
+  ResizeObserverSPI.prototype.clearActive = function () {
+    this.activeObservations_.splice(0);
+  };
+  /**
+   * Tells whether observer has active observations.
+   *
+   * @returns {boolean}
+   */
+
+
+  ResizeObserverSPI.prototype.hasActive = function () {
+    return this.activeObservations_.length > 0;
+  };
+
+  return ResizeObserverSPI;
+}(); // Registry of internal observers. If WeakMap is not available use current shim
+// for the Map collection as it has all required methods and because WeakMap
+// can't be fully polyfilled anyway.
+
+
+var observers = typeof WeakMap !== 'undefined' ? new WeakMap() : new MapShim();
+/**
+ * ResizeObserver API. Encapsulates the ResizeObserver SPI implementation
+ * exposing only those methods and properties that are defined in the spec.
+ */
+
+var ResizeObserver =
+/** @class */
+function () {
+  /**
+   * Creates a new instance of ResizeObserver.
+   *
+   * @param {ResizeObserverCallback} callback - Callback that is invoked when
+   *      dimensions of the observed elements change.
+   */
+  function ResizeObserver(callback) {
+    if (!(this instanceof ResizeObserver)) {
+      throw new TypeError('Cannot call a class as a function.');
+    }
+
+    if (!arguments.length) {
+      throw new TypeError('1 argument required, but only 0 present.');
+    }
+
+    var controller = ResizeObserverController.getInstance();
+    var observer = new ResizeObserverSPI(callback, controller, this);
+    observers.set(this, observer);
+  }
+
+  return ResizeObserver;
+}(); // Expose public methods of ResizeObserver.
+
+
+['observe', 'unobserve', 'disconnect'].forEach(function (method) {
+  ResizeObserver.prototype[method] = function () {
+    var _a;
+
+    return (_a = observers.get(this))[method].apply(_a, arguments);
+  };
+});
+
+var index = function () {
+  // Export existing implementation if available.
+  if (typeof global$1.ResizeObserver !== 'undefined') {
+    return global$1.ResizeObserver;
+  }
+
+  return ResizeObserver;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (index);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ })
+
+}]);
+//# sourceMappingURL=1.chunk.js.map
